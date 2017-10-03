@@ -1,0 +1,33 @@
+{
+  "name": "personalwebsite",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".eslintrc.js",
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "eslint": "^4.8.0",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.4.0",
+    "source-map-loader": "^0.2.2",
+    "webpack": "^2.7.0",
+    "webpack-dev-server": "^2.9.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "devserver": "webpack-dev-server --hot --inline --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeffchang5/PersonalWebsite.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeffchang5/PersonalWebsite/issues"
+  },
+  "homepage": "https://github.com/jeffchang5/PersonalWebsite#readme"
+}

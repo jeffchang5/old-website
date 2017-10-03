@@ -26,12 +26,5 @@ module.exports = {
             { test: /\.jsx?$/, loader: 'babel-loader' },
             { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' }
         ]
-    },
-    externals: {
-        'react': 'React',
-        'redux': 'Redux',
-        'react-dom': 'ReactDOM',
-        'react-router-dom': 'ReactRouterDOM',
-        'react-redux': 'ReactRedux'
     }
 };

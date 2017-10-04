@@ -16,7 +16,7 @@ const NavItem = styled.a`
 // });
 
 const createHoverBar = (element) => {
-  console.log(element);
+  // console.log(element);
 };
 
 const NavComponent = props =>

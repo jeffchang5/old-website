@@ -1,9 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
 import logo from 'resources/images/redbluelogo.png';
+import LineSeperator from 'components/common/line_seperator';
 import NavItem from './nav_item';
 
+
+const LineWrapper = styled.nav`
+  position: fixed;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+`;
+
+
 const NavWrapper = styled.nav`
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,12 +40,15 @@ const LogoImage = styled.img`
 `;
 
 export default () =>
-  (<NavWrapper>
-    <NavItem url="/" text="About" />
-    <NavItem url="/" text="Project" />
-    <LogoWrapper>
-      <LogoImage alt="logo" src={logo} />
-    </LogoWrapper>
-    <NavItem url="/" text="Resume" />
-    <NavItem url="/" text="Contact" />
-  </NavWrapper>);
+  (<LineWrapper>
+    <NavWrapper>
+      <NavItem url="/" text="About" />
+      <NavItem url="/" text="Project" />
+      <LogoWrapper>
+        <LogoImage alt="logo" src={logo} />
+      </LogoWrapper>
+      <NavItem url="/" text="Resume" />
+      <NavItem url="/" text="Contact" />
+    </NavWrapper>
+    <LineSeperator />
+  </LineWrapper>);

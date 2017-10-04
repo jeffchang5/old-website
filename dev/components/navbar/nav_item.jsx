@@ -3,9 +3,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const NavItem = styled.a`
-  &:hover {
-    color:salmon;
-  }
   font-family: 'Open Sans Condensed', sans-serif;
   font-size: 18pt;
 `;

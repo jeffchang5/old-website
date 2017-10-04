@@ -10,7 +10,18 @@ const NavItem = styled.a`
   font-size: 18pt;
   margin: 30px 30px 0 30px;
 `;
-const NavComponent = props => <NavItem href={props.url}>{props.text}</NavItem>;
+
+// NavItem.addEventListener('mouseover', (event) => {
+//   console.log(event);e
+// });
+
+const createHoverBar = (element) => {
+  console.log(element);
+};
+
+const NavComponent = props =>
+  <NavItem href={props.url} onmouseover={createHoverBar(this)}>{props.text}</NavItem>;
+
 
 NavComponent.propTypes = {
   url: PropTypes.string,

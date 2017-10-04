@@ -6,6 +6,7 @@ const NavItem = styled.a`
   &:hover {
     color:salmon;
   }
+    
   font-family: 'Open Sans Condensed', sans-serif;
   font-size: 18pt;
   margin: 30px 30px 0 30px;
@@ -15,13 +16,17 @@ const NavItem = styled.a`
 //   console.log(event);e
 // });
 
-const createHoverBar = (element) => {
-  // console.log(element);
+
+const NavComponent = (props) => {
+  const createHoverBar = (element) => {
+    element.preventDefault();
+    console.log('Hello');
+    // this.element.bind(element);
+    // element.visibility = 'invisible';
+  };
+
+  return <NavItem href={props.url} onmouseover={createHoverBar}>{props.text}</NavItem>;
 };
-
-const NavComponent = props =>
-  <NavItem href={props.url} onmouseover={createHoverBar(this)}>{props.text}</NavItem>;
-
 
 NavComponent.propTypes = {
   url: PropTypes.string,

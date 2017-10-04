@@ -6,27 +6,55 @@ const NavItem = styled.a`
   &:hover {
     color:salmon;
   }
-    
   font-family: 'Open Sans Condensed', sans-serif;
   font-size: 18pt;
+`;
+
+const NavHoverBar = styled.div`
+  height: 3px;
+  width: 100%;
+  background-color: salmon;
+  visibility: ${props => props.hoverBarVisible};
+`;
+
+const NavWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   margin: 30px 30px 0 30px;
 `;
 
-// NavItem.addEventListener('mouseover', (event) => {
-//   console.log(event);e
-// });
+class NavComponent extends React.Component {
+  constructor(props, context) {
+    super(props, context);
+    this.showHoverBar = this.showHoverBar.bind(this);
+    this.hideHoverBar = this.hideHoverBar.bind(this);
+    this.state = {
+      hoverBarVisible: 'hidden',
+    };
+  }
+  showHoverBar(e) {
+    e.preventDefault();
+    this.setState({ hoverBarVisible: 'visible' });
+  }
 
+  hideHoverBar(e) {
+    e.preventDefault();
+    this.setState({ hoverBarVisible: 'hidden' });
+  }
+  render() {
+    return (<NavWrapper>
+      <NavHoverBar hoverBarVisible={this.state.hoverBarVisible} />
+      <NavItem
+        href={this.props.url}
+        onMouseEnter={this.showHoverBar}
+        onMouseLeave={this.hideHoverBar}
+      >{this.props.text}</NavItem>
+    </NavWrapper>);
+  }
+}
 
-const NavComponent = (props) => {
-  const createHoverBar = (element) => {
-    element.preventDefault();
-    console.log('Hello');
-    // this.element.bind(element);
-    // element.visibility = 'invisible';
-  };
-
-  return <NavItem href={props.url} onmouseover={createHoverBar}>{props.text}</NavItem>;
-};
 
 NavComponent.propTypes = {
   url: PropTypes.string,

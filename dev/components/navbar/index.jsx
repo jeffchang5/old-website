@@ -9,10 +9,10 @@ const NavWrapper = styled.nav`
   justify-content: center;
 `;
 
-const Title = styled.div`
-  font-family: 'Amatic SC', cursive;
-  font-size: 25pt;
-`;
+// const Title = styled.div`
+//   font-family: 'Amatic SC', cursive;
+//   font-size: 25pt;
+// `;
 
 const LogoWrapper = styled.div`
   display: flex;
@@ -34,7 +34,6 @@ export default () =>
     <NavItem url="/" text="Project" />
     <LogoWrapper>
       <LogoImage alt="logo" src={logo} />
-      <Title>Jeffrey Chang</Title>
     </LogoWrapper>
     <NavItem url="/" text="Resume" />
     <NavItem url="/" text="Contact" />

@@ -5,15 +5,16 @@ import LineSeperator from 'components/common/line_seperator';
 import NavItem from './nav_item';
 
 
-const LineWrapper = styled.nav`
+const NavWrapper = styled.nav`
   position: fixed;
   display: flex;
   width: 100%;
+  background-color: white;
   flex-direction: column;
 `;
 
 
-const NavWrapper = styled.nav`
+const NavBarWrapper = styled.nav`
   width: 100%;
   display: flex;
   align-items: center;
@@ -40,8 +41,8 @@ const LogoImage = styled.img`
 `;
 
 export default () =>
-  (<LineWrapper>
-    <NavWrapper>
+  (<NavWrapper>
+    <NavBarWrapper>
       <NavItem url="/" text="About" />
       <NavItem url="/" text="Project" />
       <LogoWrapper>
@@ -49,6 +50,6 @@ export default () =>
       </LogoWrapper>
       <NavItem url="/" text="Resume" />
       <NavItem url="/" text="Contact" />
-    </NavWrapper>
+    </NavBarWrapper>
     <LineSeperator />
-  </LineWrapper>);
+  </NavWrapper>);

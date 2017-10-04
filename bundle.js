@@ -3221,9 +3221,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 var _templateObject = _taggedTemplateLiteral(['\n  display: flex;\n  align-items: center;\n  justify-content: center;\n'], ['\n  display: flex;\n  align-items: center;\n  justify-content: center;\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n  font-family: \'Amatic SC\', cursive;\n  font-size: 25pt;\n'], ['\n  font-family: \'Amatic SC\', cursive;\n  font-size: 25pt;\n']),
-    _templateObject3 = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  width: 180px;\n \n'], ['\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  width: 180px;\n \n']),
-    _templateObject4 = _taggedTemplateLiteral(['\n  width: 100px;\n  margin: 20px 0 0 0;\n  height: auto;\n'], ['\n  width: 100px;\n  margin: 20px 0 0 0;\n  height: auto;\n']);
+    _templateObject2 = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  width: 180px;\n \n'], ['\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  width: 180px;\n \n']),
+    _templateObject3 = _taggedTemplateLiteral(['\n  width: 100px;\n  margin: 20px 0 0 0;\n  height: auto;\n'], ['\n  width: 100px;\n  margin: 20px 0 0 0;\n  height: auto;\n']);
 
 var _react = __webpack_require__(2);
 
@@ -3247,10 +3246,13 @@ function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defi
 
 var NavWrapper = _styledComponents2.default.nav(_templateObject);
 
-var Title = _styledComponents2.default.div(_templateObject2);
+// const Title = styled.div`
+//   font-family: 'Amatic SC', cursive;
+//   font-size: 25pt;
+// `;
 
-var LogoWrapper = _styledComponents2.default.div(_templateObject3);
-var LogoImage = _styledComponents2.default.img(_templateObject4);
+var LogoWrapper = _styledComponents2.default.div(_templateObject2);
+var LogoImage = _styledComponents2.default.img(_templateObject3);
 
 exports.default = function () {
   return _react2.default.createElement(
@@ -3261,12 +3263,7 @@ exports.default = function () {
     _react2.default.createElement(
       LogoWrapper,
       null,
-      _react2.default.createElement(LogoImage, { alt: 'logo', src: _redbluelogo2.default }),
-      _react2.default.createElement(
-        Title,
-        null,
-        'Jeffrey Chang'
-      )
+      _react2.default.createElement(LogoImage, { alt: 'logo', src: _redbluelogo2.default })
     ),
     _react2.default.createElement(_nav_item2.default, { url: '/', text: 'Resume' }),
     _react2.default.createElement(_nav_item2.default, { url: '/', text: 'Contact' })
@@ -3284,7 +3281,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(['\n  &:hover {\n    color:salmon;\n  }\n  font-family: \'Open Sans Condensed\', sans-serif;\n  font-size: 18pt;\n  margin: 30px 30px 0 30px;\n'], ['\n  &:hover {\n    color:salmon;\n  }\n  font-family: \'Open Sans Condensed\', sans-serif;\n  font-size: 18pt;\n  margin: 30px 30px 0 30px;\n']);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _templateObject = _taggedTemplateLiteral(['\n  &:hover {\n    color:salmon;\n  }\n  font-family: \'Open Sans Condensed\', sans-serif;\n  font-size: 18pt;\n'], ['\n  &:hover {\n    color:salmon;\n  }\n  font-family: \'Open Sans Condensed\', sans-serif;\n  font-size: 18pt;\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n  height: 3px;\n  width: 100%;\n  background-color: salmon;\n  visibility: ', ';\n'], ['\n  height: 3px;\n  width: 100%;\n  background-color: salmon;\n  visibility: ', ';\n']),
+    _templateObject3 = _taggedTemplateLiteral(['\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column;\n  margin: 30px 30px 0 30px;\n'], ['\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column;\n  margin: 30px 30px 0 30px;\n']);
 
 var _styledComponents = __webpack_require__(7);
 
@@ -3300,25 +3301,72 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var NavItem = _styledComponents2.default.a(_templateObject);
 
-// NavItem.addEventListener('mouseover', (event) => {
-//   console.log(event);e
-// });
+var NavHoverBar = _styledComponents2.default.div(_templateObject2, function (props) {
+  return props.hoverBarVisible;
+});
 
-var createHoverBar = function createHoverBar(element) {
-  // console.log(element);
-};
+var NavWrapper = _styledComponents2.default.div(_templateObject3);
 
-var NavComponent = function NavComponent(props) {
-  return _react2.default.createElement(
-    NavItem,
-    { href: props.url, onmouseover: createHoverBar(undefined) },
-    props.text
-  );
-};
+var NavComponent = function (_React$Component) {
+  _inherits(NavComponent, _React$Component);
+
+  function NavComponent(props, context) {
+    _classCallCheck(this, NavComponent);
+
+    var _this = _possibleConstructorReturn(this, (NavComponent.__proto__ || Object.getPrototypeOf(NavComponent)).call(this, props, context));
+
+    _this.showHoverBar = _this.showHoverBar.bind(_this);
+    _this.hideHoverBar = _this.hideHoverBar.bind(_this);
+    _this.state = {
+      hoverBarVisible: 'hidden'
+    };
+    return _this;
+  }
+
+  _createClass(NavComponent, [{
+    key: 'showHoverBar',
+    value: function showHoverBar(e) {
+      e.preventDefault();
+      this.setState({ hoverBarVisible: 'visible' });
+    }
+  }, {
+    key: 'hideHoverBar',
+    value: function hideHoverBar(e) {
+      e.preventDefault();
+      this.setState({ hoverBarVisible: 'hidden' });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        NavWrapper,
+        null,
+        _react2.default.createElement(NavHoverBar, { hoverBarVisible: this.state.hoverBarVisible }),
+        _react2.default.createElement(
+          NavItem,
+          {
+            href: this.props.url,
+            onMouseEnter: this.showHoverBar,
+            onMouseLeave: this.hideHoverBar
+          },
+          this.props.text
+        )
+      );
+    }
+  }]);
+
+  return NavComponent;
+}(_react2.default.Component);
 
 NavComponent.propTypes = {
   url: _propTypes2.default.string,

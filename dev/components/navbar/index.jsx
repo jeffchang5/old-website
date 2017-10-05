@@ -5,11 +5,10 @@ import LineSeperator from 'components/common/line_seperator';
 import NavItem from './nav_item';
 
 
-const NavWrapper = styled.nav`
+const NavWrapper = styled.div`
   position: fixed;
   display: flex;
   width: 100%;
-  height: 12vh;
 
   z-index: 99999;
   background-color: white;
@@ -19,15 +18,12 @@ const NavWrapper = styled.nav`
 
 const NavBarWrapper = styled.nav`
   width: 100%;
+  margin-top: 15px;
+  margin-bottom: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
 `;
-
-// const Title = styled.div`
-//   font-family: 'Amatic SC', cursive;
-//   font-size: 25pt;
-// `;
 
 const LogoWrapper = styled.div`
   display: flex;
@@ -39,7 +35,6 @@ const LogoWrapper = styled.div`
 `;
 const LogoImage = styled.img`
   width: 100px;
-  margin: 20px 0 0 0;
   height: auto;
 `;
 

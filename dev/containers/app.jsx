@@ -11,4 +11,5 @@ export default () =>
     <NavBar />
     <About />
     <Projects />
+    <Projects />
   </AppWrapper>);

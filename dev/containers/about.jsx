@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import sample from 'resources/images/sample.jpg';
 
 const NavBarBufferWrapper = styled.div`
-  padding-top: 15vh`;
+  padding-top: 10vh`;
 
 const AboutBanner = styled.div`
   margin-left: auto;

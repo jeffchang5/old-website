@@ -6,8 +6,8 @@ import ProjectCard from 'components/projectcard';
 
 const ProjectCardwrapper = styled.div`
   display: flex;
+  justify-content: space-around;
   flex-wrap: wrap;
-  flex-direction: row;
 `;
 export default () => (
   <ResponsiveContainer>

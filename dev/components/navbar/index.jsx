@@ -9,6 +9,9 @@ const NavWrapper = styled.nav`
   position: fixed;
   display: flex;
   width: 100%;
+  height: 12vh;
+
+  z-index: 99999;
   background-color: white;
   flex-direction: column;
 `;

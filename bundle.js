@@ -3403,8 +3403,7 @@ var NavComponent = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (NavComponent.__proto__ || Object.getPrototypeOf(NavComponent)).call(this, props, context));
 
-    _this.showHoverBar = _this.showHoverBar.bind(_this);
-    _this.hideHoverBar = _this.hideHoverBar.bind(_this);
+    _this.toggleHoverBar = _this.toggleHoverBar.bind(_this);
     _this.state = {
       hoverBarVisible: 'hidden'
     };
@@ -3412,16 +3411,11 @@ var NavComponent = function (_React$Component) {
   }
 
   _createClass(NavComponent, [{
-    key: 'showHoverBar',
-    value: function showHoverBar(e) {
+    key: 'toggleHoverBar',
+    value: function toggleHoverBar(e) {
       e.preventDefault();
-      this.setState({ hoverBarVisible: 'visible' });
-    }
-  }, {
-    key: 'hideHoverBar',
-    value: function hideHoverBar(e) {
-      e.preventDefault();
-      this.setState({ hoverBarVisible: 'hidden' });
+      var toggle = !(this.state.hoverBarVisible === 'visible') ? 'visible' : 'hidden';
+      this.setState({ hoverBarVisible: toggle });
     }
   }, {
     key: 'render',
@@ -3434,8 +3428,8 @@ var NavComponent = function (_React$Component) {
           NavItem,
           {
             href: this.props.url,
-            onMouseEnter: this.showHoverBar,
-            onMouseLeave: this.hideHoverBar
+            onMouseEnter: this.toggleHoverBar,
+            onMouseLeave: this.toggleHoverBar
           },
           this.props.text
         )
@@ -3471,7 +3465,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n  max-width: 80%;\n  ', ';\n  ', ';\n  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);\n  height: 500px;\n  \n  display: flex;\n  margin: 1em;\n  background: sandybrown;\n'], ['\n  max-width: 80%;\n  ', ';\n  ', ';\n  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);\n  height: 500px;\n  \n  display: flex;\n  margin: 1em;\n  background: sandybrown;\n']),
+var _templateObject = _taggedTemplateLiteral(['\n  max-width: 80%;\n  ', ';\n  ', ';\n  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);\n  height: 500px;\n  display: flex;\n  margin: 1em;\n  filter: ', '\n'], ['\n  max-width: 80%;\n  ', ';\n  ', ';\n  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);\n  height: 500px;\n  display: flex;\n  margin: 1em;\n  filter: ', '\n']),
     _templateObject2 = _taggedTemplateLiteral(['\n    max-width: 70%;\n  '], ['\n    max-width: 70%;\n  ']),
     _templateObject3 = _taggedTemplateLiteral(['\n    max-width: 28%;\n  '], ['\n    max-width: 28%;\n  ']),
     _templateObject4 = _taggedTemplateLiteral(['\n  width: 100%;\n  height: auto;\n  display: flex;\n'], ['\n  width: 100%;\n  height: auto;\n  display: flex;\n']);
@@ -3506,7 +3500,9 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var ProjectCardWrapper = _styledComponents2.default.div(_templateObject, _devices2.default.tablet(_templateObject2), _devices2.default.desktop(_templateObject3));
+var ProjectCardWrapper = _styledComponents2.default.div(_templateObject, _devices2.default.tablet(_templateObject2), _devices2.default.desktop(_templateObject3), function (props) {
+  return props.filterColor;
+});
 
 var ProjectCardLogo = _styledComponents2.default.img(_templateObject4);
 
@@ -3518,33 +3514,41 @@ var ProjectCard = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (ProjectCard.__proto__ || Object.getPrototypeOf(ProjectCard)).call(this, props, context));
 
-    _this.showHoverBar = _this.showHoverBar.bind(_this);
-    _this.hideHoverBar = _this.hideHoverBar.bind(_this);
+    _this.toggleActiveProject = _this.toggleActiveProject.bind(_this);
     _this.state = {
-      hoverBarVisible: 'hidden'
+      isActive: false,
+      filterColor: 'grayscale(100%) blur(2px)'
     };
     return _this;
   }
 
   _createClass(ProjectCard, [{
-    key: 'showHoverBar',
-    value: function showHoverBar(e) {
+    key: 'toggleActiveProject',
+    value: function toggleActiveProject(e) {
       e.preventDefault();
-      this.setState({ hoverBarVisible: 'visible' });
-    }
-  }, {
-    key: 'hideHoverBar',
-    value: function hideHoverBar(e) {
-      e.preventDefault();
-      this.setState({ hoverBarVisible: 'hidden' });
+      if (this.state.isActive) {
+        this.setState({
+          isActive: false,
+          filterColor: 'grayscale(100%) blur(2px)'
+        });
+      } else {
+        this.setState({
+          isActive: true,
+          filterColor: 'none'
+        });
+      }
     }
   }, {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
         ProjectCardWrapper,
-        null,
-        _react2.default.createElement(ProjectCardLogo, { src: this.props.src })
+        { filterColor: this.state.filterColor },
+        _react2.default.createElement(ProjectCardLogo, {
+          src: this.props.src,
+          onMouseEnter: this.toggleActiveProject,
+          onMouseLeave: this.toggleActiveProject
+        })
       );
     }
   }]);
@@ -3556,14 +3560,11 @@ exports.default = ProjectCard;
 
 
 ProjectCard.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
   src: _propTypes2.default.string
-  // text: PropTypes.string,
 };
 
 ProjectCard.defaultProps = {
   src: _mhacks_android2.default
-  // text: '',
 };
 
 /***/ }),
@@ -3677,7 +3678,7 @@ exports.default = function () {
       ProjectCardwrapper,
       null,
       _projects_card2.default.map(function (projectCard) {
-        return _react2.default.createElement(_projectcard2.default, { key: projectCard.title, src: projectCard.image });
+        return _react2.default.createElement(_projectcard2.default, { key: projectCard.key, src: projectCard.image });
       })
     )
   );
@@ -3784,14 +3785,17 @@ var _mhacks_android2 = _interopRequireDefault(_mhacks_android);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = [{
+  id: 'mhacks',
   title: 'MHacks',
   subtitle: 'Whoever',
   image: _mhacks_android2.default
 }, {
+  id: 'mhacks2',
   title: 'MHacks',
   subtitle: 'Whoever',
   image: _mhacks_android2.default
 }, {
+  id: 'mhacks3',
   title: 'MHacks',
   subtitle: 'Whoever',
   image: _mhacks_android2.default

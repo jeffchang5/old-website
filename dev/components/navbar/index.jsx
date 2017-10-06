@@ -4,7 +4,6 @@ import logo from 'resources/images/redbluelogo.png';
 import LineSeperator from 'components/common/line_seperator';
 import NavItem from './nav_item';
 
-
 const NavWrapper = styled.div`
   position: fixed;
   display: flex;

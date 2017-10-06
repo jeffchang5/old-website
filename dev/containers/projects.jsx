@@ -1,24 +1,24 @@
 import React from 'react';
-import ResponsiveContainer from 'components/common/responsive_container';
 import styled from 'styled-components';
+import { WideContainer } from 'components/common/responsive_container';
 import SectionHeader from 'components/common/section_header';
 import ProjectCard from 'components/projectcard';
+import ProjectCardConfig from 'config/projects_card';
 
 const ProjectCardwrapper = styled.div`
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 `;
+
 export default () => (
-  <ResponsiveContainer>
+  <WideContainer>
     <SectionHeader />
     <ProjectCardwrapper>
-      <ProjectCard />
-      <ProjectCard />
-      <ProjectCard />
-      <ProjectCard />
-      <ProjectCard />
-      <ProjectCard />
+      {
+        ProjectCardConfig.map(projectCard =>
+          (<ProjectCard key={projectCard.title} src={projectCard.image} />))
+      }
     </ProjectCardwrapper>
-  </ResponsiveContainer>
+  </WideContainer>
 );

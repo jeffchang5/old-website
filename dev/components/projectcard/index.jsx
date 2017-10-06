@@ -1,17 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
 import devices from 'theme/devices';
+import PropTypes from 'prop-types';
+import MHacksProjectImage from 'resources/images/projects/mhacks_android.png';
 
 const ProjectCardWrapper = styled.div`
-  min-width: 80%;
+  max-width: 80%;
   ${devices.tablet`
-    min-width: 70%;
+    max-width: 70%;
   `};
   ${devices.desktop`
-    min-width: 30%;
+    max-width: 28%;
   `};
   box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
-  height: 100px;
+  height: 500px;
+  
   display: flex;
   margin: 1em;
   background: sandybrown;
@@ -44,8 +47,19 @@ export default class ProjectCard extends React.Component {
   render() {
     return (
       <ProjectCardWrapper>
-        <ProjectCardLogo />
+        <ProjectCardLogo src={this.props.src} />
       </ProjectCardWrapper>
     );
   }
 }
+
+ProjectCard.propTypes = {
+// eslint-disable-next-line react/forbid-prop-types
+  src: PropTypes.string,
+  // text: PropTypes.string,
+};
+
+ProjectCard.defaultProps = {
+  src: MHacksProjectImage,
+  // text: '',
+};

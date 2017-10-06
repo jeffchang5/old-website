@@ -14,10 +14,9 @@ const ProjectCardWrapper = styled.div`
   `};
   box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
   height: 500px;
-  
   display: flex;
   margin: 1em;
-  background: sandybrown;
+  filter: ${props => props.filterColor}
 `;
 
 const ProjectCardLogo = styled.img`
@@ -29,37 +28,43 @@ const ProjectCardLogo = styled.img`
 export default class ProjectCard extends React.Component {
   constructor(props, context) {
     super(props, context);
-    this.showHoverBar = this.showHoverBar.bind(this);
-    this.hideHoverBar = this.hideHoverBar.bind(this);
+    this.toggleActiveProject = this.toggleActiveProject.bind(this);
     this.state = {
-      active: 'true',
+      isActive: false,
+      filterColor: 'grayscale(100%) blur(2px)',
     };
   }
-  showHoverBar(e) {
+  toggleActiveProject(e) {
     e.preventDefault();
-    this.setState({ active: 'visible' });
-  }
-
-  hideHoverBar(e) {
-    e.preventDefault();
-    this.setState({ active: 'hidden' });
+    if (this.state.isActive) {
+      this.setState({
+        isActive: false,
+        filterColor: 'grayscale(100%) blur(2px)',
+      });
+    } else {
+      this.setState({
+        isActive: true,
+        filterColor: 'none',
+      });
+    }
   }
   render() {
     return (
-      <ProjectCardWrapper>
-        <ProjectCardLogo src={this.props.src} />
+      <ProjectCardWrapper filterColor={this.state.filterColor}>
+        <ProjectCardLogo
+          src={this.props.src}
+          onMouseEnter={this.toggleActiveProject}
+          onMouseLeave={this.toggleActiveProject}
+        />
       </ProjectCardWrapper>
     );
   }
 }
 
 ProjectCard.propTypes = {
-// eslint-disable-next-line react/forbid-prop-types
   src: PropTypes.string,
-  // text: PropTypes.string,
 };
 
 ProjectCard.defaultProps = {
   src: MHacksProjectImage,
-  // text: '',
 };

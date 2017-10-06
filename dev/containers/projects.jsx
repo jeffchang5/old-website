@@ -17,7 +17,7 @@ export default () => (
     <ProjectCardwrapper>
       {
         ProjectCardConfig.map(projectCard =>
-          (<ProjectCard key={projectCard.title} src={projectCard.image} />))
+          (<ProjectCard key={projectCard.key} src={projectCard.image} />))
       }
     </ProjectCardwrapper>
   </WideContainer>

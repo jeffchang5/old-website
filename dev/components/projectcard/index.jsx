@@ -32,17 +32,17 @@ export default class ProjectCard extends React.Component {
     this.showHoverBar = this.showHoverBar.bind(this);
     this.hideHoverBar = this.hideHoverBar.bind(this);
     this.state = {
-      hoverBarVisible: 'hidden',
+      active: 'true',
     };
   }
   showHoverBar(e) {
     e.preventDefault();
-    this.setState({ hoverBarVisible: 'visible' });
+    this.setState({ active: 'visible' });
   }
 
   hideHoverBar(e) {
     e.preventDefault();
-    this.setState({ hoverBarVisible: 'hidden' });
+    this.setState({ active: 'hidden' });
   }
   render() {
     return (

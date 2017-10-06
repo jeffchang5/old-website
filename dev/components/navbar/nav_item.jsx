@@ -25,28 +25,23 @@ const NavWrapper = styled.div`
 class NavComponent extends React.Component {
   constructor(props, context) {
     super(props, context);
-    this.showHoverBar = this.showHoverBar.bind(this);
-    this.hideHoverBar = this.hideHoverBar.bind(this);
+    this.toggleHoverBar = this.toggleHoverBar.bind(this);
     this.state = {
       hoverBarVisible: 'hidden',
     };
   }
-  showHoverBar(e) {
+  toggleHoverBar(e) {
     e.preventDefault();
-    this.setState({ hoverBarVisible: 'visible' });
-  }
-
-  hideHoverBar(e) {
-    e.preventDefault();
-    this.setState({ hoverBarVisible: 'hidden' });
+    const toggle = !(this.state.hoverBarVisible === 'visible') ? 'visible' : 'hidden';
+    this.setState({ hoverBarVisible: toggle });
   }
   render() {
     return (<NavWrapper>
       <NavHoverBar hoverBarVisible={this.state.hoverBarVisible} />
       <NavItem
         href={this.props.url}
-        onMouseEnter={this.showHoverBar}
-        onMouseLeave={this.hideHoverBar}
+        onMouseEnter={this.toggleHoverBar}
+        onMouseLeave={this.toggleHoverBar}
       >{this.props.text}</NavItem>
     </NavWrapper>);
   }

@@ -1,8 +1,10 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
+
 const ProjectTextInputWrapper = styled.div`
   position:relative; 
   margin-bottom:50px;
+  
 `;
 
 export const inputHighlighter = keyframes`
@@ -30,7 +32,9 @@ const ProjectTextBar = styled.span`
     bottom:1px; 
     position:absolute;
     background:#5264AE; 
-    transition:0.2s ease all;
+    transition:0.2s ease all; 
+    -moz-transition:0.2s ease all; 
+    -webkit-transition:0.2s ease all;
   }
   &:before {
     left: 50%;
@@ -52,7 +56,7 @@ const ProjectTextLabel = styled.label`
   }
   color:#999; 
   font-family: 'Open Sans Condensed', 'Helvetica Neue', sans-serif;
-  font-size: 24pt;
+  font-size:18px;
   font-weight:normal;
   position:absolute;
   pointer-events:none;
@@ -69,6 +73,8 @@ const ProjectTextInput = styled.input`
     outline:none;
   }
   &:focus ~ ${ProjectTextHighlight} {
+    -webkit-animation:inputHighlighter 0.3s ease;
+    -moz-animation:inputHighlighter 0.3s ease;
     animation:inputHighlighter 0.3s ease;
   }
   
@@ -78,21 +84,20 @@ const ProjectTextInput = styled.input`
     color:#5264AE;
   }
   
-  &:focus ~ ${ProjectTextBar}:before, &:before ~ ${ProjectTextBar}:after { 
+  &:focus ~ ${ProjectTextBar}:before, &:focus ~ ${ProjectTextBar}:after { 
     width:50%;
   }
-  padding:50px 10px 10px 5px;
+  font-size:18px;
+  padding:10px 10px 10px 5px;
   display:block;
-  width:500px;
+  width:300px;
   border:none;
   border-bottom:1px solid #757575;
 `;
 
-
-
 export default props => (
   <ProjectTextInputWrapper>
-    <ProjectTextInput />
+    <ProjectTextInput type="text" required />
     <ProjectTextHighlight />
     <ProjectTextBar />
     <ProjectTextLabel>Filter</ProjectTextLabel>

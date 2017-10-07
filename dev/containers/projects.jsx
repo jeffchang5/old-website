@@ -4,8 +4,9 @@ import { WideContainer } from 'components/common/responsive_container';
 import SectionHeader from 'components/common/section_header';
 import ProjectCard from 'components/projectcard';
 import ProjectCardConfig from 'config/projects_card';
+import ProjectTextInput from 'components/projecttextinput';
 
-const ProjectCardwrapper = styled.div`
+const ProjectCardWrapper = styled.div`
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -14,11 +15,10 @@ const ProjectCardwrapper = styled.div`
 export default () => (
   <WideContainer>
     <SectionHeader />
-    <ProjectCardwrapper>
-      {
-        ProjectCardConfig.map(projectCard =>
-          (<ProjectCard key={projectCard.key} src={projectCard.image} />))
-      }
-    </ProjectCardwrapper>
+    <ProjectTextInput />
+    <ProjectCardWrapper>
+      { ProjectCardConfig.map(projectCard =>
+        (<ProjectCard key={projectCard.key} src={projectCard.image} />))}
+    </ProjectCardWrapper>
   </WideContainer>
 );

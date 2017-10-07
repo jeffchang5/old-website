@@ -15,14 +15,16 @@ const ProjectCardWrapper = styled.div`
   box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
   height: 500px;
   display: flex;
+  overflow: hidden;
   margin: 1em;
-  filter: ${props => props.filterColor}
 `;
 
 const ProjectCardLogo = styled.img`
+  display: flex;
   width: 100%;
   height: auto;
-  display: flex;
+  
+  filter: ${props => props.filterColor}
 `;
 
 export default class ProjectCard extends React.Component {
@@ -31,7 +33,7 @@ export default class ProjectCard extends React.Component {
     this.toggleActiveProject = this.toggleActiveProject.bind(this);
     this.state = {
       isActive: false,
-      filterColor: 'grayscale(100%) blur(2px)',
+      filterColor: 'url(\'#cyan_filter\') blur(3px)',
     };
   }
   toggleActiveProject(e) {
@@ -39,7 +41,7 @@ export default class ProjectCard extends React.Component {
     if (this.state.isActive) {
       this.setState({
         isActive: false,
-        filterColor: 'grayscale(100%) blur(2px)',
+        filterColor: 'url(\'#cyan_filter\') blur(3px)',
       });
     } else {
       this.setState({
@@ -50,8 +52,20 @@ export default class ProjectCard extends React.Component {
   }
   render() {
     return (
-      <ProjectCardWrapper filterColor={this.state.filterColor}>
+      <ProjectCardWrapper>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="0">
+          <filter id="cyan_filter">
+            <feColorMatrix
+              type="matrix"
+              values="0.4 0 0.3 0 0
+              0 0.5 0 0 0
+              0 0 0.8 0 0
+              1 0 0 1 0 "
+            />
+          </filter>
+        </svg>
         <ProjectCardLogo
+          filterColor={this.state.filterColor}
           src={this.props.src}
           onMouseEnter={this.toggleActiveProject}
           onMouseLeave={this.toggleActiveProject}

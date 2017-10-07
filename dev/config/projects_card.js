@@ -20,4 +20,17 @@ export default [
     subtitle: 'Whoever',
     image: MHacksImage,
   },
+  {
+    id: 'mhacks',
+    title: 'MHacks',
+    subtitle: 'Whoever',
+    image: MHacksImage,
+  },
+  {
+    id: 'mhacks2',
+    title: 'MHacks',
+    subtitle: 'Whoever',
+    image: MHacksImage,
+  },
+
 ];

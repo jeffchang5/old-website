@@ -1,16 +1,42 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 const ProjectTextInputWrapper = styled.div`
   position:relative; 
   margin-bottom:50px;
 `;
 
+export const inputHighlighter = keyframes`
+  from { background:#5264AE; }
+  to { 
+    width:0;
+    background:transparent; 
+  }
+`;
+
+const ProjectTextBar = styled.span`
+  &:before, &:after {
+    content:'';
+    height:2px; 
+    width:0;
+    bottom:1px; 
+    position:absolute;
+    background:#5264AE; 
+    transition:0.2s ease all;
+  }
+  position: relative;
+  display: block;
+  width:300px;
+`;
 const ProjectTextInput = styled.input`
-  &:focus {
+  &:focus { 
     outline:none;
   }
-  padding:10px 10px 10px 5px;
+  
+  &:focus ~ ${ProjectTextBar}:before, &:before ~ ${ProjectTextBar}:after { 
+    width:50%;
+  }
+  padding:50px 10px 10px 5px;
   display:block;
   width:500px;
   border:none;
@@ -27,11 +53,7 @@ const ProjectTextHighlight = styled.span`
   opacity:0.5;
 `;
 
-const ProjectTextBar = styled.span`
-  position: relative;
-  display: block;
-  width:300px;
-`;
+
 
 const ProjectTextLabel = styled.label`
   &:before {

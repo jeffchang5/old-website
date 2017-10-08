@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import ProjectCategories from 'config/project_categories';
 import ProjectMenuItem from './project_menu_item';
 
@@ -17,16 +18,31 @@ const ProjectMenuWrapper = styled.div`
 `;
 
 
-export default class ProjectMenu extends React.Component {
+class ProjectMenu extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      active: false,
+    };
+  }
+
   render() {
     return (<ProjectMenuWrapper>
       { ProjectCategories.map(projectCategory =>
         (<ProjectMenuItem
-          gi
           key={projectCategory.key}
+          id={projectCategory.key}
           name={projectCategory.name}
+          onClick={this.props.callback}
         />))
       }
     </ProjectMenuWrapper>);
   }
 }
+
+ProjectMenu.propTypes = {
+  callback: PropTypes.func.isRequired,
+};
+
+
+export default ProjectMenu;

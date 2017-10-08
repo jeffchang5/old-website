@@ -7,14 +7,23 @@ const ProjectMenuItemWrapper = styled.div`
 `;
 const ProjectMenuItem = styled.a``;
 
+const console = () => {
+  return 'f';
+};
+
 const ProjectMenuItemComponent = props => (
   <ProjectMenuItemWrapper>
-    <ProjectMenuItem>{props.name}</ProjectMenuItem>
+    <ProjectMenuItem onClick={() => props.onClick(props.id)}>
+      {props.name}
+    </ProjectMenuItem>
   </ProjectMenuItemWrapper>
 );
 
+
 ProjectMenuItemComponent.propTypes = {
+  id: PropTypes.string.isRequired,
   name: PropTypes.string,
+  onClick: PropTypes.func.isRequired,
 };
 
 ProjectMenuItemComponent.defaultProps = {

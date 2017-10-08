@@ -42,7 +42,7 @@ export default [
     featured: true,
   },
   {
-    key: 'mhacks5',
+    key: 'mhacks6',
     title: 'MHacks',
     subtitle: 'Whoever',
     image: MHacksImage,

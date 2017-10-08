@@ -16,6 +16,7 @@ const ProjectCardWrapper = styled.div`
 export default class ProjectsComponent extends React.Component {
   constructor(props) {
     super(props);
+    this.menuCallback = this.menuCallback.bind(this);
     this.state = {
       category: 'default',
     };
@@ -42,7 +43,7 @@ export default class ProjectsComponent extends React.Component {
     return (
       <WideContainer>
         <SectionHeader />
-        <ProjectMenu callback={this.menuCallback()} />
+        <ProjectMenu callback={this.menuCallback} />
         <ProjectCardWrapper>
           {
             this.filterAndMapProjectCards(ProjectCardConfig)

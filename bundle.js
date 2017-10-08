@@ -3179,7 +3179,7 @@ exports.default = function () {
 "use strict";
 
 
-var _templateObject = _taggedTemplateLiteral(['\n  body {  margin: 0;  };\n  a { color: inherit; text-decoration: none; }\n'], ['\n  body {  margin: 0;  };\n  a { color: inherit; text-decoration: none; }\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  body {  margin: 0;  };\n  a { color: inherit; text-decoration: none; }\n  * { box-sizing:border-box; }\n'], ['\n  body {  margin: 0;  };\n  a { color: inherit; text-decoration: none; }\n  * { box-sizing:border-box; }\n']);
 
 var _styledComponents = __webpack_require__(2);
 
@@ -3592,12 +3592,12 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.inputHighlighter = undefined;
 
-var _templateObject = _taggedTemplateLiteral(['\n  position:relative; \n  margin-bottom:50px;\n'], ['\n  position:relative; \n  margin-bottom:50px;\n']),
+var _templateObject = _taggedTemplateLiteral(['\n  position:relative; \n  margin-bottom:50px;\n  \n'], ['\n  position:relative; \n  margin-bottom:50px;\n  \n']),
     _templateObject2 = _taggedTemplateLiteral(['\n  from { background:#5264AE; }\n  to { \n    width:0;\n    background:transparent; \n  }\n'], ['\n  from { background:#5264AE; }\n  to { \n    width:0;\n    background:transparent; \n  }\n']),
-    _templateObject3 = _taggedTemplateLiteral(['\n  &:before, &:after {\n    content:\'\';\n    height:2px; \n    width:0;\n    bottom:1px; \n    position:absolute;\n    background:#5264AE; \n    transition:0.2s ease all;\n  }\n  position: relative;\n  display: block;\n  width:300px;\n'], ['\n  &:before, &:after {\n    content:\'\';\n    height:2px; \n    width:0;\n    bottom:1px; \n    position:absolute;\n    background:#5264AE; \n    transition:0.2s ease all;\n  }\n  position: relative;\n  display: block;\n  width:300px;\n']),
-    _templateObject4 = _taggedTemplateLiteral(['\n  &:focus { \n    outline:none;\n  }\n  \n  &:focus ~ ', ':before, &:before ~ ', ':after { \n    width:50%;\n  }\n  padding:50px 10px 10px 5px;\n  display:block;\n  width:500px;\n  border:none;\n  border-bottom:1px solid #757575;\n'], ['\n  &:focus { \n    outline:none;\n  }\n  \n  &:focus ~ ', ':before, &:before ~ ', ':after { \n    width:50%;\n  }\n  padding:50px 10px 10px 5px;\n  display:block;\n  width:500px;\n  border:none;\n  border-bottom:1px solid #757575;\n']),
-    _templateObject5 = _taggedTemplateLiteral(['\n  position:absolute;\n  height:60%; \n  width:100px; \n  top:25%; \n  left:0;\n  pointer-events:none;\n  opacity:0.5;\n'], ['\n  position:absolute;\n  height:60%; \n  width:100px; \n  top:25%; \n  left:0;\n  pointer-events:none;\n  opacity:0.5;\n']),
-    _templateObject6 = _taggedTemplateLiteral(['\n  &:before {\n    left: 50%;\n  }\n  &:after{\n    right: 50%;\n  }\n  color:#999; \n  font-family: \'Open Sans Condensed\', \'Helvetica Neue\', sans-serif;\n  font-size: 24pt;\n  font-weight:normal;\n  position:absolute;\n  pointer-events:none;\n  left:5px;\n  top:10px;\n  transition:0.2s ease all; \n  -moz-transition:0.2s ease all; \n  -webkit-transition:0.2s ease all;\n'], ['\n  &:before {\n    left: 50%;\n  }\n  &:after{\n    right: 50%;\n  }\n  color:#999; \n  font-family: \'Open Sans Condensed\', \'Helvetica Neue\', sans-serif;\n  font-size: 24pt;\n  font-weight:normal;\n  position:absolute;\n  pointer-events:none;\n  left:5px;\n  top:10px;\n  transition:0.2s ease all; \n  -moz-transition:0.2s ease all; \n  -webkit-transition:0.2s ease all;\n']);
+    _templateObject3 = _taggedTemplateLiteral(['\n  position:absolute;\n  height:60%; \n  width:100px; \n  top:25%; \n  left:0;\n  pointer-events:none;\n  opacity:0.5;\n'], ['\n  position:absolute;\n  height:60%; \n  width:100px; \n  top:25%; \n  left:0;\n  pointer-events:none;\n  opacity:0.5;\n']),
+    _templateObject4 = _taggedTemplateLiteral(['\n  &:before, &:after {\n    content:\'\';\n    height:2px; \n    width:0;\n    bottom:1px; \n    position:absolute;\n    background:#5264AE; \n    transition:0.2s ease all; \n    -moz-transition:0.2s ease all; \n    -webkit-transition:0.2s ease all;\n  }\n  &:before {\n    left: 50%;\n  }\n  &:after {\n    right: 50%;\n  }\n  position: relative;\n  display: block;\n  width:300px;\n'], ['\n  &:before, &:after {\n    content:\'\';\n    height:2px; \n    width:0;\n    bottom:1px; \n    position:absolute;\n    background:#5264AE; \n    transition:0.2s ease all; \n    -moz-transition:0.2s ease all; \n    -webkit-transition:0.2s ease all;\n  }\n  &:before {\n    left: 50%;\n  }\n  &:after {\n    right: 50%;\n  }\n  position: relative;\n  display: block;\n  width:300px;\n']),
+    _templateObject5 = _taggedTemplateLiteral(['\n  &:before {\n    left: 50%;\n  }\n  &:after{\n    right: 50%;\n  }\n  color:#999; \n  font-family: \'Open Sans Condensed\', \'Helvetica Neue\', sans-serif;\n  font-size:18px;\n  font-weight:normal;\n  position:absolute;\n  pointer-events:none;\n  left:5px;\n  top:10px;\n  transition:0.2s ease all; \n  -moz-transition:0.2s ease all; \n  -webkit-transition:0.2s ease all;\n'], ['\n  &:before {\n    left: 50%;\n  }\n  &:after{\n    right: 50%;\n  }\n  color:#999; \n  font-family: \'Open Sans Condensed\', \'Helvetica Neue\', sans-serif;\n  font-size:18px;\n  font-weight:normal;\n  position:absolute;\n  pointer-events:none;\n  left:5px;\n  top:10px;\n  transition:0.2s ease all; \n  -moz-transition:0.2s ease all; \n  -webkit-transition:0.2s ease all;\n']),
+    _templateObject6 = _taggedTemplateLiteral(['\n  &:focus { \n    outline:none;\n  }\n  &:focus ~ ', ' {\n    -webkit-animation:inputHighlighter 0.3s ease;\n    -moz-animation:inputHighlighter 0.3s ease;\n    animation:inputHighlighter 0.3s ease;\n  }\n  \n  &:focus ~ ', ', &:valid ~ ', ' {\n    top:-20px;\n    font-size:14px;\n    color:#5264AE;\n  }\n  \n  &:focus ~ ', ':before, &:focus ~ ', ':after { \n    width:50%;\n  }\n  font-size:18px;\n  padding:10px 10px 10px 5px;\n  display:block;\n  width:300px;\n  border:none;\n  border-bottom:1px solid #757575;\n'], ['\n  &:focus { \n    outline:none;\n  }\n  &:focus ~ ', ' {\n    -webkit-animation:inputHighlighter 0.3s ease;\n    -moz-animation:inputHighlighter 0.3s ease;\n    animation:inputHighlighter 0.3s ease;\n  }\n  \n  &:focus ~ ', ', &:valid ~ ', ' {\n    top:-20px;\n    font-size:14px;\n    color:#5264AE;\n  }\n  \n  &:focus ~ ', ':before, &:focus ~ ', ':after { \n    width:50%;\n  }\n  font-size:18px;\n  padding:10px 10px 10px 5px;\n  display:block;\n  width:300px;\n  border:none;\n  border-bottom:1px solid #757575;\n']);
 
 var _react = __webpack_require__(0);
 
@@ -3615,18 +3615,18 @@ var ProjectTextInputWrapper = _styledComponents2.default.div(_templateObject);
 
 var inputHighlighter = exports.inputHighlighter = (0, _styledComponents.keyframes)(_templateObject2);
 
-var ProjectTextBar = _styledComponents2.default.span(_templateObject3);
-var ProjectTextInput = _styledComponents2.default.input(_templateObject4, ProjectTextBar, ProjectTextBar);
+var ProjectTextHighlight = _styledComponents2.default.span(_templateObject3);
+var ProjectTextBar = _styledComponents2.default.span(_templateObject4);
 
-var ProjectTextHighlight = _styledComponents2.default.span(_templateObject5);
+var ProjectTextLabel = _styledComponents2.default.label(_templateObject5);
 
-var ProjectTextLabel = _styledComponents2.default.label(_templateObject6);
+var ProjectTextInput = _styledComponents2.default.input(_templateObject6, ProjectTextHighlight, ProjectTextLabel, ProjectTextLabel, ProjectTextBar, ProjectTextBar);
 
 exports.default = function (props) {
   return _react2.default.createElement(
     ProjectTextInputWrapper,
     null,
-    _react2.default.createElement(ProjectTextInput, null),
+    _react2.default.createElement(ProjectTextInput, { type: 'text', required: true }),
     _react2.default.createElement(ProjectTextHighlight, null),
     _react2.default.createElement(ProjectTextBar, null),
     _react2.default.createElement(

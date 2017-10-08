@@ -7,7 +7,7 @@ import MHacksProjectImage from 'resources/images/projects/mhacks_android.png';
 const ProjectCardWrapper = styled.div`
   max-width: 80%;
   ${devices.tablet`
-    max-width: 70%;
+    max-width: 65%;
   `};
   ${devices.desktop`
     max-width: 28%;
@@ -15,15 +15,16 @@ const ProjectCardWrapper = styled.div`
   box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
   height: 500px;
   display: flex;
+  flex-direction: column;
   overflow: hidden;
   margin: 1em;
+  background-color: aquamarine;
 `;
 
 const ProjectCardLogo = styled.img`
   display: flex;
   width: 100%;
   height: auto;
-  
   filter: ${props => props.filterColor}
 `;
 

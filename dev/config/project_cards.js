@@ -41,4 +41,12 @@ export default [
     category: 'android',
     featured: true,
   },
+  {
+    key: 'mhacks5',
+    title: 'MHacks',
+    subtitle: 'Whoever',
+    image: MHacksImage,
+    category: 'ios',
+    featured: true,
+  },
 ];

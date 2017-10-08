@@ -1,14 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import ProjectCategories from 'config/project_categories';
 import ProjectMenuItem from './project_menu_item';
 
-const projectCategories = [
-  { key: 'android', name: 'Android' },
-  { key: 'web_dev', name: 'Web Dev' },
-  { key: 'ml', name: 'Machine Learning' },
-  { key: 'data_science', name: 'Data Science' },
-  { key: 'ios', name: 'iOS' },
-];
 
 const ProjectMenuWrapper = styled.div`
   display: flex;
@@ -26,7 +20,7 @@ const ProjectMenuWrapper = styled.div`
 export default class ProjectMenu extends React.Component {
   render() {
     return (<ProjectMenuWrapper>
-      { projectCategories.map(projectCategory =>
+      { ProjectCategories.map(projectCategory =>
         (<ProjectMenuItem key={projectCategory.key} name={projectCategory.name} />))}
     </ProjectMenuWrapper>);
   }

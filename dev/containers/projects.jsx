@@ -13,13 +13,30 @@ const ProjectCardWrapper = styled.div`
   flex-wrap: wrap;
 `;
 
-export default () => (
-  <WideContainer>
-    <SectionHeader />
-    <ProjectMenu />
-    <ProjectCardWrapper>
-      { ProjectCardConfig.map(projectCard =>
-        (<ProjectCard key={projectCard.key} src={projectCard.image} />))}
-    </ProjectCardWrapper>
-  </WideContainer>
-);
+export default class ProjectsComponent extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      category: 'ios',
+    };
+  }
+  menuCallback(category) {
+    console.log(category);
+  }
+  render() {
+    return (
+      <WideContainer>
+        <SectionHeader />
+        <ProjectMenu callback={this.menuCallback()} />
+        <ProjectCardWrapper>
+          {ProjectCardConfig
+            .filter(projectCard => projectCard.category === this.state.category)
+            .map(projectCard =>
+              (<ProjectCard key={projectCard.key} src={projectCard.image} />))}
+        </ProjectCardWrapper>
+      </WideContainer>
+    );
+  }
+}
+

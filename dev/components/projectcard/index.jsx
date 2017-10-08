@@ -66,8 +66,8 @@ export default class ProjectCard extends React.Component {
           </filter>
         </svg>
         <ProjectCardLogo
+          src={this.props.project.image}
           filterColor={this.state.filterColor}
-          src={this.props.src}
           onMouseEnter={this.toggleActiveProject}
           onMouseLeave={this.toggleActiveProject}
         />
@@ -77,9 +77,22 @@ export default class ProjectCard extends React.Component {
 }
 
 ProjectCard.propTypes = {
-  src: PropTypes.string,
+  project: PropTypes.shape({
+    title: PropTypes.string,
+    subtitle: PropTypes.string,
+    image: PropTypes.string,
+    category: PropTypes.string,
+    featured: PropTypes.bool,
+  }),
 };
 
 ProjectCard.defaultProps = {
-  src: MHacksProjectImage,
+  project: PropTypes.shape({
+    key: 'sample',
+    title: 'Title',
+    subtitle: 'Subtitle',
+    image: '',
+    category: 'android',
+    featured: true,
+  }),
 };

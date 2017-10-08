@@ -25,7 +25,7 @@ module.exports = {
     rules: [
       { test: /\.jsx$/, enforce: 'pre', loader: 'eslint-loader', options: { emitWarning: true } },
       { test: /\.jsx?$/, loader: 'babel-loader' },
-      { test: /\.(png|jpg|gif)$/, use: [{ loader: 'file-loader', options: {} }] },
+      { test: /\.(svg|png|jpg|gif)$/, use: [{ loader: 'file-loader', options: {} }] },
       { test: /\.css$/, use: [{ loader: 'style-loader' }, { loader: 'css-loader' }] },
       { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
     ],

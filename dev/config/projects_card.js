@@ -3,34 +3,44 @@ import MHacksImage from 'resources/images/projects/mhacks_android.png';
 
 export default [
   {
-    id: 'mhacks',
+    key: 'mhacks',
     title: 'MHacks',
     subtitle: 'Whoever',
     image: MHacksImage,
+    category: 'android',
+    featured: true,
   },
   {
-    id: 'mhacks2',
+    key: 'mhacks2',
     title: 'MHacks',
     subtitle: 'Whoever',
     image: MHacksImage,
+    category: 'android',
+    featured: true,
   },
   {
-    id: 'mhacks3',
+    key: 'mhacks3',
     title: 'MHacks',
     subtitle: 'Whoever',
     image: MHacksImage,
+    category: 'android',
+    featured: true,
   },
   {
-    id: 'mhacks',
+    key: 'mhacks5',
     title: 'MHacks',
     subtitle: 'Whoever',
     image: MHacksImage,
+    category: 'android',
+    featured: true,
   },
   {
-    id: 'mhacks2',
+    key: 'mhacks4',
     title: 'MHacks',
     subtitle: 'Whoever',
     image: MHacksImage,
+    category: 'android',
+    featured: true,
   },
 
 ];

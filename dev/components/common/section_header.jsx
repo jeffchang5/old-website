@@ -1,32 +1,44 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 import React from 'react';
 import styled from 'styled-components';
+import DoubleSlashIcon from 'resources/images/double_slash.svg';
 
 const SectionHeaderWrapper = styled.div`
   display: flex;
-  flex-direction: row;
-  height: 175px;
-  position: relative;
+  height: 80px;
+  flex-grow: 1;
+  margin: 30px 0 30px 0;
   left: 15px;
-  top: 30px;
+  position: relative;
+  flex-direction: row;
   font-family: "Open Sans Condensed", Helvetica, Arial, sans-serif;
+
 `;
 const SectionDecoration = styled.div`
-  font-size: 75pt;
-  line-height: 175px;
-  vertical-align: text-bottom;
+  width: 100px;
+  height: 100%;
+  background-image: url('${DoubleSlashIcon}');
+  background-size: 100% 100%;
+`;
+
+const HeaderTextWrapper = styled.div`
+  height: 100%;
+  margin-left: 15px;
 `;
 
 const SectionHeader = styled.div`
-  margin-left: 15px;
+  position: absolute;
+  bottom: 0;
   font-size: 45pt;
-  line-height: 175px;
+  height:      45px;  
+  line-height: 45px;
   vertical-align: text-bottom;
- 
 `;
 
 export default () => (
   <SectionHeaderWrapper>
-    <SectionDecoration>//</SectionDecoration>
-    <SectionHeader>Projects</SectionHeader>
+    <SectionDecoration />
+    <HeaderTextWrapper>
+      <SectionHeader>Projects</SectionHeader>
+    </HeaderTextWrapper>
   </SectionHeaderWrapper>);

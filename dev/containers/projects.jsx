@@ -4,7 +4,7 @@ import { WideContainer } from 'components/common/responsive_container';
 import SectionHeader from 'components/common/section_header';
 import ProjectMenu from 'components/projectsmenu';
 import ProjectCard from 'components/projectcard';
-import ProjectCardConfig from 'config/projects_card';
+import ProjectCardConfig from 'config/project_cards';
 
 
 const ProjectCardWrapper = styled.div`

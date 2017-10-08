@@ -1,6 +1,5 @@
 import MHacksImage from 'resources/images/projects/mhacks_android.png';
 
-
 export default [
   {
     key: 'mhacks',
@@ -42,5 +41,4 @@ export default [
     category: 'android',
     featured: true,
   },
-
 ];

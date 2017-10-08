@@ -1,17 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 import logo from 'resources/images/redbluelogo.png';
-import LineSeperator from 'components/common/line_seperator';
 import NavItem from './nav_item';
 
 const NavWrapper = styled.div`
   position: fixed;
   display: flex;
   width: 100%;
-
   z-index: 99999;
   background-color: white;
   flex-direction: column;
+  border-bottom: 1px solid #ccc;
 `;
 
 
@@ -30,7 +29,6 @@ const LogoWrapper = styled.div`
   align-items: center;
   justify-content: center;
   width: 180px;
- 
 `;
 const LogoImage = styled.img`
   width: 100px;
@@ -48,5 +46,4 @@ export default () =>
       <NavItem url="/" text="Resume" />
       <NavItem url="/" text="Contact" />
     </NavBarWrapper>
-    <LineSeperator />
   </NavWrapper>);

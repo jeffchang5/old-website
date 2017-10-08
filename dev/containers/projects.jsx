@@ -14,26 +14,39 @@ const ProjectCardWrapper = styled.div`
 `;
 
 export default class ProjectsComponent extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
-      category: 'ios',
+      category: 'default',
     };
   }
-  menuCallback(category) {
-    console.log(category);
+
+  filterAndMapProjectCards(projectCardList) {
+    let cardList;
+    if (this.state.category === 'default') cardList = projectCardList;
+    else {
+      cardList = projectCardList
+        .filter(projectCard => projectCard.category === this.state.category);
+    }
+    return cardList.map(projectCard =>
+      (<ProjectCard key={projectCard.key} src={projectCard.image} />));
   }
+
+  menuCallback(category) {
+    this.setState({
+      category,
+    });
+  }
+
   render() {
     return (
       <WideContainer>
         <SectionHeader />
         <ProjectMenu callback={this.menuCallback()} />
         <ProjectCardWrapper>
-          {ProjectCardConfig
-            .filter(projectCard => projectCard.category === this.state.category)
-            .map(projectCard =>
-              (<ProjectCard key={projectCard.key} src={projectCard.image} />))}
+          {
+            this.filterAndMapProjectCards(ProjectCardConfig)
+          }
         </ProjectCardWrapper>
       </WideContainer>
     );

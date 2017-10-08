@@ -21,7 +21,12 @@ export default class ProjectMenu extends React.Component {
   render() {
     return (<ProjectMenuWrapper>
       { ProjectCategories.map(projectCategory =>
-        (<ProjectMenuItem key={projectCategory.key} name={projectCategory.name} />))}
+        (<ProjectMenuItem
+          gi
+          key={projectCategory.key}
+          name={projectCategory.name}
+        />))
+      }
     </ProjectMenuWrapper>);
   }
 }

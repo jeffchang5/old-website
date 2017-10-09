@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import devices from 'theme/devices';
 import PropTypes from 'prop-types';
-import MHacksProjectImage from 'resources/images/projects/mhacks_android.png';
 
 const ProjectCardWrapper = styled.div`
   max-width: 80%;
@@ -21,11 +20,26 @@ const ProjectCardWrapper = styled.div`
   background-color: aquamarine;
 `;
 
-const ProjectCardLogo = styled.img`
-  display: flex;
+const ProjectCardImageWrapper = styled.div`
   width: 100%;
-  height: auto;
+  height: 500px;
   filter: ${props => props.filterColor}
+`;
+
+const ProjectCardImage = styled.img`
+  width: 100%;
+  height: 100%;
+  filter: ${props => props.filterColor}
+`;
+
+const ProjectCardTextOverlay = styled.div`
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index: 99999;
+  background-color: indianred;
 `;
 
 export default class ProjectCard extends React.Component {
@@ -65,12 +79,14 @@ export default class ProjectCard extends React.Component {
             />
           </filter>
         </svg>
-        <ProjectCardLogo
-          src={this.props.project.image}
-          filterColor={this.state.filterColor}
-          onMouseEnter={this.toggleActiveProject}
-          onMouseLeave={this.toggleActiveProject}
-        />
+        <ProjectCardImageWrapper>
+          <ProjectCardImage
+            src={this.props.project.image}
+            filterColor={this.state.filterColor}
+            onMouseEnter={this.toggleActiveProject}
+            onMouseLeave={this.toggleActiveProject}
+          />
+        </ProjectCardImageWrapper>
       </ProjectCardWrapper>
     );
   }

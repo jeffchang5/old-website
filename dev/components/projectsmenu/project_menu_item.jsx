@@ -7,10 +7,6 @@ const ProjectMenuItemWrapper = styled.div`
 `;
 const ProjectMenuItem = styled.a``;
 
-const console = () => {
-  return 'f';
-};
-
 const ProjectMenuItemComponent = props => (
   <ProjectMenuItemWrapper>
     <ProjectMenuItem onClick={() => props.onClick(props.id)}>

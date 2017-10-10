@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import devices from 'theme/devices';
 import PropTypes from 'prop-types';
+import ProjectCardImage from './project_card_image';
 
 const ProjectCardWrapper = styled.div`
   &:hover {
@@ -31,13 +32,6 @@ const ProjectCardWrapper = styled.div`
   margin: 1em;
 `;
 
-const ProjectCardImageWrapper = styled.div`
-  position: relative;
-  width: 100%;
-  height: 55%;
-  filter: ${props => props.filterColor}
-`;
-
 const ProjectCardTextWrapper = styled.div`
   position: relative;
   margin: 25px 25px;
@@ -48,51 +42,7 @@ const ProjectCardTextWrapper = styled.div`
   background-color: white;
 `;
 
-const ProjectCardImage = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
-  filter: ${props => props.filterColor}
-`;
-
-const ProjectCardTextOverlay = styled.div`
-  position:absolute;
-  display: flex;
-  top:0;
-  left:0;
-  right:0;
-  bottom:0;
-  z-index: 2;
-  color: white;
-`;
-
 const ProjectCardTextHeader = styled.div``;
-
-
-const ProjectCardTextOverlayFlexRow = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 65px;
-  width: 100%;
-  align-self: center;
-`;
-const ProjectCardTextOverlayGitHubButton = styled.button`
-  &:focus {
-    outline: none;
-  }
- 
-  visibility: ${props => props.buttonVisible};
-  background-color: transparent;
-  align-self: center;
-  font-family: 'Open Sans Condensed', sans-serif;
-  font-size: 20pt;
-  padding: 0 15px;
-  height: 100%;
-  border: 2px solid #FFF;
-  border-radius: 18px;
-  color: white;
-`;
 
 export default class ProjectCard extends React.Component {
   constructor(props, context) {
@@ -135,22 +85,13 @@ export default class ProjectCard extends React.Component {
             />
           </filter>
         </svg>
-        <ProjectCardImageWrapper>
-          <ProjectCardImage
-            src={this.props.project.image}
-            filterColor={this.state.filterColor}
-          />
-          <ProjectCardTextOverlay
-            onMouseEnter={this.toggleActiveProject}
-            onMouseLeave={this.toggleActiveProject}
-          >
-            <ProjectCardTextOverlayFlexRow>
-              <ProjectCardTextOverlayGitHubButton buttonVisible={this.state.buttonVisible}>
-                View on GitHub
-              </ProjectCardTextOverlayGitHubButton>
-            </ProjectCardTextOverlayFlexRow>
-          </ProjectCardTextOverlay>
-        </ProjectCardImageWrapper>
+        <ProjectCardImage
+          filterColor={this.state.filterColor}
+          image={this.props.project.image}
+          toggleActiveProject={this.toggleActiveProject}
+          buttonVisible={this.state.buttonVisible}
+        />
+
         <ProjectCardTextWrapper>
           <ProjectCardTextHeader>Hello</ProjectCardTextHeader>
         </ProjectCardTextWrapper>

@@ -3461,12 +3461,15 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n  max-width: 80%;\n  ', ';\n  ', ';\n  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);\n  height: 500px;\n  display: flex;\n  flex-direction: column;\n  overflow: hidden;\n  margin: 1em;\n  background-color: aquamarine;\n'], ['\n  max-width: 80%;\n  ', ';\n  ', ';\n  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);\n  height: 500px;\n  display: flex;\n  flex-direction: column;\n  overflow: hidden;\n  margin: 1em;\n  background-color: aquamarine;\n']),
+var _templateObject = _taggedTemplateLiteral(['\n  max-width: 80%;\n  ', ';\n  ', ';\n  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);\n  height: 500px;\n  display: flex;\n  flex-direction: column;\n  overflow: hidden;\n  margin: 1em;\n'], ['\n  max-width: 80%;\n  ', ';\n  ', ';\n  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);\n  height: 500px;\n  display: flex;\n  flex-direction: column;\n  overflow: hidden;\n  margin: 1em;\n']),
     _templateObject2 = _taggedTemplateLiteral(['\n    max-width: 65%;\n  '], ['\n    max-width: 65%;\n  ']),
-    _templateObject3 = _taggedTemplateLiteral(['\n    max-width: 28%;\n  '], ['\n    max-width: 28%;\n  ']),
-    _templateObject4 = _taggedTemplateLiteral(['\n  width: 100%;\n  height: 500px;\n  filter: ', '\n'], ['\n  width: 100%;\n  height: 500px;\n  filter: ', '\n']),
-    _templateObject5 = _taggedTemplateLiteral(['\n  width: 100%;\n  height: 100%;\n  filter: ', '\n'], ['\n  width: 100%;\n  height: 100%;\n  filter: ', '\n']),
-    _templateObject6 = _taggedTemplateLiteral(['\n  position:absolute;\n  top:0;\n  left:0;\n  right:0;\n  bottom:0;\n  z-index: 99999;\n  background-color: indianred;\n'], ['\n  position:absolute;\n  top:0;\n  left:0;\n  right:0;\n  bottom:0;\n  z-index: 99999;\n  background-color: indianred;\n']);
+    _templateObject3 = _taggedTemplateLiteral(['\n    max-width: 30%;\n  '], ['\n    max-width: 30%;\n  ']),
+    _templateObject4 = _taggedTemplateLiteral(['\n  position: relative;\n  width: 100%;\n  height: 55%;\n  filter: ', '\n'], ['\n  position: relative;\n  width: 100%;\n  height: 55%;\n  filter: ', '\n']),
+    _templateObject5 = _taggedTemplateLiteral(['\n  position: relative;\n  width: 100%;\n  height: 45%;\n  background-color: white;\n  filter: ', '\n'], ['\n  position: relative;\n  width: 100%;\n  height: 45%;\n  background-color: white;\n  filter: ', '\n']),
+    _templateObject6 = _taggedTemplateLiteral(['\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  z-index: 1;\n  filter: ', '\n'], ['\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  z-index: 1;\n  filter: ', '\n']),
+    _templateObject7 = _taggedTemplateLiteral(['\n  position:absolute;\n  display: flex;\n  top:0;\n  left:0;\n  right:0;\n  bottom:0;\n  z-index: 2;\n  color: white;\n'], ['\n  position:absolute;\n  display: flex;\n  top:0;\n  left:0;\n  right:0;\n  bottom:0;\n  z-index: 2;\n  color: white;\n']),
+    _templateObject8 = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: column;\n  height: 65px;\n  width: 100%;\n  align-self: center;\n'], ['\n  display: flex;\n  flex-direction: column;\n  height: 65px;\n  width: 100%;\n  align-self: center;\n']),
+    _templateObject9 = _taggedTemplateLiteral(['\n  background-color: transparent;\n  align-self: center;\n  font-family: \'Open Sans Condensed\', sans-serif;\n  font-size: 20pt;\n  padding: 0 15px;\n  height: 100%;\n  border: 2px solid #FFF;\n  border-radius: 15px;\n  color: white;\n'], ['\n  background-color: transparent;\n  align-self: center;\n  font-family: \'Open Sans Condensed\', sans-serif;\n  font-size: 20pt;\n  padding: 0 15px;\n  height: 100%;\n  border: 2px solid #FFF;\n  border-radius: 15px;\n  color: white;\n']);
 
 var _react = __webpack_require__(0);
 
@@ -3500,11 +3503,18 @@ var ProjectCardImageWrapper = _styledComponents2.default.div(_templateObject4, f
   return props.filterColor;
 });
 
-var ProjectCardImage = _styledComponents2.default.img(_templateObject5, function (props) {
+var ProjectCardTextWrapper = _styledComponents2.default.div(_templateObject5, function (props) {
   return props.filterColor;
 });
 
-var ProjectCardTextOverlay = _styledComponents2.default.div(_templateObject6);
+var ProjectCardImage = _styledComponents2.default.img(_templateObject6, function (props) {
+  return props.filterColor;
+});
+
+var ProjectCardTextOverlay = _styledComponents2.default.div(_templateObject7);
+
+var ProjectCardTextOverlayFlexRow = _styledComponents2.default.div(_templateObject8);
+var ProjectCardTextOverlayGitHubButton = _styledComponents2.default.button(_templateObject9);
 
 var ProjectCard = function (_React$Component) {
   _inherits(ProjectCard, _React$Component);
@@ -3517,7 +3527,7 @@ var ProjectCard = function (_React$Component) {
     _this.toggleActiveProject = _this.toggleActiveProject.bind(_this);
     _this.state = {
       isActive: false,
-      filterColor: 'url(\'#cyan_filter\') blur(3px)'
+      filterColor: 'none'
     };
     return _this;
   }
@@ -3529,12 +3539,12 @@ var ProjectCard = function (_React$Component) {
       if (this.state.isActive) {
         this.setState({
           isActive: false,
-          filterColor: 'url(\'#cyan_filter\') blur(3px)'
+          filterColor: 'none'
         });
       } else {
         this.setState({
           isActive: true,
-          filterColor: 'none'
+          filterColor: 'url("#cyan_filter") blur(3px)'
         });
       }
     }
@@ -3561,11 +3571,26 @@ var ProjectCard = function (_React$Component) {
           null,
           _react2.default.createElement(ProjectCardImage, {
             src: this.props.project.image,
-            filterColor: this.state.filterColor,
-            onMouseEnter: this.toggleActiveProject,
-            onMouseLeave: this.toggleActiveProject
-          })
-        )
+            filterColor: this.state.filterColor
+          }),
+          _react2.default.createElement(
+            ProjectCardTextOverlay,
+            {
+              onMouseEnter: this.toggleActiveProject,
+              onMouseLeave: this.toggleActiveProject
+            },
+            _react2.default.createElement(
+              ProjectCardTextOverlayFlexRow,
+              null,
+              _react2.default.createElement(
+                ProjectCardTextOverlayGitHubButton,
+                null,
+                'View on GitHub'
+              )
+            )
+          )
+        ),
+        _react2.default.createElement(ProjectCardTextWrapper, null)
       );
     }
   }]);
@@ -3820,8 +3845,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n  display: flex;\n  justify-content: space-around;\n  flex-wrap: wrap;\n'], ['\n  display: flex;\n  justify-content: space-around;\n  flex-wrap: wrap;\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n\n'], ['\n\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  display: flex;\n  justify-content: space-around;\n  flex-wrap: wrap;\n'], ['\n  display: flex;\n  justify-content: space-around;\n  flex-wrap: wrap;\n']);
 
 var _react = __webpack_require__(0);
 
@@ -3860,8 +3884,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var ProjectCardWrapper = _styledComponents2.default.div(_templateObject);
-
-var ProjectCardOverlay = _styledComponents2.default.div(_templateObject2);
 
 var ProjectsComponent = function (_React$Component) {
   _inherits(ProjectsComponent, _React$Component);

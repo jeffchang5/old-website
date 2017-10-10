@@ -4,6 +4,9 @@ import devices from 'theme/devices';
 import PropTypes from 'prop-types';
 
 const ProjectCardWrapper = styled.div`
+  &:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 5px 5px #ccc;
+  }
   max-width: 80%;
   ${devices.small`
 
@@ -18,7 +21,8 @@ const ProjectCardWrapper = styled.div`
     max-width: 30%;
     height: 525px;
   `};
-  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   border-radius: 7px;
   height: 400px;
   display: flex;

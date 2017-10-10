@@ -7,7 +7,7 @@ import ProjectMenuItem from './project_menu_item';
 
 const ProjectMenuWrapper = styled.div`
   display: flex;
-  font-family: Helvetica,Arial,sans-serif;
+  font-family: 'Lora',Arial,sans-serif;
   flex-wrap: nowrap;
   justify-content: space-around;
   padding: 12px 0 12px 0;

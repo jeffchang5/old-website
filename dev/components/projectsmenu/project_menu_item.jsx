@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const ProjectMenuItemWrapper = styled.div`
-  //border-style: solid;
 `;
 const ProjectMenuItem = styled.a``;
 

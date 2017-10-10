@@ -3332,7 +3332,7 @@ exports.default = function () {
       NavBarWrapper,
       null,
       _react2.default.createElement(_nav_item2.default, { url: '/', text: 'About' }),
-      _react2.default.createElement(_nav_item2.default, { url: '/', text: 'Project' }),
+      _react2.default.createElement(_nav_item2.default, { url: '/', text: 'Projects' }),
       _react2.default.createElement(
         LogoWrapper,
         null,
@@ -3461,15 +3461,17 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n  max-width: 80%;\n  ', ';\n  ', ';\n  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);\n  height: 500px;\n  display: flex;\n  flex-direction: column;\n  overflow: hidden;\n  margin: 1em;\n'], ['\n  max-width: 80%;\n  ', ';\n  ', ';\n  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);\n  height: 500px;\n  display: flex;\n  flex-direction: column;\n  overflow: hidden;\n  margin: 1em;\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n    max-width: 65%;\n  '], ['\n    max-width: 65%;\n  ']),
-    _templateObject3 = _taggedTemplateLiteral(['\n    max-width: 30%;\n  '], ['\n    max-width: 30%;\n  ']),
-    _templateObject4 = _taggedTemplateLiteral(['\n  position: relative;\n  width: 100%;\n  height: 55%;\n  filter: ', '\n'], ['\n  position: relative;\n  width: 100%;\n  height: 55%;\n  filter: ', '\n']),
-    _templateObject5 = _taggedTemplateLiteral(['\n  position: relative;\n  width: 100%;\n  height: 45%;\n  background-color: white;\n  filter: ', '\n'], ['\n  position: relative;\n  width: 100%;\n  height: 45%;\n  background-color: white;\n  filter: ', '\n']),
-    _templateObject6 = _taggedTemplateLiteral(['\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  z-index: 1;\n  filter: ', '\n'], ['\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  z-index: 1;\n  filter: ', '\n']),
-    _templateObject7 = _taggedTemplateLiteral(['\n  position:absolute;\n  display: flex;\n  top:0;\n  left:0;\n  right:0;\n  bottom:0;\n  z-index: 2;\n  color: white;\n'], ['\n  position:absolute;\n  display: flex;\n  top:0;\n  left:0;\n  right:0;\n  bottom:0;\n  z-index: 2;\n  color: white;\n']),
-    _templateObject8 = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: column;\n  height: 65px;\n  width: 100%;\n  align-self: center;\n'], ['\n  display: flex;\n  flex-direction: column;\n  height: 65px;\n  width: 100%;\n  align-self: center;\n']),
-    _templateObject9 = _taggedTemplateLiteral(['\n  background-color: transparent;\n  align-self: center;\n  font-family: \'Open Sans Condensed\', sans-serif;\n  font-size: 20pt;\n  padding: 0 15px;\n  height: 100%;\n  border: 2px solid #FFF;\n  border-radius: 15px;\n  color: white;\n'], ['\n  background-color: transparent;\n  align-self: center;\n  font-family: \'Open Sans Condensed\', sans-serif;\n  font-size: 20pt;\n  padding: 0 15px;\n  height: 100%;\n  border: 2px solid #FFF;\n  border-radius: 15px;\n  color: white;\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  max-width: 80%;\n  ', ';\n  ', ';\n  ', ';\n  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);\n  border-radius: 7px;\n  height: 400px;\n  display: flex;\n  flex-direction: column;\n  overflow: hidden;\n  margin: 1em;\n'], ['\n  max-width: 80%;\n  ', ';\n  ', ';\n  ', ';\n  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);\n  border-radius: 7px;\n  height: 400px;\n  display: flex;\n  flex-direction: column;\n  overflow: hidden;\n  margin: 1em;\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n\n    max-width: 65%;\n    height: 450px;\n  '], ['\n\n    max-width: 65%;\n    height: 450px;\n  ']),
+    _templateObject3 = _taggedTemplateLiteral(['\n    max-width: 65%;\n    height: 450px;\n  '], ['\n    max-width: 65%;\n    height: 450px;\n  ']),
+    _templateObject4 = _taggedTemplateLiteral(['\n    max-width: 30%;\n    height: 525px;\n  '], ['\n    max-width: 30%;\n    height: 525px;\n  ']),
+    _templateObject5 = _taggedTemplateLiteral(['\n  position: relative;\n  width: 100%;\n  height: 55%;\n  filter: ', '\n'], ['\n  position: relative;\n  width: 100%;\n  height: 55%;\n  filter: ', '\n']),
+    _templateObject6 = _taggedTemplateLiteral(['\n  position: relative;\n  margin: 25px 25px;\n  font-family: \'Lora\', sans-serif;\n  font-size: 20pt;\n  width: 100%;\n  height: 45%;\n  background-color: white;\n'], ['\n  position: relative;\n  margin: 25px 25px;\n  font-family: \'Lora\', sans-serif;\n  font-size: 20pt;\n  width: 100%;\n  height: 45%;\n  background-color: white;\n']),
+    _templateObject7 = _taggedTemplateLiteral(['\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  z-index: 1;\n  filter: ', '\n'], ['\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  z-index: 1;\n  filter: ', '\n']),
+    _templateObject8 = _taggedTemplateLiteral(['\n  position:absolute;\n  display: flex;\n  top:0;\n  left:0;\n  right:0;\n  bottom:0;\n  z-index: 2;\n  color: white;\n'], ['\n  position:absolute;\n  display: flex;\n  top:0;\n  left:0;\n  right:0;\n  bottom:0;\n  z-index: 2;\n  color: white;\n']),
+    _templateObject9 = _taggedTemplateLiteral([''], ['']),
+    _templateObject10 = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: column;\n  height: 65px;\n  width: 100%;\n  align-self: center;\n'], ['\n  display: flex;\n  flex-direction: column;\n  height: 65px;\n  width: 100%;\n  align-self: center;\n']),
+    _templateObject11 = _taggedTemplateLiteral(['\n  &:focus {\n    outline: none;\n  }\n \n  visibility: ', ';\n  background-color: transparent;\n  align-self: center;\n  font-family: \'Open Sans Condensed\', sans-serif;\n  font-size: 20pt;\n  padding: 0 15px;\n  height: 100%;\n  border: 2px solid #FFF;\n  border-radius: 18px;\n  color: white;\n'], ['\n  &:focus {\n    outline: none;\n  }\n \n  visibility: ', ';\n  background-color: transparent;\n  align-self: center;\n  font-family: \'Open Sans Condensed\', sans-serif;\n  font-size: 20pt;\n  padding: 0 15px;\n  height: 100%;\n  border: 2px solid #FFF;\n  border-radius: 18px;\n  color: white;\n']);
 
 var _react = __webpack_require__(0);
 
@@ -3497,24 +3499,26 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var ProjectCardWrapper = _styledComponents2.default.div(_templateObject, _devices2.default.tablet(_templateObject2), _devices2.default.desktop(_templateObject3));
+var ProjectCardWrapper = _styledComponents2.default.div(_templateObject, _devices2.default.small(_templateObject2), _devices2.default.tablet(_templateObject3), _devices2.default.desktop(_templateObject4));
 
-var ProjectCardImageWrapper = _styledComponents2.default.div(_templateObject4, function (props) {
+var ProjectCardImageWrapper = _styledComponents2.default.div(_templateObject5, function (props) {
   return props.filterColor;
 });
 
-var ProjectCardTextWrapper = _styledComponents2.default.div(_templateObject5, function (props) {
+var ProjectCardTextWrapper = _styledComponents2.default.div(_templateObject6);
+
+var ProjectCardImage = _styledComponents2.default.img(_templateObject7, function (props) {
   return props.filterColor;
 });
 
-var ProjectCardImage = _styledComponents2.default.img(_templateObject6, function (props) {
-  return props.filterColor;
+var ProjectCardTextOverlay = _styledComponents2.default.div(_templateObject8);
+
+var ProjectCardTextHeader = _styledComponents2.default.div(_templateObject9);
+
+var ProjectCardTextOverlayFlexRow = _styledComponents2.default.div(_templateObject10);
+var ProjectCardTextOverlayGitHubButton = _styledComponents2.default.button(_templateObject11, function (props) {
+  return props.buttonVisible;
 });
-
-var ProjectCardTextOverlay = _styledComponents2.default.div(_templateObject7);
-
-var ProjectCardTextOverlayFlexRow = _styledComponents2.default.div(_templateObject8);
-var ProjectCardTextOverlayGitHubButton = _styledComponents2.default.button(_templateObject9);
 
 var ProjectCard = function (_React$Component) {
   _inherits(ProjectCard, _React$Component);
@@ -3527,7 +3531,8 @@ var ProjectCard = function (_React$Component) {
     _this.toggleActiveProject = _this.toggleActiveProject.bind(_this);
     _this.state = {
       isActive: false,
-      filterColor: 'none'
+      filterColor: 'none',
+      buttonVisible: 'hidden'
     };
     return _this;
   }
@@ -3539,12 +3544,15 @@ var ProjectCard = function (_React$Component) {
       if (this.state.isActive) {
         this.setState({
           isActive: false,
-          filterColor: 'none'
+          filterColor: 'none',
+          buttonVisible: 'hidden'
         });
       } else {
         this.setState({
           isActive: true,
-          filterColor: 'url("#cyan_filter") blur(3px)'
+          filterColor: 'url("#cyan_filter") blur(3px)',
+          buttonVisible: 'visible'
+
         });
       }
     }
@@ -3584,13 +3592,21 @@ var ProjectCard = function (_React$Component) {
               null,
               _react2.default.createElement(
                 ProjectCardTextOverlayGitHubButton,
-                null,
+                { buttonVisible: this.state.buttonVisible },
                 'View on GitHub'
               )
             )
           )
         ),
-        _react2.default.createElement(ProjectCardTextWrapper, null)
+        _react2.default.createElement(
+          ProjectCardTextWrapper,
+          null,
+          _react2.default.createElement(
+            ProjectCardTextHeader,
+            null,
+            'Hello'
+          )
+        )
       );
     }
   }]);
@@ -3635,7 +3651,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n  display: flex;\n  font-family: Helvetica,Arial,sans-serif;\n  flex-wrap: nowrap;\n  justify-content: space-around;\n  padding: 12px 0 12px 0;\n  margin-bottom: 30px;\n\n  border-top: 1px solid #ccc;\n  border-bottom: 1px solid #ccc;\n'], ['\n  display: flex;\n  font-family: Helvetica,Arial,sans-serif;\n  flex-wrap: nowrap;\n  justify-content: space-around;\n  padding: 12px 0 12px 0;\n  margin-bottom: 30px;\n\n  border-top: 1px solid #ccc;\n  border-bottom: 1px solid #ccc;\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  display: flex;\n  font-family: \'Lora\',Arial,sans-serif;\n  flex-wrap: nowrap;\n  justify-content: space-around;\n  padding: 12px 0 12px 0;\n  margin-bottom: 30px;\n\n  border-top: 1px solid #ccc;\n  border-bottom: 1px solid #ccc;\n'], ['\n  display: flex;\n  font-family: \'Lora\',Arial,sans-serif;\n  flex-wrap: nowrap;\n  justify-content: space-around;\n  padding: 12px 0 12px 0;\n  margin-bottom: 30px;\n\n  border-top: 1px solid #ccc;\n  border-bottom: 1px solid #ccc;\n']);
 
 var _react = __webpack_require__(0);
 
@@ -3723,7 +3739,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(['\n  //border-style: solid;\n'], ['\n  //border-style: solid;\n']),
+var _templateObject = _taggedTemplateLiteral(['\n'], ['\n']),
     _templateObject2 = _taggedTemplateLiteral([''], ['']);
 
 var _react = __webpack_require__(0);

@@ -9,7 +9,7 @@ const ProjectCardWrapper = styled.div`
     max-width: 65%;
   `};
   ${devices.desktop`
-    max-width: 28%;
+    max-width: 30%;
   `};
   box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
   height: 500px;
@@ -17,29 +17,59 @@ const ProjectCardWrapper = styled.div`
   flex-direction: column;
   overflow: hidden;
   margin: 1em;
-  background-color: aquamarine;
 `;
 
 const ProjectCardImageWrapper = styled.div`
+  position: relative;
   width: 100%;
-  height: 500px;
+  height: 55%;
+  filter: ${props => props.filterColor}
+`;
+
+const ProjectCardTextWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  height: 45%;
+  background-color: white;
   filter: ${props => props.filterColor}
 `;
 
 const ProjectCardImage = styled.img`
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  z-index: 1;
   filter: ${props => props.filterColor}
 `;
 
 const ProjectCardTextOverlay = styled.div`
   position:absolute;
+  display: flex;
   top:0;
   left:0;
   right:0;
   bottom:0;
-  z-index: 99999;
-  background-color: indianred;
+  z-index: 2;
+  color: white;
+`;
+
+const ProjectCardTextOverlayFlexRow = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 65px;
+  width: 100%;
+  align-self: center;
+`;
+const ProjectCardTextOverlayGitHubButton = styled.button`
+  background-color: transparent;
+  align-self: center;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 20pt;
+  padding: 0 15px;
+  height: 100%;
+  border: 2px solid #FFF;
+  border-radius: 15px;
+  color: white;
 `;
 
 export default class ProjectCard extends React.Component {
@@ -48,7 +78,7 @@ export default class ProjectCard extends React.Component {
     this.toggleActiveProject = this.toggleActiveProject.bind(this);
     this.state = {
       isActive: false,
-      filterColor: 'url(\'#cyan_filter\') blur(3px)',
+      filterColor: 'none',
     };
   }
   toggleActiveProject(e) {
@@ -56,12 +86,12 @@ export default class ProjectCard extends React.Component {
     if (this.state.isActive) {
       this.setState({
         isActive: false,
-        filterColor: 'url(\'#cyan_filter\') blur(3px)',
+        filterColor: 'none',
       });
     } else {
       this.setState({
         isActive: true,
-        filterColor: 'none',
+        filterColor: 'url("#cyan_filter") blur(3px)',
       });
     }
   }
@@ -83,10 +113,21 @@ export default class ProjectCard extends React.Component {
           <ProjectCardImage
             src={this.props.project.image}
             filterColor={this.state.filterColor}
+          />
+          <ProjectCardTextOverlay
             onMouseEnter={this.toggleActiveProject}
             onMouseLeave={this.toggleActiveProject}
-          />
+          >
+            <ProjectCardTextOverlayFlexRow>
+              <ProjectCardTextOverlayGitHubButton>
+                View on GitHub
+              </ProjectCardTextOverlayGitHubButton>
+            </ProjectCardTextOverlayFlexRow>
+          </ProjectCardTextOverlay>
         </ProjectCardImageWrapper>
+        <ProjectCardTextWrapper>
+
+        </ProjectCardTextWrapper>
       </ProjectCardWrapper>
     );
   }

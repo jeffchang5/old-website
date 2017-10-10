@@ -13,9 +13,6 @@ const ProjectCardWrapper = styled.div`
   flex-wrap: wrap;
 `;
 
-const ProjectCardOverlay = styled.div`
-
-`;
 export default class ProjectsComponent extends React.Component {
   constructor(props) {
     super(props);

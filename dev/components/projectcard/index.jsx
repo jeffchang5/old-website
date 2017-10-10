@@ -61,8 +61,14 @@ const ProjectCardTextOverlayFlexRow = styled.div`
   align-self: center;
 `;
 const ProjectCardTextOverlayGitHubButton = styled.button`
+  &:focus {
+    outline: none;
+  }
+ 
+  visibility: ${props => props.buttonVisible};
   background-color: transparent;
   align-self: center;
+  
   font-family: 'Open Sans Condensed', sans-serif;
   font-size: 20pt;
   padding: 0 15px;
@@ -79,6 +85,7 @@ export default class ProjectCard extends React.Component {
     this.state = {
       isActive: false,
       filterColor: 'none',
+      buttonVisible: 'hidden',
     };
   }
   toggleActiveProject(e) {
@@ -87,11 +94,14 @@ export default class ProjectCard extends React.Component {
       this.setState({
         isActive: false,
         filterColor: 'none',
+        buttonVisible: 'hidden',
       });
     } else {
       this.setState({
         isActive: true,
         filterColor: 'url("#cyan_filter") blur(3px)',
+        buttonVisible: 'visible',
+
       });
     }
   }
@@ -119,7 +129,7 @@ export default class ProjectCard extends React.Component {
             onMouseLeave={this.toggleActiveProject}
           >
             <ProjectCardTextOverlayFlexRow>
-              <ProjectCardTextOverlayGitHubButton>
+              <ProjectCardTextOverlayGitHubButton buttonVisible={this.state.buttonVisible}>
                 View on GitHub
               </ProjectCardTextOverlayGitHubButton>
             </ProjectCardTextOverlayFlexRow>

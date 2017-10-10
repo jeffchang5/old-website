@@ -37,7 +37,8 @@ const ProjectCardImageWrapper = styled.div`
 const ProjectCardTextWrapper = styled.div`
   position: relative;
   margin: 25px 25px;
-  font-family: 'Lora', sans-serif;
+  font-family: 'Lora', s
+  ans-serif;
   font-size: 20pt;
   width: 100%;
   height: 45%;

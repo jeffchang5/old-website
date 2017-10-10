@@ -5,22 +5,14 @@ import PropTypes from 'prop-types';
 
 const ProjectCardWrapper = styled.div`
   max-width: 80%;
-  ${devices.small`
-
-    max-width: 65%;
-    height: 450px;
-  `};
   ${devices.tablet`
     max-width: 65%;
-    height: 450px;
   `};
   ${devices.desktop`
     max-width: 30%;
-    height: 525px;
   `};
   box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
-  border-radius: 7px;
-  height: 400px;
+  height: 500px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -36,12 +28,10 @@ const ProjectCardImageWrapper = styled.div`
 
 const ProjectCardTextWrapper = styled.div`
   position: relative;
-  margin: 25px 25px;
-  font-family: 'Lora', sans-serif;
-  font-size: 20pt;
   width: 100%;
   height: 45%;
   background-color: white;
+  filter: ${props => props.filterColor}
 `;
 
 const ProjectCardImage = styled.img`
@@ -63,9 +53,6 @@ const ProjectCardTextOverlay = styled.div`
   color: white;
 `;
 
-const ProjectCardTextHeader = styled.div``;
-
-
 const ProjectCardTextOverlayFlexRow = styled.div`
   display: flex;
   flex-direction: column;
@@ -81,15 +68,15 @@ const ProjectCardTextOverlayGitHubButton = styled.button`
   visibility: ${props => props.buttonVisible};
   background-color: transparent;
   align-self: center;
+  
   font-family: 'Open Sans Condensed', sans-serif;
   font-size: 20pt;
   padding: 0 15px;
   height: 100%;
   border: 2px solid #FFF;
-  border-radius: 18px;
+  border-radius: 15px;
   color: white;
 `;
-
 
 export default class ProjectCard extends React.Component {
   constructor(props, context) {
@@ -149,7 +136,7 @@ export default class ProjectCard extends React.Component {
           </ProjectCardTextOverlay>
         </ProjectCardImageWrapper>
         <ProjectCardTextWrapper>
-          <ProjectCardTextHeader>Hello</ProjectCardTextHeader>
+
         </ProjectCardTextWrapper>
       </ProjectCardWrapper>
     );

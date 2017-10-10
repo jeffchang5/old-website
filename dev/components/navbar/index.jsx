@@ -39,7 +39,7 @@ export default () =>
   (<NavWrapper>
     <NavBarWrapper>
       <NavItem url="/" text="About" />
-      <NavItem url="/" text="Projects" />
+      <NavItem url="/" text="Project" />
       <LogoWrapper>
         <LogoImage alt="logo" src={logo} />
       </LogoWrapper>

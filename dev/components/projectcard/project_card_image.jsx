@@ -39,7 +39,7 @@ const ProjectCardTextOverlayGitHubButton = styled.button`
   font-size: 20pt;
   padding: 0 15px;
   height: 100%;
-  border: 2px solid #FFF;
+  border: 1px solid #FFF;
   border-radius: 18px;
   color: white;
 `;

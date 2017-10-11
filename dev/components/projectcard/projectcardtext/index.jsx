@@ -5,29 +5,43 @@ import ProjectCardSkills from './projectcardskills';
 
 
 const ProjectCardTextWrapper = styled.div`
-  position: relative;
-  margin: 25px 25px;
-  font-family: 'Lora', sans-serif;
-  font-size: 20pt;
+  display: flex;
+  flex-direction: column;
+  margin: 25px 35px;
+  font-family: 'Lora', serif;
+  font-size: 15pt;
   max-width: 90%;
   height: 50%;
   background-color: white;
 `;
 
+const ProjectCardDescription = styled.div`
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 200;
+  margin-left: 2px;
+  flex-grow: 1;
+  font-size: 14pt;
+`;
 
-const ProjectCardTextHeader = styled.div``;
+
+const ProjectCardTextHeader = styled.div`
+  font-family: 'Lora', sans-serif;
+  font-size: 18pt;
+`;
 
 const ProjectCardTextComponent = props => (
   <ProjectCardTextWrapper>
     <ProjectCardTextHeader>{props.header}</ProjectCardTextHeader>
-    <ProjectCardSkills skills={props.skills} />
+    <ProjectCardSkills category={props.category} skills={props.skills} />
+    <ProjectCardDescription>{props.description}</ProjectCardDescription>
+
   </ProjectCardTextWrapper>
 );
 
 ProjectCardTextComponent.propTypes = {
   header: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  skills: PropTypes.array.isRequired,
+  skills: PropTypes.arrayOf(PropTypes.string).isRequired,
   category: PropTypes.string.isRequired,
 };
 

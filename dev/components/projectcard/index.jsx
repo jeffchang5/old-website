@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import devices from 'theme/devices';
 import PropTypes from 'prop-types';
-import ProjectCardImage from './project_card_image';
-import ProjectCardText from './project_card_text';
+import ProjectCardImage from './projectcardimage';
+import ProjectCardText from './projectcardtext';
 
 const ProjectCardWrapper = styled.div`
   &:hover {
@@ -29,7 +29,6 @@ const ProjectCardWrapper = styled.div`
   height: 400px;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
   margin: 1em;
 `;
 

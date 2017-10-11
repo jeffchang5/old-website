@@ -5,9 +5,9 @@ import SlashDecoration from 'resources/images/double_slash';
 
 const ProjectSkillsWrapper = styled.div`
   display: flex;
-  margin: 4px 2px 4px 2px;
+  margin: 4px 2px;
   font-family: 'Open Sans Condensed', sans-serif;
-  font-size: 12pt;
+  font-size: 15pt;
   flex-direction: row;
 `;
 
@@ -26,11 +26,12 @@ const ProjectDecorationTextWrapper = styled.div`
 
 const ProjectNoDecorationWrapper = styled.div`
   display: flex;
-  font-size: 12pt;
+  font-size: 15pt;
   flex-direction: row;
 `;
 
-const createSkillBarComponent = (skills) => {
+const createSkillBarComponent = (category, skills) => {
+  console.log(category);
   const skillBar = skills.map((skill, position) => {
     if (position === skills.length - 1) {
       return (
@@ -43,7 +44,7 @@ const createSkillBarComponent = (skills) => {
         <ProjectDecorationTextWrapper>{skill}</ProjectDecorationTextWrapper>
         <ProjectDecorationWrapper>
           <DecorationWrapper>
-            <SlashDecoration />
+            <SlashDecoration color={category} />
           </DecorationWrapper>
         </ProjectDecorationWrapper>
       </ProjectNoDecorationWrapper>);
@@ -54,9 +55,10 @@ const createSkillBarComponent = (skills) => {
     </ProjectSkillsWrapper>);
 };
 
-const ProjectCardSkillsComponent = props => (createSkillBarComponent(props.skills));
+const ProjectCardSkillsComponent = props => (createSkillBarComponent(props.category, props.skills));
 
 ProjectCardSkillsComponent.propTypes = {
+  category: PropTypes.string,
   skills: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 

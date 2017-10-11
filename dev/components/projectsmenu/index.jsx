@@ -27,16 +27,20 @@ export default class ProjectMenu extends React.Component {
   }
 
   render() {
-    return (<ProjectMenuWrapper>
-      { ProjectCategories.map(projectCategory =>
-        (<ProjectMenuItem
-          key={projectCategory.key}
-          id={projectCategory.key}
-          name={projectCategory.name}
-          onClick={this.props.callback}
-        />))
-      }
-    </ProjectMenuWrapper>);
+    return (
+      <ProjectMenuWrapper>
+        { Object.keys(ProjectCategories).map((key) => {
+          const category = ProjectCategories[key];
+          return (
+            <ProjectMenuItem
+              key={key}
+              id={key}
+              name={category.name}
+              onClick={this.props.callback}
+            />);
+        })
+        }
+      </ProjectMenuWrapper>);
   }
 }
 

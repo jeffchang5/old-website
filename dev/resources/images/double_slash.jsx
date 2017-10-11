@@ -7,7 +7,7 @@ const SlashImage = styled.svg`
   height: 100%;
   
   & path {
-    
+    fill: ${props => props.color} 
   }
 `;
 
@@ -18,7 +18,11 @@ const DoubleSlash = props => (
   </SlashImage>
 );
 DoubleSlash.propTypes = {
-  color: PropTypes.string.isRequired,
+  color: PropTypes.string,
+};
+
+DoubleSlash.defaultProps = {
+  color: 'black',
 };
 
 export default DoubleSlash;

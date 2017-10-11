@@ -52,7 +52,7 @@ export default [
     header: 'MHacks',
     description: 'Whoever',
     skills: ['Android', 'Kotlin', 'RxJava', 'Dagger'],
-    category: 'android',
+    category: 'ios',
     featured: true,
   },
 ];

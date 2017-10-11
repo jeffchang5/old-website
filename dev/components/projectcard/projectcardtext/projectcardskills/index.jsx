@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import ProjectCategories from 'config/project_categories';
 import SlashDecoration from 'resources/images/double_slash';
 
 const ProjectSkillsWrapper = styled.div`
@@ -12,46 +13,49 @@ const ProjectSkillsWrapper = styled.div`
 `;
 
 const ProjectDecorationWrapper = styled.div`
-
+  height: 30px;
 `;
 
 const DecorationWrapper = styled.div`
-  width: 15px;
+  width: 20px;
   height: 100%;
   margin: 0 6px;
 `;
 
-const ProjectDecorationTextWrapper = styled.div`
+const ProjectTextWrapper = styled.div`
+  height: 100%;
+  padding-top: 2px;
+  padding-bottom: 2px;
 `;
 
-const ProjectNoDecorationWrapper = styled.div`
+const ProjectDecorationAndTextWrapper = styled.div`
   display: flex;
+  height: 100%;
   font-size: 15pt;
   flex-direction: row;
 `;
 
 const createSkillBarComponent = (category, skills) => {
-  console.log(category);
   const skillBar = skills.map((skill, position) => {
     if (position === skills.length - 1) {
       return (
-        <ProjectDecorationWrapper>
+        <ProjectTextWrapper key={skill}>
           {skill}
-        </ProjectDecorationWrapper>);
+        </ProjectTextWrapper>);
     }
     return (
-      <ProjectNoDecorationWrapper>
-        <ProjectDecorationTextWrapper>{skill}</ProjectDecorationTextWrapper>
+      <ProjectDecorationAndTextWrapper key={skill}>
+        <ProjectTextWrapper>{skill}</ProjectTextWrapper>
         <ProjectDecorationWrapper>
           <DecorationWrapper>
-            <SlashDecoration color={category} />
+            <SlashDecoration color={ProjectCategories[category].accentColor} />
           </DecorationWrapper>
         </ProjectDecorationWrapper>
-      </ProjectNoDecorationWrapper>);
+      </ProjectDecorationAndTextWrapper>);
   });
   return (
     <ProjectSkillsWrapper>
-      { skillBar.map(skill => <div>{skill}</div>) }
+      { skillBar.map(skill => skill) }
     </ProjectSkillsWrapper>);
 };
 

@@ -6,9 +6,9 @@ import SlashDecoration from 'resources/images/double_slash';
 
 const ProjectSkillsWrapper = styled.div`
   display: flex;
-  margin: 4px 2px;
-  font-family: 'Open Sans Condensed', sans-serif;
-  font-size: 15pt;
+  margin: 0;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 14pt;
   flex-direction: row;
 `;
 
@@ -18,8 +18,8 @@ const ProjectDecorationWrapper = styled.div`
 
 const DecorationWrapper = styled.div`
   width: 20px;
-  height: 100%;
-  margin: 0 6px;
+  height: 80%;
+  margin: 0 3px;
 `;
 
 const ProjectTextWrapper = styled.div`
@@ -31,7 +31,7 @@ const ProjectTextWrapper = styled.div`
 const ProjectDecorationAndTextWrapper = styled.div`
   display: flex;
   height: 100%;
-  font-size: 15pt;
+  font-size: 14pt;
   flex-direction: row;
 `;
 

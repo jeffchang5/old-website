@@ -16,11 +16,11 @@ const ProjectCardTextWrapper = styled.div`
 `;
 
 const ProjectCardDescription = styled.div`
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 200;
   margin-left: 2px;
   flex-grow: 1;
-  font-size: 14pt;
+  font-size: 15pt;
 `;
 
 
@@ -34,7 +34,6 @@ const ProjectCardTextComponent = props => (
     <ProjectCardTextHeader>{props.header}</ProjectCardTextHeader>
     <ProjectCardSkills category={props.category} skills={props.skills} />
     <ProjectCardDescription>{props.description}</ProjectCardDescription>
-
   </ProjectCardTextWrapper>
 );
 

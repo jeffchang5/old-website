@@ -2858,7 +2858,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(['\n  width: 100%;\n  height: 100%;\n'], ['\n  width: 100%;\n  height: 100%;\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  width: 100%;\n  height: 100%;\n  \n  & path {\n    \n  }\n'], ['\n  width: 100%;\n  height: 100%;\n  \n  & path {\n    \n  }\n']);
 
 var _styledComponents = __webpack_require__(1);
 
@@ -2868,25 +2868,29 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = __webpack_require__(3);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var SlashImage = _styledComponents2.default.svg(_templateObject);
 
-exports.default = function () {
+var DoubleSlash = function DoubleSlash(props) {
   return _react2.default.createElement(
     SlashImage,
-    { viewBox: '0 0 8.08 8.49' },
-    _react2.default.createElement(
-      'title',
-      null,
-      'double_slash'
-    ),
+    { color: props.color, viewBox: '0 0 8.08 8.49' },
     _react2.default.createElement('path', { d: 'M0,8.69,3.35,0h.82L.8,8.69Z' }),
     _react2.default.createElement('path', { d: 'M4.12,8.69,7.46,0h.82L4.92,8.69Z' })
   );
 };
+DoubleSlash.propTypes = {
+  color: _propTypes2.default.string.isRequired
+};
+
+exports.default = DoubleSlash;
 
 /***/ }),
 /* 13 */
@@ -3506,7 +3510,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n  &:hover {\n    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 5px 5px #ccc;\n  }\n  max-width: 80%;\n  ', ';\n  ', ';\n  ', ';\n  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);\n  transition: all 0.3s cubic-bezier(.25,.8,.25,1);\n  border-radius: 7px;\n  height: 400px;\n  display: flex;\n  flex-direction: column;\n  overflow: hidden;\n  margin: 1em;\n'], ['\n  &:hover {\n    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 5px 5px #ccc;\n  }\n  max-width: 80%;\n  ', ';\n  ', ';\n  ', ';\n  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);\n  transition: all 0.3s cubic-bezier(.25,.8,.25,1);\n  border-radius: 7px;\n  height: 400px;\n  display: flex;\n  flex-direction: column;\n  overflow: hidden;\n  margin: 1em;\n']),
+var _templateObject = _taggedTemplateLiteral(['\n  &:hover {\n    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 5px 5px #ccc;\n  }\n  max-width: 80%;\n  ', ';\n  ', ';\n  ', ';\n  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);\n  transition: all 0.3s cubic-bezier(.25,.8,.25,1);\n  border-radius: 7px;\n  height: 400px;\n  display: flex;\n  flex-direction: column;\n  margin: 1em;\n'], ['\n  &:hover {\n    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 5px 5px #ccc;\n  }\n  max-width: 80%;\n  ', ';\n  ', ';\n  ', ';\n  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);\n  transition: all 0.3s cubic-bezier(.25,.8,.25,1);\n  border-radius: 7px;\n  height: 400px;\n  display: flex;\n  flex-direction: column;\n  margin: 1em;\n']),
     _templateObject2 = _taggedTemplateLiteral(['\n\n    max-width: 65%;\n    height: 450px;\n  '], ['\n\n    max-width: 65%;\n    height: 450px;\n  ']),
     _templateObject3 = _taggedTemplateLiteral(['\n    max-width: 65%;\n    height: 450px;\n  '], ['\n    max-width: 65%;\n    height: 450px;\n  ']),
     _templateObject4 = _taggedTemplateLiteral(['\n    max-width: 30%;\n    height: 525px;\n  '], ['\n    max-width: 30%;\n    height: 525px;\n  ']);
@@ -3527,13 +3531,13 @@ var _propTypes = __webpack_require__(3);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _project_card_image = __webpack_require__(25);
+var _projectcardimage = __webpack_require__(25);
 
-var _project_card_image2 = _interopRequireDefault(_project_card_image);
+var _projectcardimage2 = _interopRequireDefault(_projectcardimage);
 
-var _project_card_text = __webpack_require__(26);
+var _projectcardtext = __webpack_require__(26);
 
-var _project_card_text2 = _interopRequireDefault(_project_card_text);
+var _projectcardtext2 = _interopRequireDefault(_projectcardtext);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -3601,13 +3605,13 @@ var ProjectCard = function (_React$Component) {
             })
           )
         ),
-        _react2.default.createElement(_project_card_image2.default, {
+        _react2.default.createElement(_projectcardimage2.default, {
           image: this.props.project.image,
           filterColor: this.state.filterColor,
           toggleActiveProject: this.toggleActiveProject,
           buttonVisible: this.state.buttonVisible
         }),
-        _react2.default.createElement(_project_card_text2.default, {
+        _react2.default.createElement(_projectcardtext2.default, {
           header: this.props.project.header,
           description: this.props.project.description,
           skills: this.props.project.skills,
@@ -3729,8 +3733,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(['\n  position: relative;\n  margin: 25px 25px;\n  font-family: \'Lora\', sans-serif;\n  font-size: 20pt;\n  max-width: 90%;\n  height: 50%;\n  background-color: white;\n'], ['\n  position: relative;\n  margin: 25px 25px;\n  font-family: \'Lora\', sans-serif;\n  font-size: 20pt;\n  max-width: 90%;\n  height: 50%;\n  background-color: white;\n']),
-    _templateObject2 = _taggedTemplateLiteral([''], ['']);
+var _templateObject = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: column;\n  margin: 25px 35px;\n  font-family: \'Lora\', serif;\n  font-size: 15pt;\n  max-width: 90%;\n  height: 50%;\n  background-color: white;\n'], ['\n  display: flex;\n  flex-direction: column;\n  margin: 25px 35px;\n  font-family: \'Lora\', serif;\n  font-size: 15pt;\n  max-width: 90%;\n  height: 50%;\n  background-color: white;\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n  font-family: \'Open Sans\', sans-serif;\n  font-weight: 200;\n  margin-left: 2px;\n  flex-grow: 1;\n  font-size: 14pt;\n'], ['\n  font-family: \'Open Sans\', sans-serif;\n  font-weight: 200;\n  margin-left: 2px;\n  flex-grow: 1;\n  font-size: 14pt;\n']),
+    _templateObject3 = _taggedTemplateLiteral(['\n  font-family: \'Lora\', sans-serif;\n  font-size: 18pt;\n'], ['\n  font-family: \'Lora\', sans-serif;\n  font-size: 18pt;\n']);
 
 var _react = __webpack_require__(0);
 
@@ -3754,7 +3759,9 @@ function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defi
 
 var ProjectCardTextWrapper = _styledComponents2.default.div(_templateObject);
 
-var ProjectCardTextHeader = _styledComponents2.default.div(_templateObject2);
+var ProjectCardDescription = _styledComponents2.default.div(_templateObject2);
+
+var ProjectCardTextHeader = _styledComponents2.default.div(_templateObject3);
 
 var ProjectCardTextComponent = function ProjectCardTextComponent(props) {
   return _react2.default.createElement(
@@ -3765,14 +3772,19 @@ var ProjectCardTextComponent = function ProjectCardTextComponent(props) {
       null,
       props.header
     ),
-    _react2.default.createElement(_projectcardskills2.default, { skills: props.skills })
+    _react2.default.createElement(_projectcardskills2.default, { category: props.category, skills: props.skills }),
+    _react2.default.createElement(
+      ProjectCardDescription,
+      null,
+      props.description
+    )
   );
 };
 
 ProjectCardTextComponent.propTypes = {
   header: _propTypes2.default.string.isRequired,
   description: _propTypes2.default.string.isRequired,
-  skills: _propTypes2.default.array.isRequired,
+  skills: _propTypes2.default.arrayOf(_propTypes2.default.string).isRequired,
   category: _propTypes2.default.string.isRequired
 };
 
@@ -3789,11 +3801,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(['\n  display: flex;\n  margin: 4px 2px 4px 2px;\n  font-family: \'Open Sans Condensed\', sans-serif;\n  font-size: 12pt;\n  flex-direction: row;\n'], ['\n  display: flex;\n  margin: 4px 2px 4px 2px;\n  font-family: \'Open Sans Condensed\', sans-serif;\n  font-size: 12pt;\n  flex-direction: row;\n']),
+var _templateObject = _taggedTemplateLiteral(['\n  display: flex;\n  margin: 4px 2px;\n  font-family: \'Open Sans Condensed\', sans-serif;\n  font-size: 15pt;\n  flex-direction: row;\n'], ['\n  display: flex;\n  margin: 4px 2px;\n  font-family: \'Open Sans Condensed\', sans-serif;\n  font-size: 15pt;\n  flex-direction: row;\n']),
     _templateObject2 = _taggedTemplateLiteral(['\n\n'], ['\n\n']),
     _templateObject3 = _taggedTemplateLiteral(['\n  width: 15px;\n  height: 100%;\n  margin: 0 6px;\n'], ['\n  width: 15px;\n  height: 100%;\n  margin: 0 6px;\n']),
     _templateObject4 = _taggedTemplateLiteral(['\n'], ['\n']),
-    _templateObject5 = _taggedTemplateLiteral(['\n  display: flex;\n  font-size: 12pt;\n  flex-direction: row;\n'], ['\n  display: flex;\n  font-size: 12pt;\n  flex-direction: row;\n']);
+    _templateObject5 = _taggedTemplateLiteral(['\n  display: flex;\n  font-size: 15pt;\n  flex-direction: row;\n'], ['\n  display: flex;\n  font-size: 15pt;\n  flex-direction: row;\n']);
 
 var _react = __webpack_require__(0);
 
@@ -3825,7 +3837,8 @@ var ProjectDecorationTextWrapper = _styledComponents2.default.div(_templateObjec
 
 var ProjectNoDecorationWrapper = _styledComponents2.default.div(_templateObject5);
 
-var createSkillBarComponent = function createSkillBarComponent(skills) {
+var createSkillBarComponent = function createSkillBarComponent(category, skills) {
+  console.log(category);
   var skillBar = skills.map(function (skill, position) {
     if (position === skills.length - 1) {
       return _react2.default.createElement(
@@ -3848,7 +3861,7 @@ var createSkillBarComponent = function createSkillBarComponent(skills) {
         _react2.default.createElement(
           DecorationWrapper,
           null,
-          _react2.default.createElement(_double_slash2.default, null)
+          _react2.default.createElement(_double_slash2.default, { color: category })
         )
       )
     );
@@ -3867,10 +3880,11 @@ var createSkillBarComponent = function createSkillBarComponent(skills) {
 };
 
 var ProjectCardSkillsComponent = function ProjectCardSkillsComponent(props) {
-  return createSkillBarComponent(props.skills);
+  return createSkillBarComponent(props.category, props.skills);
 };
 
 ProjectCardSkillsComponent.propTypes = {
+  category: _propTypes2.default.string,
   skills: _propTypes2.default.arrayOf(_propTypes2.default.string).isRequired
 };
 
@@ -3945,11 +3959,12 @@ var ProjectMenu = function (_React$Component) {
       return _react2.default.createElement(
         ProjectMenuWrapper,
         null,
-        _project_categories2.default.map(function (projectCategory) {
+        Object.keys(_project_categories2.default).map(function (key) {
+          var category = _project_categories2.default[key];
           return _react2.default.createElement(_project_menu_item2.default, {
-            key: projectCategory.key,
-            id: projectCategory.key,
-            name: projectCategory.name,
+            key: key,
+            id: key,
+            name: category.name,
             onClick: _this2.props.callback
           });
         })
@@ -4280,7 +4295,7 @@ exports.default = [{
   key: 'mhacks',
   image: _mhacks_android2.default,
   header: 'MHacks',
-  description: 'Whoever',
+  description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
   skills: ['Android', 'Kotlin', 'RxJava', 'Dagger'],
   category: 'android',
   featured: true
@@ -4336,7 +4351,13 @@ exports.default = [{
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = [{ key: 'android', name: 'Android', accent: '#66bb6a' }, { key: 'web_dev', name: 'Web Dev', accent: '#26c6da' }, { key: 'ml', name: 'Machine Learning', accent: '#ffb300' }, { key: 'data_science', name: 'Data Science', accent: '#ff5740' }, { key: 'ios', name: 'iOS', accent: '#fff81f' }];
+exports.default = {
+  android: { name: 'Android', accentColor: '#66bb6a' },
+  web_dev: { name: 'Web Dev', accentColor: '#26c6da' },
+  ml: { name: 'Machine Learning', accentColor: '#ffb300' },
+  data_science: { name: 'Data Science', accentColor: '#ff5740' },
+  ios: { name: 'iOS', accentColor: '#fff81f' }
+};
 
 /***/ }),
 /* 36 */

@@ -18,7 +18,7 @@ const ProjectMenuWrapper = styled.div`
 `;
 
 
-class ProjectMenu extends React.Component {
+export default class ProjectMenu extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -43,6 +43,3 @@ class ProjectMenu extends React.Component {
 ProjectMenu.propTypes = {
   callback: PropTypes.func.isRequired,
 };
-
-
-export default ProjectMenu;

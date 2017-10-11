@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 import React from 'react';
 import styled from 'styled-components';
-import DoubleSlashIcon from 'resources/images/double_slash.svg';
+import DoubleSlashIcon from 'resources/images/double_slash';
 
 const SectionHeaderWrapper = styled.div`
   display: flex;
@@ -17,8 +17,6 @@ const SectionHeaderWrapper = styled.div`
 const SectionDecoration = styled.div`
   width: 100px;
   height: 100%;
-  background-image: url('${DoubleSlashIcon}');
-  background-size: 100% 100%;
 `;
 
 const HeaderTextWrapper = styled.div`
@@ -37,7 +35,9 @@ const SectionHeader = styled.div`
 
 export default () => (
   <SectionHeaderWrapper>
-    <SectionDecoration />
+    <SectionDecoration>
+      <DoubleSlashIcon />
+    </SectionDecoration>
     <HeaderTextWrapper>
       <SectionHeader>Projects</SectionHeader>
     </HeaderTextWrapper>

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import devices from 'theme/devices';
 import PropTypes from 'prop-types';
 import ProjectCardImage from './project_card_image';
+import ProjectCardText from './project_card_text';
 
 const ProjectCardWrapper = styled.div`
   &:hover {
@@ -32,17 +33,6 @@ const ProjectCardWrapper = styled.div`
   margin: 1em;
 `;
 
-const ProjectCardTextWrapper = styled.div`
-  position: relative;
-  margin: 25px 25px;
-  font-family: 'Lora', sans-serif;
-  font-size: 20pt;
-  width: 100%;
-  height: 45%;
-  background-color: white;
-`;
-
-const ProjectCardTextHeader = styled.div``;
 
 export default class ProjectCard extends React.Component {
   constructor(props, context) {
@@ -86,15 +76,17 @@ export default class ProjectCard extends React.Component {
           </filter>
         </svg>
         <ProjectCardImage
-          filterColor={this.state.filterColor}
           image={this.props.project.image}
+          filterColor={this.state.filterColor}
           toggleActiveProject={this.toggleActiveProject}
           buttonVisible={this.state.buttonVisible}
         />
-
-        <ProjectCardTextWrapper>
-          <ProjectCardTextHeader>Hello</ProjectCardTextHeader>
-        </ProjectCardTextWrapper>
+        <ProjectCardText
+          header={this.props.project.header}
+          description={this.props.project.description}
+          skills={this.props.project.skills}
+          category={this.props.project.category}
+        />
       </ProjectCardWrapper>
     );
   }
@@ -102,21 +94,11 @@ export default class ProjectCard extends React.Component {
 
 ProjectCard.propTypes = {
   project: PropTypes.shape({
-    title: PropTypes.string,
-    subtitle: PropTypes.string,
     image: PropTypes.string,
-    category: PropTypes.string,
     featured: PropTypes.bool,
-  }),
-};
-
-ProjectCard.defaultProps = {
-  project: PropTypes.shape({
-    key: 'sample',
-    title: 'Title',
-    subtitle: 'Subtitle',
-    image: '',
-    category: 'android',
-    featured: true,
-  }),
+    header: PropTypes.string,
+    description: PropTypes.string,
+    skills: PropTypes.array,
+    category: PropTypes.string,
+  }).isRequired,
 };

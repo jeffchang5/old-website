@@ -3758,7 +3758,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 var _templateObject = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: column;\n  margin: 25px 35px;\n  font-family: \'Lora\', serif;\n  font-size: 15pt;\n  max-width: 90%;\n  height: 50%;\n  background-color: white;\n'], ['\n  display: flex;\n  flex-direction: column;\n  margin: 25px 35px;\n  font-family: \'Lora\', serif;\n  font-size: 15pt;\n  max-width: 90%;\n  height: 50%;\n  background-color: white;\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n  font-family: \'Open Sans\', sans-serif;\n  font-weight: 200;\n  margin-left: 2px;\n  flex-grow: 1;\n  font-size: 14pt;\n'], ['\n  font-family: \'Open Sans\', sans-serif;\n  font-weight: 200;\n  margin-left: 2px;\n  flex-grow: 1;\n  font-size: 14pt;\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n  font-family: \'Roboto Condensed\', sans-serif;\n  font-weight: 200;\n  margin-left: 2px;\n  flex-grow: 1;\n  font-size: 15pt;\n'], ['\n  font-family: \'Roboto Condensed\', sans-serif;\n  font-weight: 200;\n  margin-left: 2px;\n  flex-grow: 1;\n  font-size: 15pt;\n']),
     _templateObject3 = _taggedTemplateLiteral(['\n  font-family: \'Lora\', sans-serif;\n  font-size: 18pt;\n'], ['\n  font-family: \'Lora\', sans-serif;\n  font-size: 18pt;\n']);
 
 var _react = __webpack_require__(0);
@@ -3825,11 +3825,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(['\n  display: flex;\n  margin: 4px 2px;\n  font-family: \'Open Sans Condensed\', sans-serif;\n  font-size: 15pt;\n  flex-direction: row;\n'], ['\n  display: flex;\n  margin: 4px 2px;\n  font-family: \'Open Sans Condensed\', sans-serif;\n  font-size: 15pt;\n  flex-direction: row;\n']),
+var _templateObject = _taggedTemplateLiteral(['\n  display: flex;\n  margin: 0;\n  font-family: \'Roboto Condensed\', sans-serif;\n  font-size: 14pt;\n  flex-direction: row;\n'], ['\n  display: flex;\n  margin: 0;\n  font-family: \'Roboto Condensed\', sans-serif;\n  font-size: 14pt;\n  flex-direction: row;\n']),
     _templateObject2 = _taggedTemplateLiteral(['\n  height: 30px;\n'], ['\n  height: 30px;\n']),
-    _templateObject3 = _taggedTemplateLiteral(['\n  width: 20px;\n  height: 100%;\n  margin: 0 6px;\n'], ['\n  width: 20px;\n  height: 100%;\n  margin: 0 6px;\n']),
+    _templateObject3 = _taggedTemplateLiteral(['\n  width: 20px;\n  height: 80%;\n  margin: 0 3px;\n'], ['\n  width: 20px;\n  height: 80%;\n  margin: 0 3px;\n']),
     _templateObject4 = _taggedTemplateLiteral(['\n  height: 100%;\n  padding-top: 2px;\n  padding-bottom: 2px;\n'], ['\n  height: 100%;\n  padding-top: 2px;\n  padding-bottom: 2px;\n']),
-    _templateObject5 = _taggedTemplateLiteral(['\n  display: flex;\n  height: 100%;\n  font-size: 15pt;\n  flex-direction: row;\n'], ['\n  display: flex;\n  height: 100%;\n  font-size: 15pt;\n  flex-direction: row;\n']);
+    _templateObject5 = _taggedTemplateLiteral(['\n  display: flex;\n  height: 100%;\n  font-size: 14pt;\n  flex-direction: row;\n'], ['\n  display: flex;\n  height: 100%;\n  font-size: 14pt;\n  flex-direction: row;\n']);
 
 var _react = __webpack_require__(0);
 
@@ -4345,19 +4345,19 @@ exports.default = [{
   featured: true
 }, {
   key: 'mhacks1',
-  image: _mhacks_android2.default,
-  header: 'MHacks',
-  description: 'Whoever',
-  skills: ['Android', 'Kotlin', 'RxJava', 'Dagger'],
-  category: 'android',
+  image: 'http://lifestyleandtravel.com/wp-content/uploads/2016/07/benjerry3.jpg',
+  header: 'Ben And Jerry\'s',
+  description: 'I love me some Ben\'s and Jerry\'s',
+  skills: ['Ice Cream', 'Mint'],
+  category: 'web_dev',
   featured: true
 }, {
   key: 'mhacks2',
-  image: _mhacks_android2.default,
-  header: 'MHacks',
-  description: 'Whoever',
-  skills: ['Android', 'Kotlin', 'RxJava', 'Dagger'],
-  category: 'android',
+  image: 'https://raw.githubusercontent.com/liuchengxu/img/master/space-vim/space-vim-gui.png',
+  header: 'Vim',
+  description: 'Vim > Emacs',
+  skills: ['The', 'Best', 'Text', 'Editor'],
+  category: 'ml',
   featured: true
 }, {
   key: 'mhacks3',

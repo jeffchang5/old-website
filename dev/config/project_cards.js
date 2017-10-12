@@ -8,6 +8,7 @@ export default [
     description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
     skills: ['Android', 'Kotlin', 'RxJava', 'Dagger'],
     category: 'android',
+    github: 'https://github.com/mhacks/mhacks-android',
     featured: true,
   },
   {
@@ -26,6 +27,7 @@ export default [
     description: 'Vim > Emacs',
     skills: ['The', 'Best', 'Text', 'Editor'],
     category: 'ml',
+    github: 'https://github.com/mhacks/mhacks-android',
     featured: true,
   },
   {
@@ -35,6 +37,7 @@ export default [
     description: 'Whoever',
     skills: ['Android', 'Kotlin', 'RxJava', 'Dagger'],
     category: 'android',
+    github: 'https://github.com/mhacks/mhacks-android',
     featured: true,
   },
   {
@@ -44,6 +47,7 @@ export default [
     description: 'Whoever',
     skills: ['Android', 'Kotlin', 'RxJava', 'Dagger'],
     category: 'android',
+    github: 'https://github.com/mhacks/mhacks-android',
     featured: true,
   },
   {
@@ -53,6 +57,7 @@ export default [
     description: 'Whoever',
     skills: ['Android', 'Kotlin', 'RxJava', 'Dagger'],
     category: 'ios',
+    github: 'https://github.com/mhacks/mhacks-android',
     featured: true,
   },
 ];

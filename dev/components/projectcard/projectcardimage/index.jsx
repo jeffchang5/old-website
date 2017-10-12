@@ -3,9 +3,11 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const ProjectCardImageWrapper = styled.div`
+
   position: relative;
   width: 100%;
   height: 50%;
+  overflow: hidden;
   filter: ${props => props.filterColor}
 `;
 
@@ -45,10 +47,12 @@ const ProjectCardTextOverlayGitHubButton = styled.button`
 `;
 
 const ProjectCardImage = styled.img`
-  width: 100%;
-  height: 100%;
+  width: 102%;
+  height: 102%;
   object-fit: cover;
   z-index: 1;
+  margin: -5px -10px -10px -5px;
+  
   filter: ${props => props.filterColor}
 `;
 
@@ -63,7 +67,10 @@ const ProjectCardImageComponent = props => (
       onMouseLeave={props.toggleActiveProject}
     >
       <ProjectCardTextOverlayFlexRow>
-        <ProjectCardTextOverlayGitHubButton buttonVisible={props.buttonVisible}>
+        <ProjectCardTextOverlayGitHubButton
+          buttonVisible={props.buttonVisible}
+          onClick={() => { location.href = props.github; }}
+        >
           View on GitHub
         </ProjectCardTextOverlayGitHubButton>
       </ProjectCardTextOverlayFlexRow>
@@ -74,6 +81,7 @@ const ProjectCardImageComponent = props => (
 ProjectCardImageComponent.propTypes = {
   filterColor: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
+  github: PropTypes.string.isRequired,
   toggleActiveProject: PropTypes.func.isRequired,
   buttonVisible: PropTypes.string.isRequired,
 };

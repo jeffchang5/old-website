@@ -54,7 +54,7 @@ export default class ProjectCard extends React.Component {
     } else {
       this.setState({
         isActive: true,
-        filterColor: 'url("#cyan_filter") blur(3px)',
+        filterColor: 'url("#purple_filter") blur(2px)',
         buttonVisible: 'visible',
 
       });
@@ -64,7 +64,7 @@ export default class ProjectCard extends React.Component {
     return (
       <ProjectCardWrapper>
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="0">
-          <filter id="cyan_filter">
+          <filter id="purple_filter">
             <feColorMatrix
               type="matrix"
               values="0.4 0 0.3 0 0
@@ -79,6 +79,7 @@ export default class ProjectCard extends React.Component {
           filterColor={this.state.filterColor}
           toggleActiveProject={this.toggleActiveProject}
           buttonVisible={this.state.buttonVisible}
+          github={this.props.project.github}
         />
         <ProjectCardText
           header={this.props.project.header}
@@ -98,6 +99,7 @@ ProjectCard.propTypes = {
     header: PropTypes.string,
     description: PropTypes.string,
     skills: PropTypes.array,
+    github: PropTypes.string,
     category: PropTypes.string,
   }).isRequired,
 };

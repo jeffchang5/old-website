@@ -33,9 +33,18 @@ const ProjectCardTextOverlayGitHubButton = styled.button`
   &:focus {
     outline: none;
   }
+  
+  &:hover {
+    outline: none;
+    color: white;
+    background-color: rgba(255,255,255, .25);
+    border: 1px solid rgba(255,255,255, .25);
+    cursor: pointer;
+  }
 
   visibility: ${props => props.buttonVisible};
   background-color: transparent;
+  color: white;
   align-self: center;
   font-family: 'Open Sans Condensed', sans-serif;
   font-size: 20pt;
@@ -43,7 +52,6 @@ const ProjectCardTextOverlayGitHubButton = styled.button`
   height: 100%;
   border: 1px solid #FFF;
   border-radius: 18px;
-  color: white;
 `;
 
 const ProjectCardImage = styled.img`

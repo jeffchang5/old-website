@@ -41,6 +41,8 @@ export default class ProjectCard extends React.Component {
       isActive: false,
       filterColor: 'none',
       buttonVisible: 'hidden',
+      buttonBackgroundColor: 'transparent',
+      buttonTextColor: 'white',
     };
   }
   toggleActiveProject(e) {
@@ -56,7 +58,6 @@ export default class ProjectCard extends React.Component {
         isActive: true,
         filterColor: 'url("#purple_filter") blur(2px)',
         buttonVisible: 'visible',
-
       });
     }
   }

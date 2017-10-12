@@ -5,6 +5,7 @@ import styled from 'styled-components';
 const ProjectMenuItemWrapper = styled.div`
   display: flex;
   flex-direction: row;
+  cursor: pointer;
 `;
 
 const ProjectMenuDecorationWrapper = styled.div`

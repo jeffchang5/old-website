@@ -6,7 +6,7 @@ import SlashDecoration from 'resources/images/double_slash';
 
 const ProjectSkillsWrapper = styled.div`
   display: flex;
-  margin: 0;
+  margin-top: 4px;
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 14pt;
   flex-direction: row;
@@ -19,7 +19,7 @@ const ProjectDecorationWrapper = styled.div`
 const DecorationWrapper = styled.div`
   width: 20px;
   height: 80%;
-  margin: 0 3px;
+  margin: 0 5px;
 `;
 
 const ProjectTextWrapper = styled.div`

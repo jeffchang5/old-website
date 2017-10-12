@@ -3587,7 +3587,9 @@ var ProjectCard = function (_React$Component) {
     _this.state = {
       isActive: false,
       filterColor: 'none',
-      buttonVisible: 'hidden'
+      buttonVisible: 'hidden',
+      buttonBackgroundColor: 'transparent',
+      buttonTextColor: 'white'
     };
     return _this;
   }
@@ -3605,9 +3607,8 @@ var ProjectCard = function (_React$Component) {
       } else {
         this.setState({
           isActive: true,
-          filterColor: 'url("#cyan_filter") blur(3px)',
+          filterColor: 'url("#purple_filter") blur(2px)',
           buttonVisible: 'visible'
-
         });
       }
     }
@@ -3622,7 +3623,7 @@ var ProjectCard = function (_React$Component) {
           { xmlns: 'http://www.w3.org/2000/svg', version: '1.1', height: '0' },
           _react2.default.createElement(
             'filter',
-            { id: 'cyan_filter' },
+            { id: 'purple_filter' },
             _react2.default.createElement('feColorMatrix', {
               type: 'matrix',
               values: '0.4 0 0.3 0 0 0 0.5 0 0 0 0 0 0.8 0 0 1 0 0 1 0 '
@@ -3633,7 +3634,8 @@ var ProjectCard = function (_React$Component) {
           image: this.props.project.image,
           filterColor: this.state.filterColor,
           toggleActiveProject: this.toggleActiveProject,
-          buttonVisible: this.state.buttonVisible
+          buttonVisible: this.state.buttonVisible,
+          github: this.props.project.github
         }),
         _react2.default.createElement(_projectcardtext2.default, {
           header: this.props.project.header,
@@ -3658,6 +3660,7 @@ ProjectCard.propTypes = {
     header: _propTypes2.default.string,
     description: _propTypes2.default.string,
     skills: _propTypes2.default.array,
+    github: _propTypes2.default.string,
     category: _propTypes2.default.string
   }).isRequired
 };
@@ -3673,11 +3676,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(['\n  position: relative;\n  width: 100%;\n  height: 50%;\n  filter: ', '\n'], ['\n  position: relative;\n  width: 100%;\n  height: 50%;\n  filter: ', '\n']),
+var _templateObject = _taggedTemplateLiteral(['\n\n  position: relative;\n  width: 100%;\n  height: 50%;\n  overflow: hidden;\n  filter: ', '\n'], ['\n\n  position: relative;\n  width: 100%;\n  height: 50%;\n  overflow: hidden;\n  filter: ', '\n']),
     _templateObject2 = _taggedTemplateLiteral(['\n  position:absolute;\n  display: flex;\n  top:0;\n  left:0;\n  right:0;\n  bottom:0;\n  z-index: 2;\n  color: white;\n'], ['\n  position:absolute;\n  display: flex;\n  top:0;\n  left:0;\n  right:0;\n  bottom:0;\n  z-index: 2;\n  color: white;\n']),
     _templateObject3 = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: column;\n  height: 65px;\n  width: 100%;\n  align-self: center;\n'], ['\n  display: flex;\n  flex-direction: column;\n  height: 65px;\n  width: 100%;\n  align-self: center;\n']),
-    _templateObject4 = _taggedTemplateLiteral(['\n  &:focus {\n    outline: none;\n  }\n\n  visibility: ', ';\n  background-color: transparent;\n  align-self: center;\n  font-family: \'Open Sans Condensed\', sans-serif;\n  font-size: 20pt;\n  padding: 0 15px;\n  height: 100%;\n  border: 1px solid #FFF;\n  border-radius: 18px;\n  color: white;\n'], ['\n  &:focus {\n    outline: none;\n  }\n\n  visibility: ', ';\n  background-color: transparent;\n  align-self: center;\n  font-family: \'Open Sans Condensed\', sans-serif;\n  font-size: 20pt;\n  padding: 0 15px;\n  height: 100%;\n  border: 1px solid #FFF;\n  border-radius: 18px;\n  color: white;\n']),
-    _templateObject5 = _taggedTemplateLiteral(['\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  z-index: 1;\n  filter: ', '\n'], ['\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  z-index: 1;\n  filter: ', '\n']);
+    _templateObject4 = _taggedTemplateLiteral(['\n  &:focus {\n    outline: none;\n  }\n  \n  &:hover {\n    outline: none;\n    color: white;\n    background-color: rgba(255,255,255, .25);\n    border: 1px solid rgba(255,255,255, .25);\n    cursor: pointer;\n  }\n\n  visibility: ', ';\n  background-color: transparent;\n  color: white;\n  align-self: center;\n  font-family: \'Open Sans Condensed\', sans-serif;\n  font-size: 20pt;\n  padding: 0 15px;\n  height: 100%;\n  border: 1px solid #FFF;\n  border-radius: 18px;\n'], ['\n  &:focus {\n    outline: none;\n  }\n  \n  &:hover {\n    outline: none;\n    color: white;\n    background-color: rgba(255,255,255, .25);\n    border: 1px solid rgba(255,255,255, .25);\n    cursor: pointer;\n  }\n\n  visibility: ', ';\n  background-color: transparent;\n  color: white;\n  align-self: center;\n  font-family: \'Open Sans Condensed\', sans-serif;\n  font-size: 20pt;\n  padding: 0 15px;\n  height: 100%;\n  border: 1px solid #FFF;\n  border-radius: 18px;\n']),
+    _templateObject5 = _taggedTemplateLiteral(['\n  width: 102%;\n  height: 102%;\n  object-fit: cover;\n  z-index: 1;\n  margin: -5px -10px -10px -5px;\n  \n  filter: ', '\n'], ['\n  width: 102%;\n  height: 102%;\n  object-fit: cover;\n  z-index: 1;\n  margin: -5px -10px -10px -5px;\n  \n  filter: ', '\n']);
 
 var _react = __webpack_require__(0);
 
@@ -3729,7 +3732,12 @@ var ProjectCardImageComponent = function ProjectCardImageComponent(props) {
         null,
         _react2.default.createElement(
           ProjectCardTextOverlayGitHubButton,
-          { buttonVisible: props.buttonVisible },
+          {
+            buttonVisible: props.buttonVisible,
+            onClick: function onClick() {
+              location.href = props.github;
+            }
+          },
           'View on GitHub'
         )
       )
@@ -3740,6 +3748,7 @@ var ProjectCardImageComponent = function ProjectCardImageComponent(props) {
 ProjectCardImageComponent.propTypes = {
   filterColor: _propTypes2.default.string.isRequired,
   image: _propTypes2.default.string.isRequired,
+  github: _propTypes2.default.string.isRequired,
   toggleActiveProject: _propTypes2.default.func.isRequired,
   buttonVisible: _propTypes2.default.string.isRequired
 };
@@ -4342,6 +4351,7 @@ exports.default = [{
   description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
   skills: ['Android', 'Kotlin', 'RxJava', 'Dagger'],
   category: 'android',
+  github: 'https://github.com/mhacks/mhacks-android',
   featured: true
 }, {
   key: 'mhacks1',
@@ -4358,6 +4368,7 @@ exports.default = [{
   description: 'Vim > Emacs',
   skills: ['The', 'Best', 'Text', 'Editor'],
   category: 'ml',
+  github: 'https://github.com/mhacks/mhacks-android',
   featured: true
 }, {
   key: 'mhacks3',
@@ -4366,6 +4377,7 @@ exports.default = [{
   description: 'Whoever',
   skills: ['Android', 'Kotlin', 'RxJava', 'Dagger'],
   category: 'android',
+  github: 'https://github.com/mhacks/mhacks-android',
   featured: true
 }, {
   key: 'mhacks4',
@@ -4374,6 +4386,7 @@ exports.default = [{
   description: 'Whoever',
   skills: ['Android', 'Kotlin', 'RxJava', 'Dagger'],
   category: 'android',
+  github: 'https://github.com/mhacks/mhacks-android',
   featured: true
 }, {
   key: 'mhacks5',
@@ -4382,6 +4395,7 @@ exports.default = [{
   description: 'Whoever',
   skills: ['Android', 'Kotlin', 'RxJava', 'Dagger'],
   category: 'ios',
+  github: 'https://github.com/mhacks/mhacks-android',
   featured: true
 }];
 

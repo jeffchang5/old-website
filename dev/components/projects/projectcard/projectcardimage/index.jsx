@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 
 
 const ProjectCardImageWrapper = styled.div`
-
   position: relative;
   width: 100%;
   height: 50%;

@@ -2,8 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { WideContainer } from 'components/common/responsive_container';
 import SectionHeader from 'components/common/section_header';
-import ProjectMenu from 'components/projectsmenu';
-import ProjectCard from 'components/projectcard';
+import ProjectMenu from 'components/projects/projectsmenu';
+import ProjectCard from 'components/projects/projectcard';
+import ProjectClearButton from 'components/projects/projectclearbutton';
 import ProjectCardConfig from 'config/project_cards';
 import ProjectCategories from 'config/project_categories';
 
@@ -40,6 +41,11 @@ export default class ProjectsComponent extends React.Component {
       category,
     });
   }
+  clearCallback(category) {
+    this.setState({
+      category,
+    });
+  }
 
   render() {
     return (
@@ -53,6 +59,7 @@ export default class ProjectsComponent extends React.Component {
         )) }
         <SectionHeader />
         <ProjectMenu callback={this.menuCallback} />
+        <ProjectClearButton callback={this.clearCallback} />
         <ProjectCardWrapper>
           { this.filterAndMapProjectCards(ProjectCardConfig) }
         </ProjectCardWrapper>

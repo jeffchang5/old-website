@@ -25,8 +25,14 @@ module.exports = {
     rules: [
       { test: /\.jsx$/, enforce: 'pre', loader: 'eslint-loader', options: { emitWarning: true } },
       { test: /\.jsx?$/, loader: 'babel-loader' },
-      { test: /\.(svg|png|jpg|gif)$/, use: [{ loader: 'file-loader', options: {} }] },
-      { test: /\.css$/, use: [{ loader: 'style-loader' }, { loader: 'css-loader' }] },
+      { test: /\.(svg|png|jpg|gif)$/,
+        use: [{ loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'images/',
+          },
+        }],
+      },
       { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
     ],
   },

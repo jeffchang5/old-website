@@ -14806,19 +14806,19 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 /* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "8b9f0d5f96ea396f7074a90c93aa9135.png";
+module.exports = __webpack_require__.p + "images/mhacks_android.png";
 
 /***/ }),
 /* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "5ebde234fa467ca408316b0120238dff.png";
+module.exports = __webpack_require__.p + "images/redbluelogo.png";
 
 /***/ }),
 /* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "c0417a10a0cf323c422e99b3496087f1.jpg";
+module.exports = __webpack_require__.p + "images/sample.jpg";
 
 /***/ })
 /******/ ]);

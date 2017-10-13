@@ -33,8 +33,8 @@
     "styled-components": "^2.2.0"
   },
   "scripts": {
-    "devserver": "webpack-dev-server --config dev.webpack.config.js --hot --inline --open",
-    "production": "webpack --config prod.webpack.config.js"
+    "devserver": "webpack-dev-server --config webpack.dev.config.js --hot --inline --open",
+    "production": "webpack --config webpack.prod.config.js"
   },
   "repository": {
     "type": "git",

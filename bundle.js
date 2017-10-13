@@ -3586,10 +3586,6 @@ var _propTypes = __webpack_require__(3);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _project_categories = __webpack_require__(9);
-
-var _project_categories2 = _interopRequireDefault(_project_categories);
-
 var _projectcardimage = __webpack_require__(26);
 
 var _projectcardimage2 = _interopRequireDefault(_projectcardimage);
@@ -3622,7 +3618,6 @@ var ProjectCard = function (_React$Component) {
     _this.state = {
       isActive: false,
       filterColor: 'none',
-      filterClassName: _this.props.project.category + '-filter',
       buttonVisible: 'hidden'
     };
     return _this;
@@ -3636,14 +3631,12 @@ var ProjectCard = function (_React$Component) {
         this.setState({
           isActive: false,
           filterColor: 'none',
-          filterClassName: this.props.project.category + '-filter',
           buttonVisible: 'hidden'
         });
       } else {
         this.setState({
           isActive: true,
-          filterColor: 'url(#' + this.state.filterClassName + ') blur(2px)',
-          filterClassName: this.props.project.category + '-filter',
+          filterColor: 'url(#' + this.props.project.category + '-filter) blur(2px)',
           buttonVisible: 'visible'
         });
       }
@@ -3654,15 +3647,6 @@ var ProjectCard = function (_React$Component) {
       return _react2.default.createElement(
         ProjectCardWrapper,
         null,
-        _react2.default.createElement(
-          'svg',
-          { xmlns: 'http://www.w3.org/2000/svg', version: '1.1', height: '0' },
-          _react2.default.createElement(
-            'filter',
-            { id: this.state.filterClassName },
-            _project_categories2.default[this.props.project.category].filter
-          )
-        ),
         _react2.default.createElement(_projectcardimage2.default, {
           image: this.props.project.image,
           filterColor: this.state.filterColor,
@@ -4230,6 +4214,10 @@ var _project_cards = __webpack_require__(35);
 
 var _project_cards2 = _interopRequireDefault(_project_cards);
 
+var _project_categories = __webpack_require__(9);
+
+var _project_categories2 = _interopRequireDefault(_project_categories);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -4285,6 +4273,17 @@ var ProjectsComponent = function (_React$Component) {
       return _react2.default.createElement(
         _responsive_container.WideContainer,
         null,
+        Object.keys(_project_categories2.default).map(function (category) {
+          return _react2.default.createElement(
+            'svg',
+            { xmlns: 'http://www.w3.org/2000/svg', version: '1.1', height: '0' },
+            _react2.default.createElement(
+              'filter',
+              { id: category + '-filter' },
+              _project_categories2.default[category].filter
+            )
+          );
+        }),
         _react2.default.createElement(_section_header2.default, null),
         _react2.default.createElement(_projectsmenu2.default, { callback: this.menuCallback }),
         _react2.default.createElement(

@@ -4025,7 +4025,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: row;\n'], ['\n  display: flex;\n  flex-direction: row;\n']),
+var _templateObject = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: row;\n  cursor: pointer;\n'], ['\n  display: flex;\n  flex-direction: row;\n  cursor: pointer;\n']),
     _templateObject2 = _taggedTemplateLiteral(['\n  margin: 1px 12px;\n  height: 12px;\n  width: 12px;\n'], ['\n  margin: 1px 12px;\n  height: 12px;\n  width: 12px;\n']),
     _templateObject3 = _taggedTemplateLiteral(['\n  & circle {\n    fill: ', '  \n  }\n  width: 100%;\n  height: 100%;\n'], ['\n  & circle {\n    fill: ', '  \n  }\n  width: 100%;\n  height: 100%;\n']),
     _templateObject4 = _taggedTemplateLiteral([''], ['']);

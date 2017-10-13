@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 
 const ProjectCardImageWrapper = styled.div`
   position: relative;
+  border-radius: 7px 7px 0 0;
   width: 100%;
   height: 50%;
   overflow: hidden;

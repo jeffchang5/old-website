@@ -3696,8 +3696,8 @@ Object.defineProperty(exports, "__esModule", {
 
 var _templateObject = _taggedTemplateLiteral(['\n  position: relative;\n  border-radius: 7px 7px 0 0;\n  width: 100%;\n  height: 50%;\n  overflow: hidden;\n  filter: ', '\n'], ['\n  position: relative;\n  border-radius: 7px 7px 0 0;\n  width: 100%;\n  height: 50%;\n  overflow: hidden;\n  filter: ', '\n']),
     _templateObject2 = _taggedTemplateLiteral(['\n  position:absolute;\n  display: flex;\n  top:0;\n  left:0;\n  right:0;\n  bottom:0;\n  z-index: 2;\n  color: white;\n'], ['\n  position:absolute;\n  display: flex;\n  top:0;\n  left:0;\n  right:0;\n  bottom:0;\n  z-index: 2;\n  color: white;\n']),
-    _templateObject3 = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: column;\n  height: 65px;\n  width: 100%;\n  align-self: center;\n'], ['\n  display: flex;\n  flex-direction: column;\n  height: 65px;\n  width: 100%;\n  align-self: center;\n']),
-    _templateObject4 = _taggedTemplateLiteral(['\n  &:focus {\n    outline: none;\n  }\n  \n  &:hover {\n    outline: none;\n    background-color: rgba(255,255,255, .25);\n    cursor: pointer;\n  }\n\n  visibility: ', ';\n  background-color: transparent;\n  color: white;\n  align-self: center;\n  font-family: \'Open Sans Condensed\', sans-serif;\n  font-size: 20pt;\n  padding: 0 15px;\n  height: 100%;\n  border: 1px solid #FFF;\n  border-radius: 18px;\n'], ['\n  &:focus {\n    outline: none;\n  }\n  \n  &:hover {\n    outline: none;\n    background-color: rgba(255,255,255, .25);\n    cursor: pointer;\n  }\n\n  visibility: ', ';\n  background-color: transparent;\n  color: white;\n  align-self: center;\n  font-family: \'Open Sans Condensed\', sans-serif;\n  font-size: 20pt;\n  padding: 0 15px;\n  height: 100%;\n  border: 1px solid #FFF;\n  border-radius: 18px;\n']),
+    _templateObject3 = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: column;\n  height: 70px;\n  width: 100%;\n  align-self: center;\n'], ['\n  display: flex;\n  flex-direction: column;\n  height: 70px;\n  width: 100%;\n  align-self: center;\n']),
+    _templateObject4 = _taggedTemplateLiteral(['\n  &:focus {\n    outline: none;\n  }\n  \n  &:hover {\n    outline: none;\n    background-color: rgba(255,255,255, .15);\n    cursor: pointer;\n  }\n\n  visibility: ', ';\n  background-color: transparent;\n  color: white;\n  align-self: center;\n  font-family: \'Open Sans Condensed\', sans-serif;\n  font-size: 20pt;\n  padding: 10px 15px;\n  height: 100%;\n  border: 2px solid #FFF;\n  border-radius: 4px;\n'], ['\n  &:focus {\n    outline: none;\n  }\n  \n  &:hover {\n    outline: none;\n    background-color: rgba(255,255,255, .15);\n    cursor: pointer;\n  }\n\n  visibility: ', ';\n  background-color: transparent;\n  color: white;\n  align-self: center;\n  font-family: \'Open Sans Condensed\', sans-serif;\n  font-size: 20pt;\n  padding: 10px 15px;\n  height: 100%;\n  border: 2px solid #FFF;\n  border-radius: 4px;\n']),
     _templateObject5 = _taggedTemplateLiteral(['\n  width: 102%;\n  height: 102%;\n  object-fit: cover;\n  z-index: 1;\n  margin: -5px -10px -10px -5px;\n  filter: ', '\n'], ['\n  width: 102%;\n  height: 102%;\n  object-fit: cover;\n  z-index: 1;\n  margin: -5px -10px -10px -5px;\n  filter: ', '\n']);
 
 var _react = __webpack_require__(0);
@@ -3756,7 +3756,7 @@ var ProjectCardImageComponent = function ProjectCardImageComponent(props) {
               location.href = props.github;
             }
           },
-          'View on GitHub'
+          'VIEW ON GITHUB'
         )
       )
     )

@@ -5,6 +5,7 @@ import SectionHeader from 'components/common/section_header';
 import ProjectMenu from 'components/projectsmenu';
 import ProjectCard from 'components/projectcard';
 import ProjectCardConfig from 'config/project_cards';
+import ProjectCategories from 'config/project_categories';
 
 
 const ProjectCardWrapper = styled.div`
@@ -42,6 +43,13 @@ export default class ProjectsComponent extends React.Component {
   render() {
     return (
       <WideContainer>
+        { Object.keys(ProjectCategories).map(category => (
+          <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="0">
+            <filter id={`${category}-filter`}>
+              { ProjectCategories[category].filter }
+            </filter>
+          </svg>
+        )) }
         <SectionHeader />
         <ProjectMenu callback={this.menuCallback} />
         <ProjectCardWrapper>

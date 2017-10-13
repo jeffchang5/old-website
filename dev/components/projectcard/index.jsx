@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import devices from 'theme/devices';
 import PropTypes from 'prop-types';
-import ProjectCategories from 'config/project_categories';
 import ProjectCardImage from './projectcardimage';
 import ProjectCardText from './projectcardtext';
 
@@ -41,7 +40,6 @@ export default class ProjectCard extends React.Component {
     this.state = {
       isActive: false,
       filterColor: 'none',
-      filterClassName: `${this.props.project.category}-filter`,
       buttonVisible: 'hidden',
     };
   }
@@ -51,14 +49,12 @@ export default class ProjectCard extends React.Component {
       this.setState({
         isActive: false,
         filterColor: 'none',
-        filterClassName: `${this.props.project.category}-filter`,
         buttonVisible: 'hidden',
       });
     } else {
       this.setState({
         isActive: true,
-        filterColor: `url(#${this.state.filterClassName}) blur(2px)`,
-        filterClassName: `${this.props.project.category}-filter`,
+        filterColor: `url(#${this.props.project.category}-filter) blur(2px)`,
         buttonVisible: 'visible',
       });
     }
@@ -66,11 +62,6 @@ export default class ProjectCard extends React.Component {
   render() {
     return (
       <ProjectCardWrapper>
-        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="0">
-          <filter id={this.state.filterClassName}>
-            {ProjectCategories[this.props.project.category].filter}
-          </filter>
-        </svg>
         <ProjectCardImage
           image={this.props.project.image}
           filterColor={this.state.filterColor}

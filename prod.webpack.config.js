@@ -1,0 +1,38 @@
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+module.exports = {
+  entry: path.resolve('./dev/index.jsx'),
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve('./dist/public'),
+  },
+  target: 'web',
+  resolve: {
+    modules: [
+      path.resolve('./dev'),
+      path.resolve('./node_modules'),
+    ],
+    extensions: ['.js', '.jsx', '.json'],
+  },
+  module: {
+    rules: [
+      { test: /\.jsx?$/, loader: 'babel-loader' },
+      { test: /\.(svg|png|jpg|gif)$/,
+        use: [{ loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'images/',
+          },
+        }],
+      },
+    ],
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.resolve('./dev/template.html'),
+      title: 'Jeffrey Chang',
+      inject: 'body',
+    }),
+  ],
+};

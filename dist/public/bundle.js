@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 34);
+/******/ 	return __webpack_require__(__webpack_require__.s = 36);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -3234,15 +3234,15 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _navbar = __webpack_require__(23);
+var _navbar = __webpack_require__(24);
 
 var _navbar2 = _interopRequireDefault(_navbar);
 
-var _about = __webpack_require__(32);
+var _about = __webpack_require__(34);
 
 var _about2 = _interopRequireDefault(_about);
 
-var _projects = __webpack_require__(33);
+var _projects = __webpack_require__(35);
 
 var _projects2 = _interopRequireDefault(_projects);
 
@@ -3334,6 +3334,35 @@ if (process.env.NODE_ENV === 'production') {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.NormalContainer = exports.WideContainer = undefined;
+
+var _templateObject = _taggedTemplateLiteral(['\n  margin-right: auto;\n  margin-left: auto;\n  padding-left: 15px;\n  padding-right: 15px;\n  height: 88vh;\n  \n  @media (min-width: 768px) {\n    width: 750px;\n    \n  @media (min-width: 992px) {\n    width: 1000px;\n  }\n  @media (min-width: 1200px) {\n    width: 1200px;\n  }\n'], ['\n  margin-right: auto;\n  margin-left: auto;\n  padding-left: 15px;\n  padding-right: 15px;\n  height: 88vh;\n  \n  @media (min-width: 768px) {\n    width: 750px;\n    \n  @media (min-width: 992px) {\n    width: 1000px;\n  }\n  @media (min-width: 1200px) {\n    width: 1200px;\n  }\n']);
+
+var _styledComponents = __webpack_require__(1);
+
+var _styledComponents2 = _interopRequireDefault(_styledComponents);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var WideContainer = _styledComponents2.default.section(_templateObject);
+
+var NormalContainer = _styledComponents2.default.section(_templateObject);
+
+exports.WideContainer = WideContainer;
+exports.NormalContainer = NormalContainer;
+
+/***/ }),
+/* 23 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
 var _templateObject = _taggedTemplateLiteral(['\n  display: flex;\n  height: 80px;\n  flex-grow: 1;\n  margin: 30px 0 30px 0;\n  left: 15px;\n  position: relative;\n  flex-direction: row;\n  font-family: "Open Sans Condensed", Helvetica, Arial, sans-serif;\n\n'], ['\n  display: flex;\n  height: 80px;\n  flex-grow: 1;\n  margin: 30px 0 30px 0;\n  left: 15px;\n  position: relative;\n  flex-direction: row;\n  font-family: "Open Sans Condensed", Helvetica, Arial, sans-serif;\n\n']),
     _templateObject2 = _taggedTemplateLiteral(['\n  width: 100px;\n  height: 100%;\n'], ['\n  width: 100px;\n  height: 100%;\n']),
@@ -3386,7 +3415,7 @@ exports.default = function () {
 };
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3413,7 +3442,7 @@ var _redbluelogo = __webpack_require__(58);
 
 var _redbluelogo2 = _interopRequireDefault(_redbluelogo);
 
-var _nav_item = __webpack_require__(24);
+var _nav_item = __webpack_require__(25);
 
 var _nav_item2 = _interopRequireDefault(_nav_item);
 
@@ -3449,7 +3478,7 @@ exports.default = function () {
 };
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3553,7 +3582,7 @@ NavComponent.defaultProps = {
 exports.default = NavComponent;
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3586,11 +3615,11 @@ var _propTypes = __webpack_require__(3);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _projectcardimage = __webpack_require__(26);
+var _projectcardimage = __webpack_require__(27);
 
 var _projectcardimage2 = _interopRequireDefault(_projectcardimage);
 
-var _projectcardtext = __webpack_require__(27);
+var _projectcardtext = __webpack_require__(28);
 
 var _projectcardtext2 = _interopRequireDefault(_projectcardtext);
 
@@ -3684,7 +3713,7 @@ ProjectCard.propTypes = {
 };
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3774,7 +3803,7 @@ ProjectCardImageComponent.propTypes = {
 exports.default = ProjectCardImageComponent;
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3800,7 +3829,7 @@ var _propTypes = __webpack_require__(3);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _projectcardskills = __webpack_require__(28);
+var _projectcardskills = __webpack_require__(29);
 
 var _projectcardskills2 = _interopRequireDefault(_projectcardskills);
 
@@ -3842,7 +3871,7 @@ ProjectCardTextComponent.propTypes = {
 exports.default = ProjectCardTextComponent;
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3941,7 +3970,7 @@ ProjectCardSkillsComponent.propTypes = {
 exports.default = ProjectCardSkillsComponent;
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3992,7 +4021,7 @@ ProjectClearButtonComponent.propTypes = {
 exports.default = ProjectClearButtonComponent;
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4022,7 +4051,7 @@ var _project_categories = __webpack_require__(9);
 
 var _project_categories2 = _interopRequireDefault(_project_categories);
 
-var _project_menu_item = __webpack_require__(31);
+var _project_menu_item = __webpack_require__(32);
 
 var _project_menu_item2 = _interopRequireDefault(_project_menu_item);
 
@@ -4084,7 +4113,7 @@ ProjectMenu.propTypes = {
 };
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4164,7 +4193,80 @@ ProjectMenuItemComponent.defaultProps = {
 exports.default = ProjectMenuItemComponent;
 
 /***/ }),
-/* 32 */
+/* 33 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _mhacks_android = __webpack_require__(57);
+
+var _mhacks_android2 = _interopRequireDefault(_mhacks_android);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = [{
+  key: 'mhacks',
+  image: _mhacks_android2.default,
+  header: 'MHacks',
+  description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
+  skills: ['Android', 'Kotlin', 'RxJava', 'Dagger'],
+  category: 'android',
+  github: 'https://github.com/mhacks/mhacks-android',
+  featured: true
+}, {
+  key: 'mhacks1',
+  image: 'http://lifestyleandtravel.com/wp-content/uploads/2016/07/benjerry3.jpg',
+  header: 'Ben And Jerry\'s',
+  description: 'I love me some Ben\'s and Jerry\'s',
+  skills: ['Ice Cream', 'Mint'],
+  category: 'web_dev',
+  github: 'https://github.com/mhacks/mhacks-android',
+  featured: true
+}, {
+  key: 'mhacks2',
+  image: 'https://raw.githubusercontent.com/liuchengxu/img/master/space-vim/space-vim-gui.png',
+  header: 'Vim',
+  description: 'Vim > Emacs',
+  skills: ['The', 'Best', 'Text', 'Editor'],
+  category: 'ml',
+  github: 'https://github.com/mhacks/mhacks-android',
+  featured: true
+}, {
+  key: 'mhacks3',
+  image: _mhacks_android2.default,
+  header: 'MHacks',
+  description: 'Whoever',
+  skills: ['Android', 'Kotlin', 'RxJava', 'Dagger'],
+  category: 'android',
+  github: 'https://github.com/mhacks/mhacks-android',
+  featured: false
+}, {
+  key: 'mhacks4',
+  image: _mhacks_android2.default,
+  header: 'MHacks',
+  description: 'Whoever',
+  skills: ['Android', 'Kotlin', 'RxJava', 'Dagger'],
+  category: 'android',
+  github: 'https://github.com/mhacks/mhacks-android',
+  featured: true
+}, {
+  key: 'mhacks5',
+  image: _mhacks_android2.default,
+  header: 'MHacks',
+  description: 'Whoever',
+  skills: ['Android', 'Kotlin', 'RxJava', 'Dagger'],
+  category: 'ios',
+  github: 'https://github.com/mhacks/mhacks-android',
+  featured: false
+}];
+
+/***/ }),
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4225,7 +4327,7 @@ exports.default = function () {
 };
 
 /***/ }),
-/* 33 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4247,25 +4349,25 @@ var _styledComponents = __webpack_require__(1);
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
-var _responsive_container = __webpack_require__(35);
+var _responsive_container = __webpack_require__(22);
 
-var _section_header = __webpack_require__(22);
+var _section_header = __webpack_require__(23);
 
 var _section_header2 = _interopRequireDefault(_section_header);
 
-var _projectsmenu = __webpack_require__(30);
+var _projectsmenu = __webpack_require__(31);
 
 var _projectsmenu2 = _interopRequireDefault(_projectsmenu);
 
-var _projectcard = __webpack_require__(25);
+var _projectcard = __webpack_require__(26);
 
 var _projectcard2 = _interopRequireDefault(_projectcard);
 
-var _projectclearbutton = __webpack_require__(29);
+var _projectclearbutton = __webpack_require__(30);
 
 var _projectclearbutton2 = _interopRequireDefault(_projectclearbutton);
 
-var _project_cards = __webpack_require__(36);
+var _project_cards = __webpack_require__(33);
 
 var _project_cards2 = _interopRequireDefault(_project_cards);
 
@@ -4368,7 +4470,7 @@ var ProjectsComponent = function (_React$Component) {
 exports.default = ProjectsComponent;
 
 /***/ }),
-/* 34 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4397,108 +4499,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 _reactDom2.default.render(_react2.default.createElement(_app2.default, null), document.getElementById('root'));
 
 // eslint-disable-next-line no-unused-vars
-
-/***/ }),
-/* 35 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.NormalContainer = exports.WideContainer = undefined;
-
-var _templateObject = _taggedTemplateLiteral(['\n  margin-right: auto;\n  margin-left: auto;\n  padding-left: 15px;\n  padding-right: 15px;\n  height: 88vh;\n  \n  @media (min-width: 768px) {\n    width: 750px;\n    \n  @media (min-width: 992px) {\n    width: 1000px;\n  }\n  @media (min-width: 1200px) {\n    width: 1200px;\n  }\n'], ['\n  margin-right: auto;\n  margin-left: auto;\n  padding-left: 15px;\n  padding-right: 15px;\n  height: 88vh;\n  \n  @media (min-width: 768px) {\n    width: 750px;\n    \n  @media (min-width: 992px) {\n    width: 1000px;\n  }\n  @media (min-width: 1200px) {\n    width: 1200px;\n  }\n']);
-
-var _styledComponents = __webpack_require__(1);
-
-var _styledComponents2 = _interopRequireDefault(_styledComponents);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-var WideContainer = _styledComponents2.default.section(_templateObject);
-
-var NormalContainer = _styledComponents2.default.section(_templateObject);
-
-exports.WideContainer = WideContainer;
-exports.NormalContainer = NormalContainer;
-
-/***/ }),
-/* 36 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _mhacks_android = __webpack_require__(57);
-
-var _mhacks_android2 = _interopRequireDefault(_mhacks_android);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = [{
-  key: 'mhacks',
-  image: _mhacks_android2.default,
-  header: 'MHacks',
-  description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
-  skills: ['Android', 'Kotlin', 'RxJava', 'Dagger'],
-  category: 'android',
-  github: 'https://github.com/mhacks/mhacks-android',
-  featured: true
-}, {
-  key: 'mhacks1',
-  image: 'http://lifestyleandtravel.com/wp-content/uploads/2016/07/benjerry3.jpg',
-  header: 'Ben And Jerry\'s',
-  description: 'I love me some Ben\'s and Jerry\'s',
-  skills: ['Ice Cream', 'Mint'],
-  category: 'web_dev',
-  github: 'https://github.com/mhacks/mhacks-android',
-  featured: true
-}, {
-  key: 'mhacks2',
-  image: 'https://raw.githubusercontent.com/liuchengxu/img/master/space-vim/space-vim-gui.png',
-  header: 'Vim',
-  description: 'Vim > Emacs',
-  skills: ['The', 'Best', 'Text', 'Editor'],
-  category: 'ml',
-  github: 'https://github.com/mhacks/mhacks-android',
-  featured: true
-}, {
-  key: 'mhacks3',
-  image: _mhacks_android2.default,
-  header: 'MHacks',
-  description: 'Whoever',
-  skills: ['Android', 'Kotlin', 'RxJava', 'Dagger'],
-  category: 'android',
-  github: 'https://github.com/mhacks/mhacks-android',
-  featured: false
-}, {
-  key: 'mhacks4',
-  image: _mhacks_android2.default,
-  header: 'MHacks',
-  description: 'Whoever',
-  skills: ['Android', 'Kotlin', 'RxJava', 'Dagger'],
-  category: 'android',
-  github: 'https://github.com/mhacks/mhacks-android',
-  featured: true
-}, {
-  key: 'mhacks5',
-  image: _mhacks_android2.default,
-  header: 'MHacks',
-  description: 'Whoever',
-  skills: ['Android', 'Kotlin', 'RxJava', 'Dagger'],
-  category: 'ios',
-  github: 'https://github.com/mhacks/mhacks-android',
-  featured: false
-}];
 
 /***/ }),
 /* 37 */
@@ -14822,4 +14822,3 @@ module.exports = __webpack_require__.p + "images/sample.jpg";
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=bundle.js.map

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import ProjectCategories from 'config/project_categories';
-import SlashDecoration from 'resources/images/double_slash';
+import SlashDecoration from 'resources/images/svg/double_slash';
 
 const ProjectSkillsWrapper = styled.div`
   display: flex;

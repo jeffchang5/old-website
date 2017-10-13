@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 import React from 'react';
 import styled from 'styled-components';
-import DoubleSlashIcon from 'resources/images/double_slash';
+import DoubleSlashIcon from 'resources/images/svg/double_slash';
 
 const SectionHeaderWrapper = styled.div`
   display: flex;

@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   entry: path.resolve('./dev/index.jsx'),
@@ -33,6 +34,9 @@ module.exports = {
       template: path.resolve('./dev/template.html'),
       title: 'Jeffrey Chang',
       inject: 'body',
+    }),
+    new UglifyJSPlugin({
+      parallel: true,
     }),
   ],
 };

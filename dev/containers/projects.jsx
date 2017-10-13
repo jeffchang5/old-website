@@ -25,8 +25,9 @@ export default class ProjectsComponent extends React.Component {
 
   filterAndMapProjectCards(projectCardList) {
     let cardList;
-    if (this.state.category === 'default') cardList = projectCardList;
-    else {
+    if (this.state.category === 'default') {
+      cardList = projectCardList.filter(projectCard => projectCard.featured === true);
+    } else {
       cardList = projectCardList
         .filter(projectCard => projectCard.category === this.state.category);
     }
@@ -44,7 +45,7 @@ export default class ProjectsComponent extends React.Component {
     return (
       <WideContainer>
         { Object.keys(ProjectCategories).map(category => (
-          <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="0">
+          <svg key={category} xmlns="http://www.w3.org/2000/svg" version="1.1" height="0">
             <filter id={`${category}-filter`}>
               { ProjectCategories[category].filter }
             </filter>

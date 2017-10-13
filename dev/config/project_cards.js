@@ -39,7 +39,7 @@ export default [
     skills: ['Android', 'Kotlin', 'RxJava', 'Dagger'],
     category: 'android',
     github: 'https://github.com/mhacks/mhacks-android',
-    featured: true,
+    featured: false,
   },
   {
     key: 'mhacks4',
@@ -59,6 +59,6 @@ export default [
     skills: ['Android', 'Kotlin', 'RxJava', 'Dagger'],
     category: 'ios',
     github: 'https://github.com/mhacks/mhacks-android',
-    featured: true,
+    featured: false,
   },
 ];

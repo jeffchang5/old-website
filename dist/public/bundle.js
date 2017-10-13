@@ -2727,6 +2727,55 @@ module.exports = warning;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var feColorMatrixList = {
+  // 51%,78%,52%
+  green: _react2.default.createElement("feColorMatrix", {
+    type: "matrix",
+    values: "0.50  0.00  0.00  0.00  0.00 0.00  0.80  0.00  0.00  0.00 0.00  0.00  0.50  0.00  0.00 1.00  0.00  0.00  1.00  0.00"
+  }),
+  blue: _react2.default.createElement("feColorMatrix", {
+    type: "matrix",
+    values: "0.56  0.00  0.00  0.00  0.00 0.00  0.79  0.00  0.00  0.00 0.00  0.00  0.98  0.00  0.00 0.00  0.00  0.00  1.00  0.00"
+  }),
+  purple: _react2.default.createElement("feColorMatrix", {
+    type: "matrix",
+    values: "0.40  0.00  0.30  0.00  0.00 0.00  0.50  0.00  0.00  0.00 0.00  0.00  0.80  0.00  0.00 1.00  0.00  0.00  1.00  0.00"
+  }),
+  orange: _react2.default.createElement("feColorMatrix", {
+    type: "matrix",
+    values: "0.40  0.00  0.30  0.00  0.00 0.00  0.50  0.00  0.00  0.00 0.00  0.00  0.80  0.00  0.00 1.00  0.00  0.00  1.00  0.00"
+  }),
+  yellow: _react2.default.createElement("feColorMatrix", {
+    type: "matrix",
+    values: "0.98  0.00  0.30  0.00  0.00 0.00  0.85  0.00  0.00  0.00 0.00  0.00  0.21  0.00  0.00 1.00  0.00  0.00  1.00  0.00"
+  })
+};
+
+exports.default = {
+  android: { name: 'Android', accentColor: '#81c784', filter: feColorMatrixList.green },
+  web_dev: { name: 'Web Dev', accentColor: '#26c6da', filter: feColorMatrixList.blue },
+  ml: { name: 'Machine Learning', accentColor: '#BA68C8', filter: feColorMatrixList.purple },
+  data_science: { name: 'Data Science', accentColor: '#ef6c00', filter: feColorMatrixList.orange },
+  ios: { name: 'iOS', accentColor: '#ffea00', filter: feColorMatrixList.yellow }
+};
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -2762,7 +2811,7 @@ var ExecutionEnvironment = {
 module.exports = ExecutionEnvironment;
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2780,7 +2829,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 if (process.env.NODE_ENV !== 'production') {
   var invariant = __webpack_require__(5);
   var warning = __webpack_require__(8);
-  var ReactPropTypesSecret = __webpack_require__(11);
+  var ReactPropTypesSecret = __webpack_require__(12);
   var loggedTypeFailures = {};
 }
 
@@ -2830,7 +2879,7 @@ module.exports = checkPropTypes;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2848,7 +2897,7 @@ var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 module.exports = ReactPropTypesSecret;
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2897,24 +2946,6 @@ DoubleSlash.defaultProps = {
 };
 
 exports.default = DoubleSlash;
-
-/***/ }),
-/* 13 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = {
-  android: { name: 'Android', accentColor: '#66bb6a' },
-  web_dev: { name: 'Web Dev', accentColor: '#26c6da' },
-  ml: { name: 'Machine Learning', accentColor: '#BA68C8' },
-  data_science: { name: 'Data Science', accentColor: '#ef6c00' },
-  ios: { name: 'iOS', accentColor: '#ffea00' }
-};
 
 /***/ }),
 /* 14 */
@@ -3317,7 +3348,7 @@ var _styledComponents = __webpack_require__(1);
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
-var _double_slash = __webpack_require__(12);
+var _double_slash = __webpack_require__(13);
 
 var _double_slash2 = _interopRequireDefault(_double_slash);
 
@@ -3555,6 +3586,10 @@ var _propTypes = __webpack_require__(3);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
+var _project_categories = __webpack_require__(9);
+
+var _project_categories2 = _interopRequireDefault(_project_categories);
+
 var _projectcardimage = __webpack_require__(26);
 
 var _projectcardimage2 = _interopRequireDefault(_projectcardimage);
@@ -3587,9 +3622,8 @@ var ProjectCard = function (_React$Component) {
     _this.state = {
       isActive: false,
       filterColor: 'none',
-      buttonVisible: 'hidden',
-      buttonBackgroundColor: 'transparent',
-      buttonTextColor: 'white'
+      filterClassName: _this.props.project.category + '-filter',
+      buttonVisible: 'hidden'
     };
     return _this;
   }
@@ -3602,12 +3636,14 @@ var ProjectCard = function (_React$Component) {
         this.setState({
           isActive: false,
           filterColor: 'none',
+          filterClassName: this.props.project.category + '-filter',
           buttonVisible: 'hidden'
         });
       } else {
         this.setState({
           isActive: true,
-          filterColor: 'url("#purple_filter") blur(2px)',
+          filterColor: 'url(#' + this.state.filterClassName + ') blur(2px)',
+          filterClassName: this.props.project.category + '-filter',
           buttonVisible: 'visible'
         });
       }
@@ -3623,11 +3659,8 @@ var ProjectCard = function (_React$Component) {
           { xmlns: 'http://www.w3.org/2000/svg', version: '1.1', height: '0' },
           _react2.default.createElement(
             'filter',
-            { id: 'purple_filter' },
-            _react2.default.createElement('feColorMatrix', {
-              type: 'matrix',
-              values: '0.4 0 0.3 0 0 0 0.5 0 0 0 0 0 0.8 0 0 1 0 0 1 0 '
-            })
+            { id: this.state.filterClassName },
+            _project_categories2.default[this.props.project.category].filter
           )
         ),
         _react2.default.createElement(_projectcardimage2.default, {
@@ -3635,6 +3668,7 @@ var ProjectCard = function (_React$Component) {
           filterColor: this.state.filterColor,
           toggleActiveProject: this.toggleActiveProject,
           buttonVisible: this.state.buttonVisible,
+          category: this.props.project.category,
           github: this.props.project.github
         }),
         _react2.default.createElement(_projectcardtext2.default, {
@@ -3679,8 +3713,8 @@ Object.defineProperty(exports, "__esModule", {
 var _templateObject = _taggedTemplateLiteral(['\n\n  position: relative;\n  width: 100%;\n  height: 50%;\n  overflow: hidden;\n  filter: ', '\n'], ['\n\n  position: relative;\n  width: 100%;\n  height: 50%;\n  overflow: hidden;\n  filter: ', '\n']),
     _templateObject2 = _taggedTemplateLiteral(['\n  position:absolute;\n  display: flex;\n  top:0;\n  left:0;\n  right:0;\n  bottom:0;\n  z-index: 2;\n  color: white;\n'], ['\n  position:absolute;\n  display: flex;\n  top:0;\n  left:0;\n  right:0;\n  bottom:0;\n  z-index: 2;\n  color: white;\n']),
     _templateObject3 = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: column;\n  height: 65px;\n  width: 100%;\n  align-self: center;\n'], ['\n  display: flex;\n  flex-direction: column;\n  height: 65px;\n  width: 100%;\n  align-self: center;\n']),
-    _templateObject4 = _taggedTemplateLiteral(['\n  &:focus {\n    outline: none;\n  }\n  \n  &:hover {\n    outline: none;\n    color: white;\n    background-color: rgba(255,255,255, .25);\n    border: 1px solid rgba(255,255,255, .25);\n    cursor: pointer;\n  }\n\n  visibility: ', ';\n  background-color: transparent;\n  color: white;\n  align-self: center;\n  font-family: \'Open Sans Condensed\', sans-serif;\n  font-size: 20pt;\n  padding: 0 15px;\n  height: 100%;\n  border: 1px solid #FFF;\n  border-radius: 18px;\n'], ['\n  &:focus {\n    outline: none;\n  }\n  \n  &:hover {\n    outline: none;\n    color: white;\n    background-color: rgba(255,255,255, .25);\n    border: 1px solid rgba(255,255,255, .25);\n    cursor: pointer;\n  }\n\n  visibility: ', ';\n  background-color: transparent;\n  color: white;\n  align-self: center;\n  font-family: \'Open Sans Condensed\', sans-serif;\n  font-size: 20pt;\n  padding: 0 15px;\n  height: 100%;\n  border: 1px solid #FFF;\n  border-radius: 18px;\n']),
-    _templateObject5 = _taggedTemplateLiteral(['\n  width: 102%;\n  height: 102%;\n  object-fit: cover;\n  z-index: 1;\n  margin: -5px -10px -10px -5px;\n  \n  filter: ', '\n'], ['\n  width: 102%;\n  height: 102%;\n  object-fit: cover;\n  z-index: 1;\n  margin: -5px -10px -10px -5px;\n  \n  filter: ', '\n']);
+    _templateObject4 = _taggedTemplateLiteral(['\n  &:focus {\n    outline: none;\n  }\n  \n  &:hover {\n    outline: none;\n    background-color: rgba(255,255,255, .25);\n    cursor: pointer;\n  }\n\n  visibility: ', ';\n  background-color: transparent;\n  color: white;\n  align-self: center;\n  font-family: \'Open Sans Condensed\', sans-serif;\n  font-size: 20pt;\n  padding: 0 15px;\n  height: 100%;\n  border: 1px solid #FFF;\n  border-radius: 18px;\n'], ['\n  &:focus {\n    outline: none;\n  }\n  \n  &:hover {\n    outline: none;\n    background-color: rgba(255,255,255, .25);\n    cursor: pointer;\n  }\n\n  visibility: ', ';\n  background-color: transparent;\n  color: white;\n  align-self: center;\n  font-family: \'Open Sans Condensed\', sans-serif;\n  font-size: 20pt;\n  padding: 0 15px;\n  height: 100%;\n  border: 1px solid #FFF;\n  border-radius: 18px;\n']),
+    _templateObject5 = _taggedTemplateLiteral(['\n  width: 102%;\n  height: 102%;\n  object-fit: cover;\n  z-index: 1;\n  margin: -5px -10px -10px -5px;\n  filter: ', '\n'], ['\n  width: 102%;\n  height: 102%;\n  object-fit: cover;\n  z-index: 1;\n  margin: -5px -10px -10px -5px;\n  filter: ', '\n']);
 
 var _react = __webpack_require__(0);
 
@@ -3748,9 +3782,9 @@ var ProjectCardImageComponent = function ProjectCardImageComponent(props) {
 ProjectCardImageComponent.propTypes = {
   filterColor: _propTypes2.default.string.isRequired,
   image: _propTypes2.default.string.isRequired,
-  github: _propTypes2.default.string.isRequired,
   toggleActiveProject: _propTypes2.default.func.isRequired,
-  buttonVisible: _propTypes2.default.string.isRequired
+  buttonVisible: _propTypes2.default.string.isRequired,
+  github: _propTypes2.default.string.isRequired
 };
 
 exports.default = ProjectCardImageComponent;
@@ -3852,11 +3886,11 @@ var _propTypes = __webpack_require__(3);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _project_categories = __webpack_require__(13);
+var _project_categories = __webpack_require__(9);
 
 var _project_categories2 = _interopRequireDefault(_project_categories);
 
-var _double_slash = __webpack_require__(12);
+var _double_slash = __webpack_require__(13);
 
 var _double_slash2 = _interopRequireDefault(_double_slash);
 
@@ -3949,7 +3983,7 @@ var _propTypes = __webpack_require__(3);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _project_categories = __webpack_require__(13);
+var _project_categories = __webpack_require__(9);
 
 var _project_categories2 = _interopRequireDefault(_project_categories);
 
@@ -4360,6 +4394,7 @@ exports.default = [{
   description: 'I love me some Ben\'s and Jerry\'s',
   skills: ['Ice Cream', 'Mint'],
   category: 'web_dev',
+  github: 'https://github.com/mhacks/mhacks-android',
   featured: true
 }, {
   key: 'mhacks2',
@@ -4665,7 +4700,7 @@ module.exports = isTextNode;
 
 
 
-var ExecutionEnvironment = __webpack_require__(9);
+var ExecutionEnvironment = __webpack_require__(10);
 
 var performance;
 
@@ -4863,7 +4898,7 @@ module.exports = function isObject(val) {
 
 var emptyFunction = __webpack_require__(4);
 var invariant = __webpack_require__(5);
-var ReactPropTypesSecret = __webpack_require__(11);
+var ReactPropTypesSecret = __webpack_require__(12);
 
 module.exports = function () {
   function shim(props, propName, componentName, location, propFullName, secret) {
@@ -4927,8 +4962,8 @@ var invariant = __webpack_require__(5);
 var warning = __webpack_require__(8);
 var assign = __webpack_require__(6);
 
-var ReactPropTypesSecret = __webpack_require__(11);
-var checkPropTypes = __webpack_require__(10);
+var ReactPropTypesSecret = __webpack_require__(12);
+var checkPropTypes = __webpack_require__(11);
 
 module.exports = function (isValidElement, throwOnDirectAccess) {
   /* global Symbol */
@@ -5443,7 +5478,7 @@ module.exports = function (isValidElement, throwOnDirectAccess) {
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
- */var _typeof=typeof Symbol==="function"&&typeof Symbol.iterator==="symbol"?function(obj){return typeof obj;}:function(obj){return obj&&typeof Symbol==="function"&&obj.constructor===Symbol&&obj!==Symbol.prototype?"symbol":typeof obj;};if(process.env.NODE_ENV!=="production"){(function(){'use strict';var react=__webpack_require__(0);var invariant=__webpack_require__(5);var ExecutionEnvironment=__webpack_require__(9);var _assign=__webpack_require__(6);var EventListener=__webpack_require__(14);var require$$0=__webpack_require__(8);var hyphenateStyleName=__webpack_require__(40);var emptyFunction=__webpack_require__(4);var camelizeStyleName=__webpack_require__(38);var performanceNow=__webpack_require__(44);var propTypes=__webpack_require__(3);var emptyObject=__webpack_require__(7);var checkPropTypes=__webpack_require__(10);var shallowEqual=__webpack_require__(18);var containsNode=__webpack_require__(15);var focusNode=__webpack_require__(16);var getActiveElement=__webpack_require__(17);/**
+ */var _typeof=typeof Symbol==="function"&&typeof Symbol.iterator==="symbol"?function(obj){return typeof obj;}:function(obj){return obj&&typeof Symbol==="function"&&obj.constructor===Symbol&&obj!==Symbol.prototype?"symbol":typeof obj;};if(process.env.NODE_ENV!=="production"){(function(){'use strict';var react=__webpack_require__(0);var invariant=__webpack_require__(5);var ExecutionEnvironment=__webpack_require__(10);var _assign=__webpack_require__(6);var EventListener=__webpack_require__(14);var require$$0=__webpack_require__(8);var hyphenateStyleName=__webpack_require__(40);var emptyFunction=__webpack_require__(4);var camelizeStyleName=__webpack_require__(38);var performanceNow=__webpack_require__(44);var propTypes=__webpack_require__(3);var emptyObject=__webpack_require__(7);var checkPropTypes=__webpack_require__(11);var shallowEqual=__webpack_require__(18);var containsNode=__webpack_require__(15);var focusNode=__webpack_require__(16);var getActiveElement=__webpack_require__(17);/**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
  * This source code is licensed under the MIT license found in the
@@ -8855,7 +8890,7 @@ if(/^(https?|file):$/.test(protocol)){console.info('%cDownload the React DevTool
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var aa = __webpack_require__(0);__webpack_require__(5);var l = __webpack_require__(9),
+var aa = __webpack_require__(0);__webpack_require__(5);var l = __webpack_require__(10),
     n = __webpack_require__(6),
     ba = __webpack_require__(14),
     ca = __webpack_require__(4),
@@ -11263,7 +11298,7 @@ if (process.env.NODE_ENV !== "production") {
     var emptyObject = __webpack_require__(7);
     var invariant = __webpack_require__(5);
     var emptyFunction = __webpack_require__(4);
-    var checkPropTypes = __webpack_require__(10);
+    var checkPropTypes = __webpack_require__(11);
 
     /**
      * Copyright (c) 2013-present, Facebook, Inc.

@@ -18,6 +18,7 @@ export default [
     description: 'I love me some Ben\'s and Jerry\'s',
     skills: ['Ice Cream', 'Mint'],
     category: 'web_dev',
+    github: 'https://github.com/mhacks/mhacks-android',
     featured: true,
   },
   {

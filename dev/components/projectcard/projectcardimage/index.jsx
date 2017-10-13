@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
+
 const ProjectCardImageWrapper = styled.div`
 
   position: relative;
@@ -36,9 +37,7 @@ const ProjectCardTextOverlayGitHubButton = styled.button`
   
   &:hover {
     outline: none;
-    color: white;
     background-color: rgba(255,255,255, .25);
-    border: 1px solid rgba(255,255,255, .25);
     cursor: pointer;
   }
 
@@ -60,7 +59,6 @@ const ProjectCardImage = styled.img`
   object-fit: cover;
   z-index: 1;
   margin: -5px -10px -10px -5px;
-  
   filter: ${props => props.filterColor}
 `;
 
@@ -89,9 +87,9 @@ const ProjectCardImageComponent = props => (
 ProjectCardImageComponent.propTypes = {
   filterColor: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
-  github: PropTypes.string.isRequired,
   toggleActiveProject: PropTypes.func.isRequired,
   buttonVisible: PropTypes.string.isRequired,
+  github: PropTypes.string.isRequired,
 };
 
 export default ProjectCardImageComponent;

@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import devices from 'theme/devices';
 import PropTypes from 'prop-types';
+import ProjectCategories from 'config/project_categories';
 import ProjectCardImage from './projectcardimage';
 import ProjectCardText from './projectcardtext';
 
@@ -40,9 +41,8 @@ export default class ProjectCard extends React.Component {
     this.state = {
       isActive: false,
       filterColor: 'none',
+      filterClassName: `${this.props.project.category}-filter`,
       buttonVisible: 'hidden',
-      buttonBackgroundColor: 'transparent',
-      buttonTextColor: 'white',
     };
   }
   toggleActiveProject(e) {
@@ -51,12 +51,14 @@ export default class ProjectCard extends React.Component {
       this.setState({
         isActive: false,
         filterColor: 'none',
+        filterClassName: `${this.props.project.category}-filter`,
         buttonVisible: 'hidden',
       });
     } else {
       this.setState({
         isActive: true,
-        filterColor: 'url("#purple_filter") blur(2px)',
+        filterColor: `url(#${this.state.filterClassName}) blur(2px)`,
+        filterClassName: `${this.props.project.category}-filter`,
         buttonVisible: 'visible',
       });
     }
@@ -65,14 +67,8 @@ export default class ProjectCard extends React.Component {
     return (
       <ProjectCardWrapper>
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="0">
-          <filter id="purple_filter">
-            <feColorMatrix
-              type="matrix"
-              values="0.4 0 0.3 0 0
-              0 0.5 0 0 0
-              0 0 0.8 0 0
-              1 0 0 1 0 "
-            />
+          <filter id={this.state.filterClassName}>
+            {ProjectCategories[this.props.project.category].filter}
           </filter>
         </svg>
         <ProjectCardImage
@@ -80,6 +76,7 @@ export default class ProjectCard extends React.Component {
           filterColor={this.state.filterColor}
           toggleActiveProject={this.toggleActiveProject}
           buttonVisible={this.state.buttonVisible}
+          category={this.props.project.category}
           github={this.props.project.github}
         />
         <ProjectCardText

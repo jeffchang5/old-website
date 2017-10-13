@@ -26,7 +26,7 @@ const ProjectCardTextOverlay = styled.div`
 const ProjectCardTextOverlayFlexRow = styled.div`
   display: flex;
   flex-direction: column;
-  height: 65px;
+  height: 70px;
   width: 100%;
   align-self: center;
 `;
@@ -37,7 +37,7 @@ const ProjectCardTextOverlayGitHubButton = styled.button`
   
   &:hover {
     outline: none;
-    background-color: rgba(255,255,255, .25);
+    background-color: rgba(255,255,255, .15);
     cursor: pointer;
   }
 
@@ -47,10 +47,10 @@ const ProjectCardTextOverlayGitHubButton = styled.button`
   align-self: center;
   font-family: 'Open Sans Condensed', sans-serif;
   font-size: 20pt;
-  padding: 0 15px;
+  padding: 10px 15px;
   height: 100%;
-  border: 1px solid #FFF;
-  border-radius: 18px;
+  border: 2px solid #FFF;
+  border-radius: 4px;
 `;
 
 const ProjectCardImage = styled.img`
@@ -77,7 +77,7 @@ const ProjectCardImageComponent = props => (
           buttonVisible={props.buttonVisible}
           onClick={() => { location.href = props.github; }}
         >
-          View on GitHub
+          VIEW ON GITHUB
         </ProjectCardTextOverlayGitHubButton>
       </ProjectCardTextOverlayFlexRow>
     </ProjectCardTextOverlay>

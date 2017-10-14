@@ -12,6 +12,7 @@ const ProjectMenuWrapper = styled.div`
   flex-wrap: nowrap;
   justify-content: space-around;
   padding: 12px 0 12px 0;
+  margin: 0 0 24px 0;
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
 `;
@@ -20,15 +21,31 @@ const ProjectMenuWrapper = styled.div`
 export default class ProjectMenu extends React.Component {
   constructor(props) {
     super(props);
+    this.clearActiveStateCallback = this.clearActiveStateCallback.bind(this);
+    this.setActiveState = this.setActiveState.bind(this);
     this.state = {
-      active: false,
+      clearActive: 'hidden',
     };
   }
-
+  setActiveState(id) {
+    this.setState({
+      clearActive: 'visible',
+    });
+    this.props.callback(id);
+  }
+  clearActiveStateCallback() {
+    this.setState({
+      clearActive: 'hidden',
+    });
+    this.props.callback('default');
+  }
   render() {
     return (
       <div>
-        <ProjectSectionHeader />
+        <ProjectSectionHeader
+          clearActive={this.state.clearActive}
+          callback={this.clearActiveStateCallback}
+        />
         <ProjectMenuWrapper>
           { Object.keys(ProjectCategories).map(key => (
             <ProjectMenuItem
@@ -36,7 +53,7 @@ export default class ProjectMenu extends React.Component {
               id={key}
               name={ProjectCategories[key].name}
               decorationColor={ProjectCategories[key].accentColor}
-              onClick={this.props.callback}
+              onClick={this.setActiveState}
             />
           )) }
         </ProjectMenuWrapper>

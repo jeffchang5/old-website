@@ -2,6 +2,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import DoubleSlashIcon from 'resources/images/svg/double_slash';
+import PropTypes from 'prop-types';
 import ProjectClearButton from './projectclearbutton';
 
 const ProjectSectionHeaderWrapper = styled.div`
@@ -41,7 +42,7 @@ const SectionHeader = styled.div`
   vertical-align: text-bottom;
 `;
 
-export default () => (
+const ProjectSectionHeader = props => (
   <ProjectSectionHeaderWrapper>
     <HeaderWrapper>
       <SectionDecoration>
@@ -51,5 +52,15 @@ export default () => (
         <SectionHeader>Projects</SectionHeader>
       </HeaderTextWrapper>
     </HeaderWrapper>
-    <ProjectClearButton />
+    <ProjectClearButton
+      clearActive={props.clearActive}
+      callback={props.callback}
+    />
   </ProjectSectionHeaderWrapper>);
+
+ProjectSectionHeader.propTypes = {
+  callback: PropTypes.func.isRequired,
+  clearActive: PropTypes.string.isRequired,
+};
+
+export default ProjectSectionHeader;

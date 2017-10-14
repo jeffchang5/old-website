@@ -8,6 +8,7 @@ const ProjectClearSectionWrapper = styled.div`
   flex-direction: row;
   margin: 0 25px;
   justify-content: flex-end;
+  visibility: ${props => props.clearActive}  
 `;
 const ProjectClearButtonWrapper = styled.div`
   display: flex;
@@ -42,9 +43,9 @@ const ProjectClearButton = styled.div`
 `;
 
 const ProjectClearButtonComponent = props => (
-  <ProjectClearSectionWrapper>
+  <ProjectClearSectionWrapper clearActive={props.clearActive}>
     <ProjectButtonBottomWrapper>
-      <ProjectClearButtonWrapper onClick={() => props.callback}>
+      <ProjectClearButtonWrapper onClick={() => props.callback()}>
         <ProjectClearIcon viewBox="0 0 40 40">
           <path className="close-x" d="M 10,10 L 30,30 M 30,10 L 10,30" />
         </ProjectClearIcon>
@@ -56,6 +57,7 @@ const ProjectClearButtonComponent = props => (
 
 ProjectClearButtonComponent.propTypes = {
   callback: PropTypes.func.isRequired,
+  clearActive: PropTypes.string.isRequired,
 };
 export default ProjectClearButtonComponent;
 

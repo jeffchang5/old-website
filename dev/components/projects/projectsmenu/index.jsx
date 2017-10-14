@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import ProjectCategories from 'config/project_categories';
+import ProjectSectionHeader from './projectsectionheader';
 import ProjectMenuItem from './project_menu_item';
 
 
@@ -13,7 +14,6 @@ const ProjectMenuWrapper = styled.div`
   padding: 12px 0 12px 0;
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
-  margin-bottom: 30px;
 `;
 
 
@@ -27,17 +27,20 @@ export default class ProjectMenu extends React.Component {
 
   render() {
     return (
-      <ProjectMenuWrapper>
-        { Object.keys(ProjectCategories).map(key => (
-          <ProjectMenuItem
-            key={key}
-            id={key}
-            name={ProjectCategories[key].name}
-            decorationColor={ProjectCategories[key].accentColor}
-            onClick={this.props.callback}
-          />
-        )) }
-      </ProjectMenuWrapper>);
+      <div>
+        <ProjectSectionHeader />
+        <ProjectMenuWrapper>
+          { Object.keys(ProjectCategories).map(key => (
+            <ProjectMenuItem
+              key={key}
+              id={key}
+              name={ProjectCategories[key].name}
+              decorationColor={ProjectCategories[key].accentColor}
+              onClick={this.props.callback}
+            />
+          )) }
+        </ProjectMenuWrapper>
+      </div>);
   }
 }
 

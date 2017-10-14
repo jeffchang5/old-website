@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 const ProjectClearSectionWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  margin: 0 75px;
+  margin: 0 25px;
   justify-content: flex-end;
 `;
 const ProjectClearButtonWrapper = styled.div`

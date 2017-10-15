@@ -11,7 +11,7 @@ const SectionHeaderWrapper = styled.div`
   left: 15px;
   position: relative;
   flex-direction: row;
-  font-family: "Open Sans Condensed", Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', 'Roboto Condensed', sans-serif;
 
 `;
 const SectionDecoration = styled.div`

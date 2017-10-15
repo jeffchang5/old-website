@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import sample from 'resources/images/sample.jpg';
-import { WideContainer } from 'components/common/responsive_container';
+import Container from 'components/common/responsive_container';
 
 const NavBarBufferWrapper = styled.div`
   padding-top: 20vh;
@@ -70,7 +70,7 @@ const AboutDescriptionHeader = styled.div`
 
 export default () => (
   <NavBarBufferWrapper>
-    <WideContainer>
+    <Container>
       <AboutWrapper>
         <AboutSectionWrapper>
           <AboutImage src={sample} />
@@ -81,7 +81,7 @@ export default () => (
               <AboutDescriptionHeaderWrapper>
                 <AboutDescriptionHeader>JEFFREY CHANG</AboutDescriptionHeader>
                 <AboutDescriptionHeader>SOFTWARE DEVELOPER</AboutDescriptionHeader>
-                <AboutDescriptionHeader>HUMMUS ENTHUAIST</AboutDescriptionHeader>
+                <AboutDescriptionHeader>HUMMUS ENTHUSIAST</AboutDescriptionHeader>
               </AboutDescriptionHeaderWrapper>
             </AboutDescription>
           </AboutDescriptionWrapper>
@@ -91,5 +91,5 @@ export default () => (
           <AboutImage src={sample} />
         </AboutSectionWrapper>
       </AboutWrapper>
-    </WideContainer>
+    </Container>
   </NavBarBufferWrapper>);

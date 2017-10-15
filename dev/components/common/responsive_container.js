@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const WideContainer = styled.section`
+export default styled.section`
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
@@ -16,23 +16,3 @@ const WideContainer = styled.section`
     width: 1200px;
   }
 `;
-
-const NormalContainer = styled.section`
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
-  height: 88vh;
-  
-  @media (min-width: 768px) {
-    width: 650px;
-    
-  @media (min-width: 992px) {
-    width: 800px;
-  }
-  @media (min-width: 1200px) {
-    width: 1000px;
-  }
-`;
-
-export { WideContainer, NormalContainer };

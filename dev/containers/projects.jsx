@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { WideContainer } from 'components/common/responsive_container';
+import WideContainer from 'components/common/responsive_container';
 import ProjectMenu from 'components/projects/projectsmenu';
 import ProjectCard from 'components/projects/projectcard';
 import ProjectCardConfig from 'config/project_cards';

@@ -8,8 +8,8 @@ const NavWrapper = styled.div`
   display: flex;
   width: 100%;
   z-index: 99999;
-  background-color: white;
   flex-direction: column;
+  background-color: white;
   border-bottom: 1px solid #ccc;
 `;
 

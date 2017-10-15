@@ -15,7 +15,7 @@ const ProjectSectionHeaderWrapper = styled.div`
   margin: 30px 0 30px 0;
   left: 15px;
   flex-direction: row;
-  font-family: "Open Sans Condensed", Helvetica, Arial, sans-serif;
+  font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
 
 `;
 const SectionDecoration = styled.div`

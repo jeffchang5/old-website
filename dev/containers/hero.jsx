@@ -8,6 +8,7 @@ const NavBarBufferWrapper = styled.div`
 `;
 
 const AboutWrapper = styled.div`
+
   position: relative;
   display: flex;
   justify-content: center;
@@ -28,9 +29,17 @@ const AboutImage = styled.img`
 `;
 
 const AboutSectionWrapper = styled.div`
-  min-width: 400px;
-  width: 50%;
-  
+  @media (min-width: 768px) {
+    width: 90%;
+    
+  //@media (min-width: 992px) {
+  //  width: 90%;
+  //}
+  @media (min-width: 1200px) {
+    min-width: 50%;
+    width: 50%;
+  }
+  width: 90%;
 `;
 
 

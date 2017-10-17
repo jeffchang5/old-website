@@ -18,15 +18,13 @@ const ProjectDecorationWrapper = styled.div`
 `;
 
 const DecorationWrapper = styled.div`
-  width: 20px;
-  height: 90%;
-  margin: 0 7px;
+  width: 22px;
+  height: 100%;
+  margin: 0 6px;
 `;
 
 const ProjectTextWrapper = styled.div`
   height: 100%;
-  padding-top: 2px;
-  padding-bottom: 2px;
 `;
 
 const ProjectDecorationAndTextWrapper = styled.div`

@@ -30,15 +30,15 @@ const HeaderWrapper = styled.div`
 const HeaderTextWrapper = styled.div`
   height: 100%;
   width: 150px;
-  font-family: 'Helvetica', 'Roboto', sans-serif;
+  font-family: 'Fira Sans', 'Roboto', sans-serif;
   font-weight: 400;
-  margin-left: 15px;
+
 `;
 
 const SectionHeader = styled.div`
   position: absolute;
   bottom: 0;
-  font-size: 45pt;
+  font-size: 50pt;
   height:      45px;  
   line-height: 45px;
   vertical-align: text-bottom;

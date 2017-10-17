@@ -11,7 +11,6 @@ const ProjectCardWrapper = styled.div`
   }
   max-width: 80%;
   ${devices.small`
-
     max-width: 65%;
     height: 450px;
   `};

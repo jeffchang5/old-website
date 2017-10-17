@@ -15,7 +15,7 @@ const ProjectCardTextWrapper = styled.div`
 `;
 
 const ProjectCardDescription = styled.div`
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-weight: 200;
   flex-grow: 1;
   font-size: 15pt;
@@ -23,7 +23,7 @@ const ProjectCardDescription = styled.div`
 
 
 const ProjectCardTextHeader = styled.div`
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Fira Sans', sans-serif;
   font-weight: 300;
   font-size: 18pt;
 `;

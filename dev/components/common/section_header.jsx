@@ -12,7 +12,7 @@ const SectionHeaderWrapper = styled.div`
   left: 15px;
   position: relative;
   flex-direction: row;
-  font-family: 'Helvetica', 'Roboto', sans-serif;;
+  font-family: 'Fira Sans', 'Roboto', sans-serif;;
 
 `;
 const SectionDecoration = styled.div`
@@ -22,13 +22,12 @@ const SectionDecoration = styled.div`
 
 const HeaderTextWrapper = styled.div`
   height: 100%;
-  margin-left: 15px;
 `;
 
 const SectionHeader = styled.div`
   position: absolute;
   bottom: 0;
-  font-size: 45pt;
+  font-size: 50pt;
   height:      45px;  
   line-height: 45px;
   vertical-align: text-bottom;

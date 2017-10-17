@@ -6,7 +6,7 @@ export default [
     image: MHacksImage,
     header: 'MHacks',
     description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
-    skills: ['Android', 'Kotlin', 'RxJava', 'Dagger'],
+    skills: ['Android', 'Kotlin', 'RxJava'],
     category: 'android',
     github: 'https://github.com/mhacks/mhacks-android',
     featured: true,

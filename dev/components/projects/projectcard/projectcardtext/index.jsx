@@ -8,7 +8,6 @@ const ProjectCardTextWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin: 25px 35px;
-  font-family: 'Lora', serif;
   font-size: 15pt;
   max-width: 90%;
   height: 50%;
@@ -24,7 +23,8 @@ const ProjectCardDescription = styled.div`
 
 
 const ProjectCardTextHeader = styled.div`
-  font-family: 'Lora', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
   font-size: 18pt;
 `;
 

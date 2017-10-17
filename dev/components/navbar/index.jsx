@@ -38,12 +38,12 @@ const LogoImage = styled.img`
 export default () =>
   (<NavWrapper>
     <NavBarWrapper>
-      <NavItem url="/" text="About" />
-      <NavItem url="/" text="Projects" />
+      <NavItem url="/" text="ABOUT" />
+      <NavItem url="/" text="PROJECTS" />
       <LogoWrapper>
         <LogoImage alt="logo" src={logo} />
       </LogoWrapper>
-      <NavItem url="/" text="Resume" />
-      <NavItem url="/" text="Contact" />
+      <NavItem url="/" text="RESUME" />
+      <NavItem url="/" text="CONTACT" />
     </NavBarWrapper>
   </NavWrapper>);

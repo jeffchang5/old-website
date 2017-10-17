@@ -8,18 +8,18 @@ const ProjectSkillsWrapper = styled.div`
   display: flex;
   margin-top: 4px;
   font-family: 'Roboto Condensed', sans-serif;
-  font-size: 14pt;
+  font-size: 15pt;
   flex-direction: row;
 `;
 
 const ProjectDecorationWrapper = styled.div`
-  height: 30px;
+  height: 25px;
 `;
 
 const DecorationWrapper = styled.div`
   width: 20px;
-  height: 80%;
-  margin: 0 5px;
+  height: 90%;
+  margin: 0 7px;
 `;
 
 const ProjectTextWrapper = styled.div`
@@ -31,7 +31,7 @@ const ProjectTextWrapper = styled.div`
 const ProjectDecorationAndTextWrapper = styled.div`
   display: flex;
   height: 100%;
-  font-size: 14pt;
+  font-size: 15pt;
   flex-direction: row;
 `;
 

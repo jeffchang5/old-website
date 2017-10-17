@@ -3,12 +3,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const NavItem = styled.a`
-  font-family: 'Open Sans Condensed', sans-serif;
-  font-size: 18pt;
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 200;
+  font-size: 15pt;
+  padding-top: 10px;
 `;
 
 const NavHoverBar = styled.div`
-  height: 3px;
+  height: 4px;
   width: 100%;
   background-color: salmon;
   visibility: ${props => props.hoverBarVisible};

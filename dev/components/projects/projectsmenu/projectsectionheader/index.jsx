@@ -30,6 +30,8 @@ const HeaderWrapper = styled.div`
 const HeaderTextWrapper = styled.div`
   height: 100%;
   width: 150px;
+  font-family: 'Helvetica', 'Roboto', sans-serif;
+  font-weight: 400;
   margin-left: 15px;
 `;
 

@@ -2,6 +2,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import DoubleSlashIcon from 'resources/images/svg/double_slash';
+import PropTypes from 'prop-types';
 
 const SectionHeaderWrapper = styled.div`
   display: flex;
@@ -11,7 +12,7 @@ const SectionHeaderWrapper = styled.div`
   left: 15px;
   position: relative;
   flex-direction: row;
-  font-family: 'Helvetica Neue', 'Roboto Condensed', sans-serif;
+  font-family: 'Helvetica', 'Roboto', sans-serif;;
 
 `;
 const SectionDecoration = styled.div`
@@ -33,12 +34,18 @@ const SectionHeader = styled.div`
   vertical-align: text-bottom;
 `;
 
-export default () => (
+const SectionHeaderComponent = props => (
   <SectionHeaderWrapper>
     <SectionDecoration>
       <DoubleSlashIcon />
     </SectionDecoration>
     <HeaderTextWrapper>
-      <SectionHeader>Projects</SectionHeader>
+      <SectionHeader>{props.text}</SectionHeader>
     </HeaderTextWrapper>
   </SectionHeaderWrapper>);
+
+SectionHeaderComponent.propTypes = {
+  text: PropTypes.string.isRequired,
+};
+
+export default SectionHeaderComponent;

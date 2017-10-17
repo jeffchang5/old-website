@@ -7,7 +7,7 @@ const NavBarBufferWrapper = styled.div`
   padding-top: 20vh;
 `;
 
-const AboutWrapper = styled.div`
+const HeroWrapper = styled.div`
 
   position: relative;
   display: flex;
@@ -17,7 +17,7 @@ const AboutWrapper = styled.div`
 `;
 
 
-const AboutDescriptionWrapper = styled.div`
+const HeroDescriptionWrapper = styled.div`
   height: 100%;
   background-color: #3398CA;
 `;
@@ -28,22 +28,18 @@ const AboutImage = styled.img`
   height: 100%;
 `;
 
-const AboutSectionWrapper = styled.div`
+const HeroSectionWrapper = styled.div`
   @media (min-width: 768px) {
     width: 90%;
     
-  //@media (min-width: 992px) {
-  //  width: 90%;
-  //}
   @media (min-width: 1200px) {
     min-width: 50%;
     width: 50%;
   }
-  width: 90%;
 `;
 
 
-const AboutDescription = styled.div`
+const HeroDescription = styled.div`
   display: flex;
   flex-direction: row;
   height: 100%;
@@ -60,7 +56,7 @@ const AboutDescriptionHeaderWrapper = styled.div`
 const AboutDescriptionHeader = styled.div`
   display: flex;
   color: white;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Playfair Display', sans-serif;
   font-size: 2.5em;
   font-weight: 500;
   line-height: 35px;
@@ -71,25 +67,25 @@ const AboutDescriptionHeader = styled.div`
 export default () => (
   <NavBarBufferWrapper>
     <Container>
-      <AboutWrapper>
-        <AboutSectionWrapper>
+      <HeroWrapper>
+        <HeroSectionWrapper>
           <AboutImage src={sample} />
-        </AboutSectionWrapper>
-        <AboutSectionWrapper>
-          <AboutDescriptionWrapper>
-            <AboutDescription>
+        </HeroSectionWrapper>
+        <HeroSectionWrapper>
+          <HeroDescriptionWrapper>
+            <HeroDescription>
               <AboutDescriptionHeaderWrapper>
-                <AboutDescriptionHeader>JEFFREY CHANG</AboutDescriptionHeader>
-                <AboutDescriptionHeader>SOFTWARE DEVELOPER</AboutDescriptionHeader>
-                <AboutDescriptionHeader>HUMMUS ENTHUSIAST</AboutDescriptionHeader>
+                <AboutDescriptionHeader>Jeffrey Chang</AboutDescriptionHeader>
+                <AboutDescriptionHeader>Software Developer</AboutDescriptionHeader>
+                <AboutDescriptionHeader>Hummus Enthusiast</AboutDescriptionHeader>
               </AboutDescriptionHeaderWrapper>
-            </AboutDescription>
-          </AboutDescriptionWrapper>
-        </AboutSectionWrapper>
-        <AboutSectionWrapper />
-        <AboutSectionWrapper>
+            </HeroDescription>
+          </HeroDescriptionWrapper>
+        </HeroSectionWrapper>
+        <HeroSectionWrapper />
+        <HeroSectionWrapper>
           <AboutImage src={sample} />
-        </AboutSectionWrapper>
-      </AboutWrapper>
+        </HeroSectionWrapper>
+      </HeroWrapper>
     </Container>
   </NavBarBufferWrapper>);

@@ -6,7 +6,7 @@ import SlashDecoration from 'resources/images/svg/double_slash';
 
 const ProjectSkillsWrapper = styled.div`
   display: flex;
-  margin-top: 4px;
+  margin: 2px 0 2px 0;
   font-family: 'Fira Sans', sans-serif;
   font-size: 15pt;
   font-weight: 300;

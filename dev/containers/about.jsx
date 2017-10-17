@@ -7,36 +7,40 @@ import SectionHeader from 'components/common/section_header';
 const AboutWrapper = styled.div`
   display: flex;
   position: relative;
+  height: 100vh;
+
   justify-content: center;
   flex-wrap: wrap;
   margin: 0 auto;
 `;
 
-const AboutSectionWrapper = styled.div`
+const AboutQuestionWrapper = styled.div`
+  flex-grow: 1;
+  background-color: #C64A50;
   ${devices.desktop`
-    min-width: 50%;
-    width: 50%;
+    min-width: 20%;
+
   `};
-  background-color: aliceblue;
-  min-height: 400px;
+  
 `;
 
-const AboutDescriptionHeaderWrapper = styled.div`
-  align-self: center;
-  margin: 25px 0;
+const AboutTextWrapper = styled.div`
+  flex-grow: 1;
+  background-color: aliceblue;
 `;
 
 export default () => (
   <Container>
     <SectionHeader text="About" />
     <AboutWrapper>
-      <AboutSectionWrapper>
-        <AboutDescriptionHeaderWrapper>
+      <AboutQuestionWrapper>
+        {/* <AboutDescriptionHeaderWrapper> */}
 
-        </AboutDescriptionHeaderWrapper>
-      </AboutSectionWrapper>
-      <AboutSectionWrapper>
-      </AboutSectionWrapper>
+        {/* </AboutDescriptionHeaderWrapper> */}
+      </AboutQuestionWrapper>
+      <AboutTextWrapper>
+        Hello
+      </AboutTextWrapper>
     </AboutWrapper>
   </Container>
 );

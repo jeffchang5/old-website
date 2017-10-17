@@ -4,16 +4,17 @@ import sample from 'resources/images/sample.jpg';
 import Container from 'components/common/responsive_container';
 
 const NavBarBufferWrapper = styled.div`
-  padding-top: 20vh;
+  padding-top: 15vh;
 `;
 
 const HeroWrapper = styled.div`
 
   position: relative;
+  height: 80vh;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin: 0 auto;
+  margin: 0 auto 5vh auto;
 `;
 
 
@@ -55,7 +56,7 @@ const AboutDescriptionHeaderWrapper = styled.div`
 
 const AboutDescriptionHeader = styled.div`
   display: flex;
-  color: white;
+  color: #E1F5FE;
   font-family: 'Playfair Display', sans-serif;
   font-size: 2.5em;
   font-weight: 500;

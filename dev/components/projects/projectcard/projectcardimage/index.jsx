@@ -46,10 +46,10 @@ const ProjectCardTextOverlayGitHubButton = styled.button`
   color: white;
   align-self: center;
   font-family: 'Fira Sans', sans-serif;
-  font-size: 20pt;
+  font-size: 15pt;
   padding: 10px 15px;
   height: 100%;
-  border: 1px solid #FFF;
+  border: 2px solid #FFF;
   border-radius: 7px;
 `;
 

@@ -8,7 +8,7 @@ const ProjectSkillsWrapper = styled.div`
   display: flex;
   margin: 2px 0 2px 0;
   font-family: 'Fira Sans', sans-serif;
-  font-size: 15pt;
+  font-size: 14pt;
   font-weight: 300;
   flex-direction: row;
 `;
@@ -18,19 +18,20 @@ const ProjectDecorationWrapper = styled.div`
 `;
 
 const DecorationWrapper = styled.div`
-  width: 22px;
+  width: 18px;
   height: 100%;
-  margin: 0 6px;
+  margin: 0 4px;
 `;
 
 const ProjectTextWrapper = styled.div`
+
   height: 100%;
 `;
 
 const ProjectDecorationAndTextWrapper = styled.div`
   display: flex;
   height: 100%;
-  font-size: 15pt;
+  font-size: 14pt;
   flex-direction: row;
 `;
 

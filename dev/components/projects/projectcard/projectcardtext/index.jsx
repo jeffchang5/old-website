@@ -23,8 +23,8 @@ const ProjectCardDescription = styled.div`
 
 
 const ProjectCardTextHeader = styled.div`
-  font-family: 'Playfair Display', serif;
-  font-weight: 300;
+  font-family: 'Source Code Pro', serif;
+  font-weight: 400;
   font-size: 18pt;
 `;
 

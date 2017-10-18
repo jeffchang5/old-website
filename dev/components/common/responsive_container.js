@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export default styled.section`
   margin-right: auto;
   margin-left: auto;
+  
   padding-left: 15px;
   padding-right: 15px;
   

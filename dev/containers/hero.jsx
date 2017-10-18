@@ -10,7 +10,6 @@ const NavBarBufferWrapper = styled.div`
 const HeroWrapper = styled.div`
 
   position: relative;
-  height: 80vh;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;

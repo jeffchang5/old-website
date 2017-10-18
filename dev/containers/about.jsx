@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
+import AboutItems from 'config/about_items';
 import devices from 'theme/devices';
 import SectionHeader from 'components/common/section_header';
-import AboutChipComponent from 'components/about/aboutquestion'
+import AboutChipComponent from 'components/about/aboutquestion';
 
 const AboutWrapper = styled.div`
   display: flex;
@@ -54,16 +55,24 @@ const AboutTextWrapper = styled.div`
   }
 `;
 
-export default () => (
-  <Container>
-    <AboutSectionWrapper>
-      <SectionHeader text="About" />
-      <AboutWrapper>
-        <AboutChipComponent items={}/>
-        <AboutTextWrapper>
-          Hello
-        </AboutTextWrapper>
-      </AboutWrapper>
-    </AboutSectionWrapper>
-  </Container>
-);
+export default class extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      section_id: 0,
+    };
+  }
+  render() {
+    return (<Container>
+      <AboutSectionWrapper>
+        <SectionHeader text="About" />
+        <AboutWrapper>
+          <AboutChipComponent />
+          <AboutTextWrapper>
+            Hello
+          </AboutTextWrapper>
+        </AboutWrapper>
+      </AboutSectionWrapper>
+    </Container>);
+  }
+}

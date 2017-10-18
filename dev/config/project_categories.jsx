@@ -1,7 +1,6 @@
 import React from 'react';
 
 const feColorMatrixList = {
-  // 51%,78%,52%
   green: <feColorMatrix
     type="matrix"
     values="0.50  0.00  0.00  0.00  0.00

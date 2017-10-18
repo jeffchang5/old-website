@@ -4,10 +4,10 @@ import devices from 'theme/devices';
 
 const AboutHeader = styled.div`
   display: inline-block;
-  color: #E1F5FE;
-  font-family: 'Playfair Display', sans-serif;
-  font-size: 2.5em;
-  font-weight: 500;
+  color: white;
+  font-family: 'Source Code Pro', sans-serif;
+  font-size: 2.2em;
+  font-weight: 300;
   line-height: 35px;
   margin: 20px 0;
 `;
@@ -15,8 +15,28 @@ const AboutHeaderWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-self: flex-start;
+  padding-bottom: 10px;
+  border-bottom: 2px solid white;
 `;
-
+const AboutChipWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  margin: 15px 0;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-self: flex-start;
+`;
+const AboutChip = styled.div`
+  display: inline-block;
+  color: white;
+  border-radius: 23px;
+  border: 1px solid white;
+  padding: 12px 15px;
+  margin: 4px 4px;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 16pt;
+  font-weight: 300;
+`;
 const AboutQuestionWrapper = styled.div`
   background-color: #C64A50;
   ${devices.tablet`
@@ -31,6 +51,7 @@ const AboutQuestionWrapper = styled.div`
 
 const AboutQuestionContainer = styled.div`
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   width: 75%;
   margin: 40px auto;
@@ -42,6 +63,16 @@ export default () => (
         <AboutHeader>Get to know me.</AboutHeader>
         <AboutHeader>I don&#39;t bite.</AboutHeader>
       </AboutHeaderWrapper>
+      <AboutChipWrapper>
+        <AboutChip>About</AboutChip>
+        <AboutChip>Skills</AboutChip>
+        <AboutChip>Volunteer</AboutChip>
+        <AboutChip>Skills</AboutChip>
+        <AboutChip>About</AboutChip>
+        <AboutChip>Skills</AboutChip>
+        <AboutChip>About</AboutChip>
+        <AboutChip>Skills</AboutChip>
+      </AboutChipWrapper>
     </AboutQuestionContainer>
   </AboutQuestionWrapper>
 );

@@ -55,10 +55,10 @@ const AboutDescriptionHeaderWrapper = styled.div`
 
 const AboutDescriptionHeader = styled.div`
   display: flex;
-  color: #E1F5FE;
-  font-family: 'Playfair Display', sans-serif;
-  font-size: 2.5em;
-  font-weight: 500;
+  color: white;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 2.2em;
+  font-weight: 300;
   line-height: 35px;
   margin: 20px 0;
   min-width: 35%;
@@ -75,9 +75,9 @@ export default () => (
           <HeroDescriptionWrapper>
             <HeroDescription>
               <AboutDescriptionHeaderWrapper>
-                <AboutDescriptionHeader>Jeffrey Chang</AboutDescriptionHeader>
-                <AboutDescriptionHeader>Software Developer</AboutDescriptionHeader>
-                <AboutDescriptionHeader>Hummus Enthusiast</AboutDescriptionHeader>
+                <AboutDescriptionHeader>JEFFREY CHANG</AboutDescriptionHeader>
+                <AboutDescriptionHeader>SOFTWARE DEVELOPER</AboutDescriptionHeader>
+                <AboutDescriptionHeader>HUMMUS ENTHUSIAST</AboutDescriptionHeader>
               </AboutDescriptionHeaderWrapper>
             </HeroDescription>
           </HeroDescriptionWrapper>

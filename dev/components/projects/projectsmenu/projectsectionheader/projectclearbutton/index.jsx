@@ -35,7 +35,7 @@ const ProjectClearIcon = styled.svg`
 const ProjectClearButton = styled.div`
   line-height: 30px;
   font-size: 20pt;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Fira Sans', sans-serif;
   font-weight: 100;
   padding: 0;
   border: none;

@@ -13,15 +13,15 @@ const AboutHeader = styled.div`
 `;
 const AboutHeaderWrapper = styled.div`
   display: flex;
+  
   flex-direction: column;
-  align-self: flex-start;
+  align-self: flex-end;
   padding-bottom: 10px;
   border-bottom: 2px solid white;
 `;
 const AboutChipWrapper = styled.div`
-  width: 100%;
   display: flex;
-  margin: 15px 0;
+  margin: 30px 0;
   flex-wrap: wrap;
   flex-direction: row;
   align-self: flex-start;
@@ -29,15 +29,18 @@ const AboutChipWrapper = styled.div`
 const AboutChip = styled.div`
   display: inline-block;
   color: white;
-  border-radius: 23px;
+  border-radius: 22px;
   border: 1px solid white;
-  padding: 12px 15px;
-  margin: 4px 4px;
+  padding: 10px 15px;
+  margin: 6px 4px;
   font-family: 'Fira Sans', sans-serif;
   font-size: 16pt;
   font-weight: 300;
 `;
 const AboutQuestionWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-color: #C64A50;
   ${devices.tablet`
     width: 90%;
@@ -52,9 +55,10 @@ const AboutQuestionWrapper = styled.div`
 const AboutQuestionContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
+
   width: 75%;
-  margin: 40px auto;
+  height: 100%;
+  margin: 0 auto;
 `;
 export default () => (
   <AboutQuestionWrapper>
@@ -64,14 +68,12 @@ export default () => (
         <AboutHeader>I don&#39;t bite.</AboutHeader>
       </AboutHeaderWrapper>
       <AboutChipWrapper>
-        <AboutChip>About</AboutChip>
-        <AboutChip>Skills</AboutChip>
-        <AboutChip>Volunteer</AboutChip>
-        <AboutChip>Skills</AboutChip>
-        <AboutChip>About</AboutChip>
-        <AboutChip>Skills</AboutChip>
-        <AboutChip>About</AboutChip>
-        <AboutChip>Skills</AboutChip>
+        <AboutChip>ABOUT</AboutChip>
+        <AboutChip>EXPERIENCE</AboutChip>
+        <AboutChip>SKILLS</AboutChip>
+        <AboutChip>VOLUNTEER</AboutChip>
+        <AboutChip>HOBBIES</AboutChip>
+        <AboutChip>MUSIC</AboutChip>
       </AboutChipWrapper>
     </AboutQuestionContainer>
   </AboutQuestionWrapper>

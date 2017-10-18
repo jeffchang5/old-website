@@ -4,6 +4,7 @@ import Hero from 'containers/hero';
 import About from 'containers/about';
 import Projects from 'containers/projects';
 import styled from 'styled-components';
+import AboutCategories from 'config/about_items';
 
 const AppWrapper = styled.div``;
 
@@ -11,6 +12,6 @@ export default () =>
   (<AppWrapper>
     <NavBar />
     <Hero />
-    <About />
+    <About items={AboutCategories} />
     <Projects />
   </AppWrapper>);

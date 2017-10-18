@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import AboutItems from 'config/about_items';
 import devices from 'theme/devices';
+import PropTypes from 'prop-types';
 import SectionHeader from 'components/common/section_header';
-import AboutChipComponent from 'components/about/aboutquestion';
+import AboutChipComponent from 'components/about/aboutchips';
+import AboutDetailWrapper from 'components/about/aboutdetail';
 
 const AboutWrapper = styled.div`
   display: flex;
@@ -15,6 +16,11 @@ const AboutWrapper = styled.div`
   margin: 0 auto;
 `;
 
+const BlueWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  background-color: pink;
+`;
 const Container = styled.div`
   display: flex;
   flex-direction: row;
@@ -25,16 +31,18 @@ const Container = styled.div`
   padding-left: 15px;
   padding-right: 15px;
   width: 100vh;
-  
-  @media (min-width: 768px) {
-    width: 750px;
-    
-  @media (min-width: 992px) {
+
+  ${devices.tablet`
+    width: 750px
+  `};
+
+  ${devices.tablet`
     width: 1000px;
-  }
-  @media (min-width: 1200px) {
+  `};
+
+  ${devices.desktop`
     width: 1200px;
-  }
+  `}
 `;
 
 
@@ -42,24 +50,11 @@ const AboutSectionWrapper = styled.div`
   width: 100%;
 `;
 
-const AboutTextWrapper = styled.div`
-  background-color: aliceblue;
-  @media (min-width: 768px) {
-  min-height: 400px;
-  }
-    width: 90%;
-    
-  @media (min-width: 1200px) {
-    min-width: 50%;
-    width: 50%;
-  }
-`;
-
-export default class extends Component {
+class AboutComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      section_id: 0,
+      active_item: 0,
     };
   }
   render() {
@@ -67,12 +62,21 @@ export default class extends Component {
       <AboutSectionWrapper>
         <SectionHeader text="About" />
         <AboutWrapper>
-          <AboutChipComponent />
-          <AboutTextWrapper>
-            Hello
-          </AboutTextWrapper>
+          <AboutChipComponent items={this.props.items} />
+          { AboutDetailWrapper(this.props.items, BlueWrapper) }
         </AboutWrapper>
       </AboutSectionWrapper>
     </Container>);
   }
 }
+
+AboutComponent.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
+};
+
+export default AboutComponent;

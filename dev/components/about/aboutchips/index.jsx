@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import devices from 'theme/devices';
 
 const AboutHeader = styled.div`
@@ -60,21 +61,31 @@ const AboutQuestionContainer = styled.div`
   height: 100%;
   margin: 0 auto;
 `;
-export default () => (
+
+const AboutChipComponent = props => (
   <AboutQuestionWrapper>
     <AboutQuestionContainer>
       <AboutHeaderWrapper>
-        <AboutHeader>Get to know me.</AboutHeader>
-        <AboutHeader>I don&#39;t bite.</AboutHeader>
+        <AboutHeader>GET TO KNOW ME.</AboutHeader>
+        <AboutHeader>I DON&#39;T BITE.</AboutHeader>
       </AboutHeaderWrapper>
       <AboutChipWrapper>
-        <AboutChip>ABOUT</AboutChip>
-        <AboutChip>EXPERIENCE</AboutChip>
-        <AboutChip>SKILLS</AboutChip>
-        <AboutChip>VOLUNTEER</AboutChip>
-        <AboutChip>HOBBIES</AboutChip>
-        <AboutChip>MUSIC</AboutChip>
+        { props.items.map(item => (
+          <AboutChip key={item.id}>
+            {item.name}
+          </AboutChip>)) }
       </AboutChipWrapper>
     </AboutQuestionContainer>
   </AboutQuestionWrapper>
 );
+
+AboutChipComponent.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
+};
+
+export default AboutChipComponent;

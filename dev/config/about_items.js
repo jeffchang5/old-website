@@ -1,17 +1,26 @@
 export default [
   {
     id: 1,
-    name: 'Early Life',
-    description: '',
+    name: 'About',
   },
   {
     id: 2,
-    name: 'Hobbies',
-    description: '',
+    name: 'Experience',
   },
   {
     id: 3,
-    name: 'Quotes',
-    description: '',
+    name: 'Skills',
+  },
+  {
+    id: 4,
+    name: 'Volunteer',
+  },
+  {
+    id: 5,
+    name: 'Hobbies',
+  },
+  {
+    id: 6,
+    name: 'Music',
   },
 ];

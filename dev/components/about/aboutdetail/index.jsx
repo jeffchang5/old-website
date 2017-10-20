@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import devices from 'theme/devices';
 
-const AboutDetailWrapper = styled.div`
+const
+  AboutDetailWrapper = styled.div`
   width: 90%;
   @media (min-width: 768px) {
     min-height: 400px;
@@ -14,8 +15,14 @@ const AboutDetailWrapper = styled.div`
   }
 `;
 
-export default (detail, HOCComponent) => (
-  <AboutDetailWrapper>
-    <HOCComponent />
-  </AboutDetailWrapper>
-);
+const AboutDetailComponent = (props) => {
+  return (
+    <AboutDetailWrapper />
+  );
+};
+
+AboutDetailComponent.propTypes = {
+
+};
+
+export default AboutDetailComponent;

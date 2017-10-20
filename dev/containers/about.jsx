@@ -4,7 +4,7 @@ import devices from 'theme/devices';
 import PropTypes from 'prop-types';
 import SectionHeader from 'components/common/section_header';
 import AboutChipComponent from 'components/about/aboutchips';
-import AboutDetailWrapper from 'components/about/aboutdetail';
+import AboutDetail from 'components/about/aboutdetail';
 
 const AboutWrapper = styled.div`
   display: flex;
@@ -16,11 +16,6 @@ const AboutWrapper = styled.div`
   margin: 0 auto;
 `;
 
-const BlueWrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  background-color: pink;
-`;
 const Container = styled.div`
   display: flex;
   flex-direction: row;
@@ -57,13 +52,15 @@ class AboutComponent extends Component {
       active_item: 0,
     };
   }
+  // aboutCallback(viewComponent) {
+  // }
   render() {
     return (<Container>
       <AboutSectionWrapper>
         <SectionHeader text="About" />
         <AboutWrapper>
           <AboutChipComponent items={this.props.items} />
-          { AboutDetailWrapper(this.props.items, BlueWrapper) }
+          <AboutDetail />
         </AboutWrapper>
       </AboutSectionWrapper>
     </Container>);

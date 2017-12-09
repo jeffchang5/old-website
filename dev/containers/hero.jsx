@@ -1,91 +1,63 @@
 import React from 'react';
 import styled from 'styled-components';
-import sample from 'resources/images/sample.jpg';
+import NavBar from 'components/navbar';
 import Container from 'components/common/responsive_container';
+import HeroGallery from 'components/hero/gallery';
 
-const NavBarBufferWrapper = styled.div`
-  padding-top: 15vh;
-`;
-
-const HeroWrapper = styled.div`
-
-  position: relative;
+const SectionWrapper = styled.div`
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
   flex-wrap: wrap;
-  margin: 0 auto 5vh auto;
 `;
 
 
-const HeroDescriptionWrapper = styled.div`
-  height: 100%;
-  background-color: #3398CA;
+const HeroHeadlineWrapper = styled.header`
+  flex-grow: 1;
 `;
 
-const AboutImage = styled.img`
-  width: 100%;
-  object-fit: cover;
-  height: 100%;
+const HeroGallerySection = styled.header`
+  background-color: red;
+  flex-grow: 1;
 `;
 
 const HeroSectionWrapper = styled.div`
-  @media (min-width: 768px) {
-    width: 90%;
-    
-  @media (min-width: 1200px) {
-    min-width: 50%;
-    width: 50%;
-  }
-`;
-
-
-const HeroDescription = styled.div`
   display: flex;
-  flex-direction: row;
   height: 100%;
-  width: 75%;
-  margin: 0 auto;
 `;
 
-const AboutDescriptionHeaderWrapper = styled.div`
-  align-self: center;
-  margin: 25px 0;
-`;
-
-
-const AboutDescriptionHeader = styled.div`
-  display: flex;
-  color: white;
-  font-family: 'Source Code Pro', monospace;
-  font-size: 2.2em;
-  font-weight: 300;
-  line-height: 35px;
+const AboutHeadlineHeader = styled.div`
+  color: #3398CA;
+  font-family: 'Majestic Bold', monospace;
+  font-size: 4.0em;
+  font-weight: 500;
   margin: 20px 0;
-  min-width: 35%;
+`;
+
+const HeroQuoteWrapper = styled.section``;
+
+const HeroQuote = styled.section`
+  color: #3398CA;
+  font-family: 'Majestic Bold', monospace;
+  font-size: 4.0em;
+  font-weight: 500;
+  margin: 20px 0;
 `;
 
 export default () => (
-  <NavBarBufferWrapper>
-    <Container>
-      <HeroWrapper>
-        <HeroSectionWrapper>
-          <AboutImage src={sample} />
-        </HeroSectionWrapper>
-        <HeroSectionWrapper>
-          <HeroDescriptionWrapper>
-            <HeroDescription>
-              <AboutDescriptionHeaderWrapper>
-                <AboutDescriptionHeader>JEFFREY CHANG</AboutDescriptionHeader>
-                <AboutDescriptionHeader>SOFTWARE DEVELOPER</AboutDescriptionHeader>
-                <AboutDescriptionHeader>HUMMUS ENTHUSIAST</AboutDescriptionHeader>
-              </AboutDescriptionHeaderWrapper>
-            </HeroDescription>
-          </HeroDescriptionWrapper>
-        </HeroSectionWrapper>
-        <HeroSectionWrapper />
-        <HeroSectionWrapper>
-          <AboutImage src={sample} />
-        </HeroSectionWrapper>
-      </HeroWrapper>
+  <SectionWrapper>
+    <NavBar />
+    <Container style={{ flexGrow: '1' }}>
+      <HeroSectionWrapper>
+        <HeroGallerySection>
+          <HeroQuoteWrapper>
+            <HeroQuote>generic quote.</HeroQuote>
+          </HeroQuoteWrapper>
+          <HeroGallery />
+        </HeroGallerySection>
+        <HeroHeadlineWrapper>
+          <AboutHeadlineHeader>Jeffrey Chang</AboutHeadlineHeader>
+        </HeroHeadlineWrapper>
+      </HeroSectionWrapper>
     </Container>
-  </NavBarBufferWrapper>);
+  </SectionWrapper>);

@@ -4,7 +4,6 @@ import logo from 'resources/images/redbluelogo.png';
 import NavItem from './nav_item';
 
 const NavWrapper = styled.div`
-  position: fixed;
   display: flex;
   width: 100%;
   z-index: 99999;

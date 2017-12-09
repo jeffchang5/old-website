@@ -5,10 +5,10 @@ import devices from 'theme/devices';
 
 const AboutHeader = styled.div`
   display: inline-block;
-  color: white;
-  font-family: 'Source Code Pro', sans-serif;
+  color: #ef5350;
+  font-family: 'Fira Sans', sans-serif;
   font-size: 2.2em;
-  font-weight: 300;
+  font-weight: 500;
   line-height: 35px;
   margin: 20px 0;
 `;
@@ -18,7 +18,7 @@ const AboutHeaderWrapper = styled.div`
   flex-direction: column;
   align-self: flex-end;
   padding-bottom: 10px;
-  border-bottom: 2px solid white;
+  border-bottom: 5px solid #ef5350;
 `;
 const AboutChipWrapper = styled.div`
   display: flex;
@@ -29,9 +29,9 @@ const AboutChipWrapper = styled.div`
 `;
 const AboutChip = styled.div`
   display: inline-block;
-  color: white;
+  color: #ef5350;
   border-radius: 22px;
-  border: 1px solid white;
+  border: 1px solid #ef5350;
   padding: 10px 15px;
   margin: 6px 4px;
   font-family: 'Fira Sans', sans-serif;
@@ -42,7 +42,9 @@ const AboutQuestionWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #C64A50;
+  border: 1px solid #CCC;
+  border-radius: 7px 7px 0 0
+;
   ${devices.tablet`
     width: 90%;
     min-height: 400px;
@@ -66,8 +68,8 @@ const AboutChipComponent = props => (
   <AboutQuestionWrapper>
     <AboutQuestionContainer>
       <AboutHeaderWrapper>
-        <AboutHeader>GET TO KNOW ME.</AboutHeader>
-        <AboutHeader>I DON&#39;T BITE.</AboutHeader>
+        <AboutHeader>Get to know me.</AboutHeader>
+        <AboutHeader>I don&#39;t bite.</AboutHeader>
       </AboutHeaderWrapper>
       <AboutChipWrapper>
         { props.items.map(item => (

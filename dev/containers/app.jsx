@@ -10,7 +10,6 @@ const AppWrapper = styled.div``;
 
 export default () =>
   (<AppWrapper>
-    <NavBar />
     <Hero />
     <About items={AboutCategories} />
     <Projects />

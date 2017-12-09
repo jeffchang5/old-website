@@ -17,7 +17,6 @@ const HeroHeadlineWrapper = styled.header`
 `;
 
 const HeroGallerySection = styled.header`
-  background-color: red;
   flex-grow: 1;
 `;
 
@@ -27,11 +26,13 @@ const HeroSectionWrapper = styled.div`
 `;
 
 const AboutHeadlineHeader = styled.div`
+  text-align: end;
   color: #3398CA;
+  margin-top: 25%;
+  white-space: nowrap;
   font-family: 'Majestic Bold', monospace;
   font-size: 4.0em;
   font-weight: 500;
-  margin: 20px 0;
 `;
 
 const HeroQuoteWrapper = styled.section``;
@@ -43,6 +44,16 @@ const HeroQuote = styled.section`
   font-weight: 500;
   margin: 20px 0;
 `;
+
+const AboutSubHeader = styled.div`
+  //display: inline-block;
+  //float: right;
+  //clear: right;
+  font-family: 'Majestic Book Italic', sans-serif;
+  font-size: 2.5em;
+  //font-style: italic;
+`;
+
 
 export default () => (
   <SectionWrapper>
@@ -57,6 +68,9 @@ export default () => (
         </HeroGallerySection>
         <HeroHeadlineWrapper>
           <AboutHeadlineHeader>Jeffrey Chang</AboutHeadlineHeader>
+          <AboutSubHeader>Data Scientist.</AboutSubHeader>
+          <AboutSubHeader>Developer.</AboutSubHeader>
+          <AboutSubHeader>Student.</AboutSubHeader>
         </HeroHeadlineWrapper>
       </HeroSectionWrapper>
     </Container>

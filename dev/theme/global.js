@@ -1,11 +1,16 @@
 /* eslint-disable no-unused-expressions */
 import { injectGlobal } from 'styled-components';
-import MajesticFont from 'resources/images/fonts/Majesti-Banner-Bold.otf';
+import MajesticBoldFont from 'resources/images/fonts/Majesti-Banner-Bold.otf';
+import MajesticBookItalicFont from 'resources/images/fonts/Majesti-Banner-BookItalic.otf';
 
 injectGlobal`
   @font-face {
     font-family: "Majestic Bold";
-    src: url('${MajesticFont}');
+    src: url('${MajesticBoldFont}');
+  }
+    @font-face {
+    font-family: "Majestic Book Italic";
+    src: url('${MajesticBookItalicFont}');
   }
   body {  
     margin: 0;

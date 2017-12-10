@@ -93,8 +93,7 @@ const HeroQuoteWrapper = styled.section`
     left: -10px;
     content: '\\201D';
     vertical-align: top;
-  }  
-  
+  }
 `;
 
 const HeroQuote = styled.blockquote`

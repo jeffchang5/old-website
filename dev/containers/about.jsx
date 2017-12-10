@@ -9,39 +9,26 @@ import AboutDetail from 'components/about/aboutdetail';
 const AboutWrapper = styled.div`
   display: flex;
   position: relative;
-  min-height: 450px;
-
-  justify-content: center;
+  flex: 1;
   flex-wrap: wrap;
-  margin: 0 auto;
 `;
 
 const Container = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  margin: 175px auto;
-  height: 90%;
+  height: 100vh;
   
   padding-left: 15px;
   padding-right: 15px;
-  width: 100vh;
-
-  ${devices.tablet`
-    width: 750px
-  `};
-
-  ${devices.tablet`
-    width: 1000px;
-  `};
-
-  ${devices.desktop`
-    width: 1200px;
-  `}
+  width: 100vw;
 `;
 
 
 const AboutSectionWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-grow: 5;
   width: 100%;
 `;
 
@@ -56,8 +43,8 @@ class AboutComponent extends Component {
   // }
   render() {
     return (<Container>
+      <SectionHeader text="About" />
       <AboutSectionWrapper>
-        <SectionHeader text="About" />
         <AboutWrapper>
           <AboutChipComponent items={this.props.items} />
           <AboutDetail />

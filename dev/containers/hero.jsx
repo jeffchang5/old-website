@@ -38,8 +38,20 @@ const AboutPortfolioHeader = styled.div`
   font-weight: 500;
 `;
 
-const HeroQuoteHoverBar = styled.div`
-  margin-top: 10%;
+const HeroSegmentBackground = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 50px;
+  min-height: 80%;
+  width: 100%;
+  background: aliceblue;
+  z-index: -1;
+`;
+
+const HeroQuoteHat = styled.div`
+  margin-top: 12%;
   height: 10px;
   width: 100px;
   background: #ef5350;
@@ -145,8 +157,9 @@ export default () => (
     <NavBar />
     <Container style={{ flexGrow: '1' }}>
       <HeroSectionWrapper>
+        <HeroSegmentBackground />
         <HeroQuoteSection>
-          <HeroQuoteHoverBar />
+          <HeroQuoteHat />
           <HeroQuoteWrapper>
             <HeroQuote>We have always held to the hope, the belief,
               the conviction that there is a better life, a better world,

@@ -46,7 +46,7 @@ const HeroSegmentBackground = styled.div`
   bottom: 50px;
   min-height: 80%;
   width: 100%;
-  background: aliceblue;
+  background: #F5F5F5;
   z-index: -1;
 `;
 
@@ -54,7 +54,7 @@ const HeroQuoteHat = styled.div`
   margin-top: 12%;
   height: 10px;
   width: 100px;
-  background: #ef5350;
+  background: #c60039;
 `;
 
 const Container = styled.div`
@@ -77,7 +77,7 @@ const HeroQuoteWrapper = styled.section`
     position: relative;
     font-size: 10em;
     top: 45px;
-    color: #eee;
+    color: #c54a50;
     left: 0;
     content: "\\201C";
     line-height: 100px;
@@ -89,7 +89,7 @@ const HeroQuoteWrapper = styled.section`
     font-size: 10em;
     top: 70px;
     line-height: 50px;
-    color: #eee;
+    color: #c54a50;
     left: -10px;
     content: '\\201D';
     vertical-align: top;
@@ -98,7 +98,7 @@ const HeroQuoteWrapper = styled.section`
 `;
 
 const HeroQuote = styled.blockquote`
-  color: #ef5350;
+  color: #c54a50;
   display: inline;
   font-family: 'Majestic Bold', sans-serif;
   font-size: 3.0em;

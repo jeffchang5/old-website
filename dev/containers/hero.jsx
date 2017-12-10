@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import NavBar from 'components/navbar';
-import Container from 'components/common/responsive_container';
 import HeroGallery from 'components/hero/gallery';
+import Portrait from 'resources/images/portfolio.png';
 
 const SectionWrapper = styled.div`
   display: flex;
@@ -13,45 +13,130 @@ const SectionWrapper = styled.div`
 
 
 const HeroHeadlineWrapper = styled.header`
-  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  flex: 3;
 `;
 
-const HeroGallerySection = styled.header`
-  flex-grow: 1;
+const HeroQuoteSection = styled.header`
+  flex: 4;
+  margin: 0 85px;
 `;
 
 const HeroSectionWrapper = styled.div`
   display: flex;
-  height: 100%;
+  flex: 1;
 `;
 
-const AboutHeadlineHeader = styled.div`
-  text-align: end;
+const AboutPortfolioHeader = styled.div`
   color: #3398CA;
-  margin-top: 25%;
   white-space: nowrap;
+  margin: 10px 0 0 0;
   font-family: 'Majestic Bold', monospace;
   font-size: 4.0em;
   font-weight: 500;
 `;
 
-const HeroQuoteWrapper = styled.section``;
+const HeroQuoteHoverBar = styled.div`
+  margin-top: 10%;
+  height: 10px;
+  width: 100px;
+  background: #ef5350;
+`;
 
-const HeroQuote = styled.section`
-  color: #3398CA;
-  font-family: 'Majestic Bold', monospace;
-  font-size: 4.0em;
-  font-weight: 500;
-  margin: 20px 0;
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex:1 0 0;
+  margin-right: auto;
+  margin-left: auto;
+  
+  padding-left: 15px;
+  padding-right: 15px;
+  
+`;
+
+const HeroQuoteWrapper = styled.section`
+  flex: 1;
+  position: relative;
+  &:before {
+    font-family: Georgia, serif;
+    position: relative;
+    font-size: 10em;
+    top: 45px;
+    color: #eee;
+    left: 0;
+    content: "\\201C";
+    line-height: 100px;
+    vertical-align: bottom;
+  }
+  &:after {
+    font-family: Georgia, serif;
+    position: relative;
+    font-size: 10em;
+    top: 70px;
+    line-height: 50px;
+    color: #eee;
+    left: -10px;
+    content: '\\201D';
+    vertical-align: top;
+  }  
+  
+`;
+
+const HeroQuote = styled.blockquote`
+  color: #ef5350;
+  display: inline;
+  font-family: 'Majestic Bold', sans-serif;
+  font-size: 3.0em;
+  hyphens: auto;
+  font-weight: 200;
+  margin: 15px 0 0;
+  position: relative;
+  padding: 15px 15px 0;
+`;
+
+const Divider = styled.div`
+  display: block;
+  height: 1px;
+  width: auto;
+  background: #CCC;
+  margin: 40px 30px 0 0;
+`;
+
+const HeroQuoteCitation = styled.div`
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 200;
+  text-align: right;
+  margin-right: 25px;
+  font-size: 2.2em;
+  margin-top: 20px;
+`;
+const HeroPortrait = styled.img`
+  width: auto;
+  align-self: flex-end;
+  flex-shrink: initial;
+  max-width: 300px;
+  max-height: 350px;
+  
+`;
+const HeroPortfolio = styled.section`
+  flex: 1;
 `;
 
 const AboutSubHeader = styled.div`
-  //display: inline-block;
-  //float: right;
-  //clear: right;
-  font-family: 'Majestic Book Italic', sans-serif;
-  font-size: 2.5em;
-  //font-style: italic;
+  position: relative;
+`;
+
+const AboutPortfolioSubHeaderWrapper = styled.div`
+  max-width: 400px;
+  white-space: nowrap;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 2.2em;
+  font-weight: 200;
+  border-top: 1px solid #ccc;
+  padding: 10px 0;
 `;
 
 
@@ -60,17 +145,28 @@ export default () => (
     <NavBar />
     <Container style={{ flexGrow: '1' }}>
       <HeroSectionWrapper>
-        <HeroGallerySection>
+        <HeroQuoteSection>
+          <HeroQuoteHoverBar />
           <HeroQuoteWrapper>
-            <HeroQuote>generic quote.</HeroQuote>
+            <HeroQuote>We have always held to the hope, the belief,
+              the conviction that there is a better life, a better world,
+              beyond the horizon.
+            </HeroQuote>
           </HeroQuoteWrapper>
+          <Divider />
+          <HeroQuoteCitation>Franklin D. Roosevelt</HeroQuoteCitation>
           <HeroGallery />
-        </HeroGallerySection>
+        </HeroQuoteSection>
         <HeroHeadlineWrapper>
-          <AboutHeadlineHeader>Jeffrey Chang</AboutHeadlineHeader>
-          <AboutSubHeader>Data Scientist.</AboutSubHeader>
-          <AboutSubHeader>Developer.</AboutSubHeader>
-          <AboutSubHeader>Student.</AboutSubHeader>
+          <HeroPortfolio>
+            <HeroPortrait src={Portrait} />
+            <AboutPortfolioHeader>Jeffrey Chang</AboutPortfolioHeader>
+            <AboutPortfolioSubHeaderWrapper>
+              <AboutSubHeader>Data Scientist</AboutSubHeader>
+              <AboutSubHeader>Developer</AboutSubHeader>
+              <AboutSubHeader>Student</AboutSubHeader>
+            </AboutPortfolioSubHeaderWrapper>
+          </HeroPortfolio>
         </HeroHeadlineWrapper>
       </HeroSectionWrapper>
     </Container>

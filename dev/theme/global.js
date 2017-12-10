@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-expressions */
 import { injectGlobal } from 'styled-components';
-import MajesticBoldFont from 'resources/images/fonts/Majesti-Banner-Bold.otf';
-import MajesticBookItalicFont from 'resources/images/fonts/Majesti-Banner-BookItalic.otf';
+import MajesticBoldFont from 'resources/fonts/Majesti-Banner-Bold.otf';
+import MajesticBookItalicFont from 'resources/fonts/Majesti-Banner-BookItalic.otf';
 
 injectGlobal`
   @font-face {

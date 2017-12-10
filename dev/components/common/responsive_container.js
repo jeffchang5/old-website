@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
 export default styled.section`
+  display: flex;
+  flex-direction: column;
+  flex:1 0 0;
   margin-right: auto;
   margin-left: auto;
   

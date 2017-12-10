@@ -8,19 +8,26 @@ const AboutHeader = styled.div`
   display: inline-block;
   color: #ef5350;
   font-family: 'Majestic Bold', sans-serif;
-  font-size: 3.5em;
+  font-size: 4.5em;
   font-weight: 500;
   line-height: 35px;
   margin: 30px 0;
 `;
+const AboutHeaderContainer = styled.div`
+  display: flex;
+  flex: 2;
+  flex-direction: row;
+  align-content: flex-end;
+  border-bottom: 5px solid #ef5350;
+  //align-content: flex-end;
+`;
+
 const AboutHeaderWrapper = styled.div`
   display: flex;
-  
-  flex: 1;
   flex-direction: column;
-  padding-bottom: 20px;
-  border-bottom: 5px solid #ef5350;
+  align-self: center;
 `;
+
 const AboutChipWrapper = styled.div`
   display: flex;
   flex: 1;
@@ -30,12 +37,12 @@ const AboutChipWrapper = styled.div`
 const AboutChip = styled.div`
   display: inline-block;
   color: #ef5350;
-  border-radius: 22px;
+  border-radius: 35px;
   border: 1px solid #ef5350;
-  padding: 10px 15px;
-  margin: 6px 4px;
+  padding: 10px 18px;
+  margin: 8px;
   font-family: 'Fira Sans', sans-serif;
-  font-size: 16pt;
+  font-size: 20pt;
   font-weight: 300;
 `;
 
@@ -58,10 +65,12 @@ const AboutChipContainer = styled.div`
 const AboutChipComponent = props => (
   <AboutChipContainer>
     <AboutChipSection>
-      <AboutHeaderWrapper>
-        <AboutHeader>Get to know me.</AboutHeader>
-        <AboutHeader>I don&#39;t bite.</AboutHeader>
-      </AboutHeaderWrapper>
+      <AboutHeaderContainer>
+        <AboutHeaderWrapper>
+          <AboutHeader>Get to know me.</AboutHeader>
+          <AboutHeader>I don&#39;t bite.</AboutHeader>
+        </AboutHeaderWrapper>
+      </AboutHeaderContainer>
       <AboutChipWrapper>
         { props.items.map(item => (
           <AboutChip key={item.id}>
@@ -69,7 +78,7 @@ const AboutChipComponent = props => (
           </AboutChip>)) }
       </AboutChipWrapper>
     </AboutChipSection>
-    <Bracket />
+    <Bracket color="#ef5350" />
   </AboutChipContainer>
 );
 

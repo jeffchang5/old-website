@@ -19,7 +19,7 @@ const SectionHeaderWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px 0;
+  padding: 20px 0 0 0;
 `;
 
 const SectionHeaderComponent = props => (

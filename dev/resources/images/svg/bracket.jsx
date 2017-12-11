@@ -15,8 +15,8 @@ const Bracket = styled.svg`
 
 const BracketDecoration = props => (
   <Bracket color={props.color} viewBox="0 0 184.9 37.3">
-    <path d="M8.6,29.1L176.2,29V0h8.7v37.3H0V0h8.6V29.1z"/>
-  </Bracket>yarn 
+    <path d="M8.6,29.1L176.2,29V0h8.7v37.3H0V0h8.6V29.1z" />
+  </Bracket>
 );
 BracketDecoration.propTypes = {
   color: PropTypes.string,

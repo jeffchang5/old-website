@@ -10,22 +10,20 @@ const AboutHeader = styled.div`
   font-family: 'Majestic Bold', sans-serif;
   font-size: 4.5em;
   font-weight: 500;
-  line-height: 35px;
-  margin: 30px 0;
+  //margin: px 0;
 `;
 const AboutHeaderContainer = styled.div`
   display: flex;
   flex: 2;
   flex-direction: row;
   align-content: flex-end;
-  border-bottom: 5px solid #ef5350;
   //align-content: flex-end;
 `;
 
 const AboutHeaderWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-self: center;
+  margin-top: 10%;
 `;
 
 const AboutChipWrapper = styled.div`
@@ -33,6 +31,9 @@ const AboutChipWrapper = styled.div`
   flex: 1;
   margin: 30px 0;
   flex-wrap: wrap;
+  border-top: 5px solid #ef5350;
+  padding-top: 20px;
+
 `;
 const AboutChip = styled.div`
   display: inline-block;
@@ -47,8 +48,9 @@ const AboutChip = styled.div`
 `;
 
 const AboutChipSection = styled.section`
-  align-self: center;
   display: flex;
+  align-self: center;
+  margin: 0 40px;
   flex: 1;
   flex-direction: column;
   max-width: 85%;

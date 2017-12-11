@@ -1,26 +1,26 @@
 export default [
   {
-    id: 1,
-    name: 'About',
+    id: 'general',
+    name: 'General',
   },
   {
-    id: 2,
+    id: 'experience',
     name: 'Experience',
   },
   {
-    id: 3,
+    id: 'skills',
     name: 'Skills',
   },
   {
-    id: 4,
+    id: 'volunteer',
     name: 'Volunteer',
   },
   {
-    id: 5,
+    id: 'hobbies',
     name: 'Hobbies',
   },
   {
-    id: 6,
+    id: 'music',
     name: 'Music',
   },
 ];

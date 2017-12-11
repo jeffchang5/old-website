@@ -6,4 +6,4 @@ export default {
   // experience: Experience,
   skills: '',
   volunteer: '',
-}
+};

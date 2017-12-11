@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import devices from 'theme/devices';
+import devices from 'theme/devices';/**/
 import PropTypes from 'prop-types';
 import SectionHeader from 'components/common/section_header';
 import AboutChipComponent from 'components/about/aboutchips';
-import AboutDetail from 'components/about/aboutdetail';
+import AboutDetail from 'components/about/aboutviewwrapper';
 
 const AboutWrapper = styled.div`
   display: flex;
@@ -36,7 +36,7 @@ class AboutComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      active_item: 0,
+      active_item: 'general',
     };
   }
   // aboutCallback(viewComponent) {

@@ -14,30 +14,33 @@ const AboutHeader = styled.div`
 `;
 const AboutHeaderContainer = styled.div`
   display: flex;
-  flex: 2;
+  flex: 1;
   flex-direction: row;
   align-content: flex-end;
-  //align-content: flex-end;
 `;
 
 const AboutHeaderWrapper = styled.div`
   display: flex;
+  align-self: center;
+  //border-bottom: 5px solid #ef5350;
+  padding-bottom: 20px;
+  margin-top: 20px;
   flex-direction: column;
-  margin-top: 10%;
 `;
 
 const AboutChipWrapper = styled.div`
   display: flex;
+  align-content: center;
   flex: 1;
   margin: 30px 0;
   flex-wrap: wrap;
-  border-top: 5px solid #ef5350;
-  padding-top: 20px;
 
 `;
 const AboutChip = styled.div`
   display: inline-block;
-  color: #ef5350;
+  background: ${props => (props.active ? '#ef5350' : 'white')};
+  color: ${props => (props.active ? 'white' : '#ef5350')};
+  max-height: 60px;
   border-radius: 35px;
   border: 1px solid #ef5350;
   padding: 10px 18px;
@@ -53,7 +56,14 @@ const AboutChipSection = styled.section`
   margin: 0 40px;
   flex: 1;
   flex-direction: column;
-  max-width: 85%;
+  max-width: 80%;
+`;
+
+const AboutChipBarDecoration = styled.div`
+  min-width: 100px;
+  width: 50%;
+  height: 15px;
+  background: #ef5350;
 `;
 
 const AboutChipContainer = styled.div`
@@ -73,11 +83,13 @@ const AboutChipComponent = props => (
           <AboutHeader>I don&#39;t bite.</AboutHeader>
         </AboutHeaderWrapper>
       </AboutHeaderContainer>
+      <AboutChipBarDecoration />
       <AboutChipWrapper>
-        { props.items.map(item => (
-          <AboutChip key={item.id}>
-            {item.name}
-          </AboutChip>)) }
+        { props.items.map((item) => {
+          if (item.id === props.active) {
+            return <AboutChip active key={item.id}>{item.name}</AboutChip>;
+          } return <AboutChip key={item.id}>{item.name}</AboutChip>;
+        }) }
       </AboutChipWrapper>
     </AboutChipSection>
     <Bracket color="#ef5350" />
@@ -87,10 +99,11 @@ const AboutChipComponent = props => (
 AboutChipComponent.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number.isRequired,
+      id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
     }),
   ).isRequired,
+  active: PropTypes.string.isRequired,
 };
 
 export default AboutChipComponent;

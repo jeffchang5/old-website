@@ -4,7 +4,7 @@ import devices from 'theme/devices';/**/
 import PropTypes from 'prop-types';
 import SectionHeader from 'components/common/section_header';
 import AboutChipComponent from 'components/about/aboutchips';
-import AboutDetail from 'components/about/aboutviewwrapper';
+import AboutViewWrapper from 'components/about/aboutviewwrapper';
 
 const AboutWrapper = styled.div`
   display: flex;
@@ -32,6 +32,12 @@ const AboutSectionWrapper = styled.div`
   width: 100%;
 `;
 
+
+const findAboutItem = (items, id) => (
+  items.filter(aboutItems =>
+    aboutItems.id === id,
+  ));
+
 class AboutComponent extends Component {
   constructor(props) {
     super(props);
@@ -46,18 +52,23 @@ class AboutComponent extends Component {
       <SectionHeader text="About" />
       <AboutSectionWrapper>
         <AboutWrapper>
-          <AboutChipComponent items={this.props.items} />
-          <AboutDetail />
+          <AboutChipComponent
+            active={this.state.active_item}
+            items={this.props.items} />
+          <AboutViewWrapper
+            data={findAboutItem(this.props.items, this.state.active_item)[0]}
+          />
         </AboutWrapper>
       </AboutSectionWrapper>
     </Container>);
   }
 }
 
+
 AboutComponent.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number.isRequired,
+      id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
     }),
   ).isRequired,

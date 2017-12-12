@@ -38,8 +38,8 @@ const AboutChipWrapper = styled.div`
 `;
 const AboutChip = styled.div`
   display: inline-block;
-  background: ${props => (props.active ? '#ef5350' : 'white')};
-  color: ${props => (props.active ? 'white' : '#ef5350')};
+  background: ${props => (props.active ? '#ef53501A' : 'white')};
+  color: #ef5350;
   max-height: 60px;
   border-radius: 35px;
   border: 1px solid #ef5350;

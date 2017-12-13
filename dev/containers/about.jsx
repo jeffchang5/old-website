@@ -44,17 +44,24 @@ class AboutComponent extends Component {
     this.state = {
       active_item: 'general',
     };
+    this.aboutChipCallback = this.aboutChipCallback.bind(this);
   }
-  // aboutCallback(viewComponent) {
-  // }
+  aboutChipCallback(aboutId) {
+    console.log(aboutId);
+    this.setState({
+      active_item: aboutId,
+    });
+  }
   render() {
     return (<Container>
       <SectionHeader text="About" />
       <AboutSectionWrapper>
         <AboutWrapper>
           <AboutChipComponent
+            callback={this.aboutChipCallback}
             active={this.state.active_item}
-            items={this.props.items} />
+            items={this.props.items}
+          />
           <AboutViewWrapper
             data={findAboutItem(this.props.items, this.state.active_item)[0]}
           />

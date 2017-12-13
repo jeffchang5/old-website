@@ -38,6 +38,7 @@ const AboutChipWrapper = styled.div`
 `;
 const AboutChip = styled.div`
   display: inline-block;
+  cursor: pointer; 
   background: ${props => (props.active ? '#ef53501A' : 'white')};
   color: #ef5350;
   max-height: 60px;
@@ -88,7 +89,13 @@ const AboutChipComponent = props => (
         { props.items.map((item) => {
           if (item.id === props.active) {
             return <AboutChip active key={item.id}>{item.name}</AboutChip>;
-          } return <AboutChip key={item.id}>{item.name}</AboutChip>;
+          }
+          return (
+            <AboutChip
+              onClick={() => props.callback(item.id)}
+              key={item.id}
+            >{item.name}
+            </AboutChip>);
         }) }
       </AboutChipWrapper>
     </AboutChipSection>
@@ -104,6 +111,7 @@ AboutChipComponent.propTypes = {
     }),
   ).isRequired,
   active: PropTypes.string.isRequired,
+  callback: PropTypes.func.isRequired,
 };
 
 export default AboutChipComponent;

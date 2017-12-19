@@ -22,7 +22,6 @@ const AboutHeaderContainer = styled.div`
 const AboutHeaderWrapper = styled.div`
   display: flex;
   align-self: center;
-  //border-bottom: 5px solid #ef5350;
   padding-bottom: 20px;
   margin-top: 20px;
   flex-direction: column;
@@ -111,7 +110,6 @@ AboutChipComponent.propTypes = {
     }),
   ).isRequired,
   active: PropTypes.string.isRequired,
-  callback: PropTypes.func.isRequired,
 };
 
 export default AboutChipComponent;

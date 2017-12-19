@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 
 const SectionHeader = styled.div`
-  font-family: 'Majestic Bold', 'Roboto', sans-serif;;
+  font-family: ${props => props.theme.font.header};
   font-size: 5.0em;
 `;
 

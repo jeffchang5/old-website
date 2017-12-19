@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const NavItem = styled.a`
-  font-family: 'Fira Sans', sans-serif;
+  font-family: ${props => props.theme.font.sanserif};
   font-weight: 200;
   font-size: 15pt;
   padding-top: 10px;

@@ -28,7 +28,7 @@ const AboutHeader = styled.h1`
   display: inline;
   color: #3398CA;
   margin: 100px 0 20px 0;
-  font-family: 'Fira Sans', sans-serif;
+  font-family: ${props => props.theme.font.sanserif};
   font-size: 4.5em;
   padding: 0 10px 10px 0;
 `;

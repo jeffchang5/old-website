@@ -11,7 +11,7 @@ const GeneralSectionWrapper = styled.div`
 `;
 
 const AboutSubHeader = styled.div`
-  font-family: 'Noto Serif', sans-serif;
+  font-family: ${props => props.theme.font.subheader};
   align-self: center;
   display: inline-block;
   padding: 30px 0;
@@ -21,7 +21,7 @@ const AboutSubHeader = styled.div`
 `;
 
 const AboutBody = styled.div`
-  font-family: 'Fira Sans', sans-serif;
+  font-family: ${props => props.theme.font.sanserif};
   align-self: center;
   hyphens: auto;
   display: inline-block;

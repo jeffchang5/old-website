@@ -19,7 +19,7 @@ module.exports = {
   module: {
     rules: [
       { test: /\.jsx?$/, loader: 'babel-loader' },
-      { test: /\.(svg|png|jpg|gif|otf)$/,
+      { test: /\.(svg|png|jpg|gif|otf|ttf)$/,
         use: [{ loader: 'file-loader',
           options: {
             name: '[name].[ext]',

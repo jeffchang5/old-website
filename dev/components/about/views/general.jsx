@@ -22,18 +22,12 @@ const AboutSubHeader = styled.div`
 
 const AboutBody = styled.div`
   font-family: ${props => props.theme.font.sanserif};
+  color: ${props => props.theme.color.text};
   align-self: center;
-  hyphens: auto;
   display: inline-block;
   margin-top: 30px;
   font-size: 1.75em;
 `;
-
-// const BarDecoration = styled.p`
-//   height: 10px;
-//   width: 100px;
-//   background: black;
-// `;
 
 export default () => (
   <GeneralSectionWrapper>

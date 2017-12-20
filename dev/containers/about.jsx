@@ -41,7 +41,7 @@ class AboutComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      active_item: 'general',
+      active_item: 'experience',
     };
     this.aboutChipCallback = this.aboutChipCallback.bind(this);
   }

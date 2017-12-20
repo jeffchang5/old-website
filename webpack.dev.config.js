@@ -23,10 +23,12 @@ module.exports = {
   },
   module: {
     rules: [
-      { test: /\.jsx$/, enforce: 'pre', loader: 'eslint-loader',
+      { test: /\.jsx$/,
+        enforce: 'pre',
+        loader: 'eslint-loader',
         options: { emitWarning: true } },
       { test: /\.jsx?$/, loader: 'babel-loader' },
-      { test: /\.(svg|png|jpg|gif|otf)$/,
+      { test: /\.(svg|png|jpg|otf|ttf)$/,
         use: [{ loader: 'file-loader',
           options: {
             name: '[name].[ext]',

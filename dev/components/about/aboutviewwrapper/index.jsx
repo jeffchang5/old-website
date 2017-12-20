@@ -1,21 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import AboutView from 'components/about/views';
 import devices from 'theme/devices';
-import AboutItems from 'config/about_items';
-import AboutViews from 'components/about/views';
 
 const AboutDetailWrapper = styled.div`
   display: flex;
+  flex: 1;
+  width: 80%;
+  align-self: center;
   flex-direction: column;
-  width: 65%;
 `;
 
 const Container = styled.div`
   display: flex;
+  flex: 1;
   flex-direction: column;
-  font-family: 'Source Code Pro', sans-serif;
-  width: 90%;
   @media (min-width: 768px) {
     min-height: 400px;
   }
@@ -24,22 +24,20 @@ const Container = styled.div`
     width: 50%;
   }
 `;
-const AboutHeader = styled.div`
-  
-  font-family: 'Fira Sans',sans-serif;
-  margin: 10% 0 0;
-  padding-bottom: 10px;
-  font-size: 3em;  
-`;
-const AboutBody = styled.div`
-  background-color: blue;
+const AboutHeader = styled.h1`
+  display: inline;
+  color: #3398CA;
+  margin: 100px 0 20px 0;
+  font-family: ${props => props.theme.font.sanserif};
+  font-size: 4.5em;
+  padding: 0 10px 10px 0;
 `;
 
 const AboutDetailComponent = props => (
   <Container>
     <AboutDetailWrapper>
       <AboutHeader>{props.data.name}</AboutHeader>
-      <AboutBody />
+      <AboutView id={props.data.id} />
     </AboutDetailWrapper>
   </Container>
 );

@@ -7,7 +7,7 @@ import Bracket from 'resources/images/svg/bracket';
 const AboutHeader = styled.div`
   display: inline-block;
   color: #ef5350;
-  font-family: 'Majestic Bold', sans-serif;
+  font-family: ${props => props.theme.font.header};
   font-size: 4.5em;
   font-weight: 500;
   //margin: px 0;
@@ -22,7 +22,6 @@ const AboutHeaderContainer = styled.div`
 const AboutHeaderWrapper = styled.div`
   display: flex;
   align-self: center;
-  //border-bottom: 5px solid #ef5350;
   padding-bottom: 20px;
   margin-top: 20px;
   flex-direction: column;
@@ -46,7 +45,7 @@ const AboutChip = styled.div`
   border: 1px solid #ef5350;
   padding: 10px 18px;
   margin: 8px;
-  font-family: 'Fira Sans', sans-serif;
+  font-family: ${props => props.theme.font.sanserif};
   font-size: 20pt;
   font-weight: 300;
 `;
@@ -111,7 +110,6 @@ AboutChipComponent.propTypes = {
     }),
   ).isRequired,
   active: PropTypes.string.isRequired,
-  callback: PropTypes.func.isRequired,
 };
 
 export default AboutChipComponent;

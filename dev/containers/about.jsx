@@ -32,7 +32,6 @@ const AboutSectionWrapper = styled.div`
   width: 100%;
 `;
 
-
 const findAboutItem = (items, id) => (
   items.filter(aboutItems =>
     aboutItems.id === id,
@@ -42,12 +41,11 @@ class AboutComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      active_item: 'general',
+      active_item: 'experience',
     };
     this.aboutChipCallback = this.aboutChipCallback.bind(this);
   }
   aboutChipCallback(aboutId) {
-    console.log(aboutId);
     this.setState({
       active_item: aboutId,
     });
@@ -62,6 +60,7 @@ class AboutComponent extends Component {
             active={this.state.active_item}
             items={this.props.items}
           />
+
           <AboutViewWrapper
             data={findAboutItem(this.props.items, this.state.active_item)[0]}
           />

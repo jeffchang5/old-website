@@ -99,7 +99,7 @@ const HeroQuoteWrapper = styled.section`
 const HeroQuote = styled.blockquote`
   color: #c54a50;
   display: inline;
-  font-family: 'Majestic Bold', sans-serif;
+  font-family: ${props => props.theme.font.header};
   font-size: 3.0em;
   hyphens: auto;
   font-weight: 200;
@@ -117,7 +117,7 @@ const Divider = styled.div`
 `;
 
 const HeroQuoteCitation = styled.div`
-  font-family: 'Fira Sans', sans-serif;
+  font-family: ${props => props.theme.font.sanserif};
   font-weight: 200;
   text-align: right;
   margin-right: 25px;
@@ -143,7 +143,7 @@ const AboutSubHeader = styled.div`
 const AboutPortfolioSubHeaderWrapper = styled.div`
   max-width: 400px;
   white-space: nowrap;
-  font-family: 'Fira Sans', sans-serif;
+  font-family: ${props => props.theme.font.sanserif};
   font-size: 2.2em;
   font-weight: 200;
   border-top: 1px solid #ccc;

@@ -9,10 +9,10 @@ export default {
     subheader: 'Noto Serif, serif',
     sanserif: 'Lato, Roboto, sans-serif',
   },
-  text_size: {
+  fontsize: {
     large_header: '4.5em',
-    header: '4em',
-    subheader: '14px',
-    text: '14px',
+    header: '1.3em',
+    subheader: '25px',
+    text: '16pt',
   },
 };

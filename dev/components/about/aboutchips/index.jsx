@@ -56,7 +56,6 @@ const AboutChipSection = styled.section`
   margin: 0 40px;
   flex: 1;
   flex-direction: column;
-  max-width: 80%;
 `;
 
 const AboutChipBarDecoration = styled.div`

@@ -10,6 +10,8 @@ export default styled.section`
   padding-left: 15px;
   padding-right: 15px;
   
+  height: 100vh;
+  width: 100vw;
   @media (min-width: 768px) {
     width: 750px;
     

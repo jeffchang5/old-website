@@ -6,6 +6,8 @@ import SectionHeader from 'components/common/section_header';
 import AboutChipComponent from 'components/about/aboutchips';
 import AboutViewWrapper from 'components/about/aboutviewwrapper';
 
+import ResponsiveContainer from 'components/common/responsive_container';
+
 const AboutWrapper = styled.div`
   display: flex;
   position: relative;
@@ -17,11 +19,9 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
-  
   padding-left: 15px;
   padding-right: 15px;
-  width: 100vw;
+  
 `;
 
 
@@ -51,22 +51,24 @@ class AboutComponent extends Component {
     });
   }
   render() {
-    return (<Container>
-      <SectionHeader text="About" />
-      <AboutSectionWrapper>
-        <AboutWrapper>
-          <AboutChipComponent
-            callback={this.aboutChipCallback}
-            active={this.state.active_item}
-            items={this.props.items}
-          />
-
-          <AboutViewWrapper
-            data={findAboutItem(this.props.items, this.state.active_item)[0]}
-          />
-        </AboutWrapper>
-      </AboutSectionWrapper>
-    </Container>);
+    return (
+      <ResponsiveContainer>
+        <Container>
+          <SectionHeader text="About" />
+          <AboutSectionWrapper>
+            <AboutWrapper>
+              <AboutChipComponent
+                callback={this.aboutChipCallback}
+                active={this.state.active_item}
+                items={this.props.items}
+              />
+              <AboutViewWrapper
+                data={findAboutItem(this.props.items, this.state.active_item)[0]}
+              />
+            </AboutWrapper>
+          </AboutSectionWrapper>
+        </Container>
+      </ResponsiveContainer>);
   }
 }
 

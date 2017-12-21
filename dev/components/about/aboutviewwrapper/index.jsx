@@ -6,15 +6,15 @@ import devices from 'theme/devices';
 
 const AboutDetailWrapper = styled.div`
   display: flex;
-  flex: 1;
-  width: 80%;
-  align-self: center;
   flex-direction: column;
+  align-self: flex-end;
+  width: 80%;
 `;
 
 const Container = styled.div`
   display: flex;
   flex: 1;
+  align-self: center;
   flex-direction: column;
   @media (min-width: 768px) {
     min-height: 400px;
@@ -24,10 +24,10 @@ const Container = styled.div`
     width: 50%;
   }
 `;
-const AboutHeader = styled.h1`
+const AboutHeader = styled.div`
   display: inline;
   color: #3398CA;
-  margin: 100px 0 20px 0;
+  //margin: 0 0 20px 0;
   font-family: ${props => props.theme.font.sanserif};
   font-size: 4.5em;
   padding: 0 10px 10px 0;

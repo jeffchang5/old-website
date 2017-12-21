@@ -11,6 +11,7 @@ import Music from './music';
 
 const AboutViewWrapper = styled.div`
   flex: 1;
+  max-height: 100%;
 `;
 const AboutViews = {
   general: General,

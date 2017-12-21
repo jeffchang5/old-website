@@ -21,7 +21,6 @@ const AboutHeaderContainer = styled.div`
 
 const AboutHeaderWrapper = styled.div`
   display: flex;
-  align-self: center;
   padding-bottom: 20px;
   margin-top: 20px;
   flex-direction: column;
@@ -29,60 +28,43 @@ const AboutHeaderWrapper = styled.div`
 
 const AboutChipWrapper = styled.div`
   display: flex;
+  align-self: flex-start;
+  flex-direction: column;
   align-content: center;
-  flex: 1;
   margin: 30px 0;
   flex-wrap: wrap;
 
 `;
 const AboutChip = styled.div`
-  display: inline-block;
   cursor: pointer; 
-  background: ${props => (props.active ? '#ef53501A' : 'white')};
+  text-decoration: ${props => (props.active ? 'underline' : 'none')};
   color: #ef5350;
   max-height: 60px;
-  border-radius: 35px;
-  border: 1px solid #ef5350;
   padding: 10px 18px;
-  margin: 8px;
-  font-family: ${props => props.theme.font.sanserif};
-  font-size: 20pt;
+  margin: 16px;
+  font-family: ${props => props.theme.font.header};
+  font-size: ${props => (props.active ? props.theme.fontsize.large_header : props.theme.fontsize.header)};
   font-weight: 300;
+  transition: all 0.2s ease-in-out;;
 `;
 
 const AboutChipSection = styled.section`
   display: flex;
-  align-self: center;
-  margin: 0 40px;
+  align-self: flex-start;
   flex: 1;
   flex-direction: column;
-`;
-
-const AboutChipBarDecoration = styled.div`
-  min-width: 100px;
-  width: 50%;
-  height: 15px;
-  background: #ef5350;
 `;
 
 const AboutChipContainer = styled.div`
   display: flex;
-  flex: 1;
+  flex: 2;
   flex-direction: column;
-  flex-wrap: wrap;
-  margin: 0 30px;
+  justify-content: ;
 `;
 
 const AboutChipComponent = props => (
   <AboutChipContainer>
     <AboutChipSection>
-      <AboutHeaderContainer>
-        <AboutHeaderWrapper>
-          <AboutHeader>Get to know me.</AboutHeader>
-          <AboutHeader>I don&#39;t bite.</AboutHeader>
-        </AboutHeaderWrapper>
-      </AboutHeaderContainer>
-      <AboutChipBarDecoration />
       <AboutChipWrapper>
         { props.items.map((item) => {
           if (item.id === props.active) {
@@ -97,7 +79,6 @@ const AboutChipComponent = props => (
         }) }
       </AboutChipWrapper>
     </AboutChipSection>
-    <Bracket color="#ef5350" />
   </AboutChipContainer>
 );
 

@@ -10,9 +10,9 @@ export default {
     sanserif: 'Lato, Roboto, sans-serif',
   },
   fontsize: {
-    large_header: '4.5em',
-    header: '1.3em',
-    subheader: '25px',
-    text: '16pt',
+    large_header: '4em',
+    header: '3.5em',
+    subheader: '1em',
+    text: '20pt',
   },
 };

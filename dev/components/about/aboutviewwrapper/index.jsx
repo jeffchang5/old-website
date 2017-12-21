@@ -7,14 +7,14 @@ import devices from 'theme/devices';
 const AboutDetailWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-self: flex-end;
+  align-self: center;
   width: 80%;
 `;
 
 const Container = styled.div`
   display: flex;
-  flex: 1;
-  align-self: center;
+  flex: 3;
+  margin: 40px 0;
   flex-direction: column;
   @media (min-width: 768px) {
     min-height: 400px;
@@ -25,12 +25,12 @@ const Container = styled.div`
   }
 `;
 const AboutHeader = styled.div`
-  display: inline;
   color: #3398CA;
-  //margin: 0 0 20px 0;
-  font-family: ${props => props.theme.font.sanserif};
+  flex: 3;
+  text-align: center;
+  font-family: ${props => props.theme.font.header};
   font-size: 4.5em;
-  padding: 0 10px 10px 0;
+  padding: 15px 10px 10px 0;
 `;
 
 const AboutDetailComponent = props => (

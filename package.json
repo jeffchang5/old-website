@@ -36,6 +36,7 @@
   "scripts": {
     "devserver": "webpack-dev-server --config webpack.dev.config.js --hot --inline --open",
     "production": "webpack --config webpack.prod.config.js"
+    "subtree": "git subtree push --prefix dist/public dev master"
   },
   "repository": {
     "type": "git",

@@ -21,14 +21,15 @@ const Container = styled.div`
   align-items: center;
   padding-left: 15px;
   padding-right: 15px;
-  
+  flex: 1;
+
 `;
 
 
 const AboutSectionWrapper = styled.div`
   display: flex;
+  flex: 1;
   flex-direction: column;
-  flex-grow: 5;
   width: 100%;
 `;
 

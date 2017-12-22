@@ -27,25 +27,4 @@ export default [
     description: 'Lorem ipsum',
     date: 'January 2017 - Present',
   },
-  {
-    id: 'freelance',
-    name: 'Freelance',
-    position: 'Web Developer',
-    description: 'Lorem ipsum',
-    date: 'January 2017 - Present',
-  },
-  {
-    id: 'freelance',
-    name: 'Freelance',
-    position: 'Web Developer',
-    description: 'Lorem ipsum',
-    date: 'January 2017 - Present',
-  },
-  {
-    id: 'freelance',
-    name: 'Freelance',
-    position: 'Web Developer',
-    description: 'Lorem ipsum',
-    date: 'January 2017 - Present',
-  },
 ];

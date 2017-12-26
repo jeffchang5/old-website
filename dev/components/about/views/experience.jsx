@@ -1,27 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import Timeline from 'components/common/timeline';
 import ExperienceConfig from 'config/experience_items';
 
-export default class ExperienceComponent extends Component {
-  constructor(props) {
-    super(props);
-    this.experienceCallback = this.experienceCallback.bind(this);
-  }
-  experienceCallback(aboutId) {
-    this.setState({
-      active_item: aboutId,
-    });
-  }
-  render() {
-    return (<Timeline
-      callback={this.experienceCallback}
-      items={ExperienceConfig.map(item =>
-        ({
-          id: item.id,
-          header: item.name,
-          subheader: item.position,
-        }),
-      )}
-    />);
-  }
-}
+const ExperienceComponent = props => (
+  (<Timeline
+    onSubMenuSelected={props.onSubMenuSelected}
+    items={ExperienceConfig.map(item =>
+      ({
+        id: item.id,
+        header: item.name,
+        subheader: item.position,
+        description: item.description,
+        date: item.date,
+      }),
+    )}
+  />));
+
+ExperienceComponent.propTypes = {
+  onSubMenuSelected: PropTypes.func,
+};
+export default ExperienceComponent;

@@ -1,8 +1,8 @@
+/* eslint-disable react/require-default-props */
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import AboutView from 'components/about/views';
-import devices from 'theme/devices';
 
 const AboutDetailWrapper = styled.div`
   display: flex;
@@ -33,20 +33,43 @@ const AboutHeader = styled.div`
   padding: 15px 10px 10px 0;
 `;
 
-const AboutDetailComponent = props => (
+
+const AboutDetail = props => (
   <Container>
     <AboutDetailWrapper>
-      <AboutHeader>{props.data.name}</AboutHeader>
-      <AboutView id={props.data.id} />
-    </AboutDetailWrapper>
-  </Container>
-);
+      <AboutHeader>{props.item.name}</AboutHeader>
+      <AboutView
+        id={props.item.id}
+        onSubMenuSelected={props.onSubMenuSelected}
 
-AboutDetailComponent.propTypes = {
-  data: PropTypes.shape({
+      />
+    </AboutDetailWrapper>
+  </Container>);
+
+const AboutDetailComponent = (props) => {
+  if (props.item !== undefined) {
+    return (<AboutDetail
+      item={props.item}
+      onSubMenuSelected={props.onSubMenuSelected}
+    />);
+  }
+  return <Container />;
+};
+
+AboutDetail.propTypes = {
+  item: PropTypes.shape({
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
   }).isRequired,
+  onSubMenuSelected: PropTypes.func,
+};
+
+AboutDetailComponent.propTypes = {
+  item: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+  }),
+  onSubMenuSelected: PropTypes.func,
 };
 
 export default AboutDetailComponent;

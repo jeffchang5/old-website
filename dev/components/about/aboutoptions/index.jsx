@@ -1,32 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import devices from 'theme/devices';
-import Bracket from 'resources/images/svg/bracket';
 
-const AboutHeader = styled.div`
-  display: inline-block;
-  color: #ef5350;
-  font-family: ${props => props.theme.font.header};
-  font-size: 4.5em;
-  font-weight: 500;
-  //margin: px 0;
-`;
-const AboutHeaderContainer = styled.div`
-  display: flex;
-  flex: 1;
-  flex-direction: row;
-  align-content: flex-end;
-`;
-
-const AboutHeaderWrapper = styled.div`
-  display: flex;
-  padding-bottom: 20px;
-  margin-top: 20px;
-  flex-direction: column;
-`;
-
-const AboutChipWrapper = styled.div`
+const AboutOptionWrapper = styled.div`
   display: flex;
   align-self: flex-start;
   flex-direction: column;
@@ -35,7 +11,7 @@ const AboutChipWrapper = styled.div`
   flex-wrap: wrap;
 
 `;
-const AboutChip = styled.div`
+const AboutOption = styled.div`
   cursor: pointer; 
   text-decoration: ${props => (props.active ? 'underline' : 'none')};
   color: #ef5350;
@@ -48,41 +24,40 @@ const AboutChip = styled.div`
   transition: all 0.2s ease-in-out;;
 `;
 
-const AboutChipSection = styled.section`
+const AboutOptionSection = styled.section`
   display: flex;
   align-self: flex-start;
   flex: 1;
   flex-direction: column;
 `;
 
-const AboutChipContainer = styled.div`
+const AboutOptionContainer = styled.div`
   display: flex;
   flex: 2;
   flex-direction: column;
-  justify-content: ;
 `;
 
-const AboutChipComponent = props => (
-  <AboutChipContainer>
-    <AboutChipSection>
-      <AboutChipWrapper>
+const AboutOptionComponent = props => (
+  <AboutOptionContainer>
+    <AboutOptionSection>
+      <AboutOptionWrapper>
         { props.items.map((item) => {
           if (item.id === props.active) {
-            return <AboutChip active key={item.id}>{item.name}</AboutChip>;
+            return <AboutOption active key={item.id}>{item.name}</AboutOption>;
           }
           return (
-            <AboutChip
-              onClick={() => props.callback(item.id)}
+            <AboutOption
+              onClick={() => props.onMenuItemClicked(item.id)}
               key={item.id}
             >{item.name}
-            </AboutChip>);
+            </AboutOption>);
         }) }
-      </AboutChipWrapper>
-    </AboutChipSection>
-  </AboutChipContainer>
+      </AboutOptionWrapper>
+    </AboutOptionSection>
+  </AboutOptionContainer>
 );
 
-AboutChipComponent.propTypes = {
+AboutOptionComponent.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
@@ -92,4 +67,4 @@ AboutChipComponent.propTypes = {
   active: PropTypes.string.isRequired,
 };
 
-export default AboutChipComponent;
+export default AboutOptionComponent;

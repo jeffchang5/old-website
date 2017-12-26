@@ -1,3 +1,4 @@
+/* eslint-disable react/require-default-props */
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
@@ -26,12 +27,15 @@ const AboutView = (props) => {
   const View = AboutViews[props.id];
   return (
     <AboutViewWrapper>
-      <View />
+      <View
+        onSubMenuSelected={props.onSubMenuSelected}
+      />
     </AboutViewWrapper>);
 };
 
 AboutView.propTypes = {
   id: PropTypes.string.isRequired,
+  onSubMenuSelected: PropTypes.func,
 };
 
 export default AboutView;

@@ -38,7 +38,8 @@ export default () => (
       Lorem ipsum dolor sit amet, consec tetur adipiscing elit. Vivamus a lectus metus.
     </AboutSubHeader>
     <AboutBody>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a lectus metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a lectus metus.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a lectus metus.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a lectus metus.
     </AboutBody>
   </GeneralSectionWrapper>
 );

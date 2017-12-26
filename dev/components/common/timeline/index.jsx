@@ -10,23 +10,17 @@ const TimelineWrapper = styled.div`
   min-height: 0;
 `;
 
-
-
-// const TimelineDecoration = styled.div`
-//   font-family: ${props => props.theme.font.sanserif};
-//   font-size: 24px;
-//   margin: auto 0;
-//   position: absolute;
-//   right: 0;
-// `;
-
 const TimelineComponent = props => (
   <TimelineWrapper>
     {props.items.map(item =>
       (<TimelineItem
         key={item.id}
+        id={item.id}
         header={item.header}
         subheader={item.subheader}
+        description={item.description}
+        date={item.date}
+        onSubMenuSelected={props.onSubMenuSelected}
       />
       ))}
   </TimelineWrapper>);
@@ -37,14 +31,7 @@ TimelineComponent.propTypes = {
     header: PropTypes.string.isRequired,
     subheader: PropTypes.string.isRequired,
   })).isRequired,
-  callback: PropTypes.func.isRequired,
+  onSubMenuSelected: PropTypes.func.isRequired,
 };
 
 export default TimelineComponent;
-
-{/*<TimeLineItemWrapper key={item.id}>*/}
-  {/*<TimelineCenter>*/}
-    {/*<TimelineCompanyHeader>{item.header}</TimelineCompanyHeader>*/}
-    {/*<TimelineCompanySubHeader>{item.subheader}</TimelineCompanySubHeader>*/}
-  {/*</TimelineCenter>*/}
-{/*</TimeLineItemWrapper>*/}

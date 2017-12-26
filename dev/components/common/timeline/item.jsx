@@ -62,9 +62,14 @@ export default class TimelineItem extends Component {
     this.setState({ isActive: toggle });
   }
   render() {
-    return (<TimeLineItemWrapper key={this.props.key}>
+    return (<TimeLineItemWrapper>
       <TimelineCenter
-        onClick={e => this.props.callback(e)}
+        onClick={() => this.props.onSubMenuSelected(
+          this.props.id,
+          this.props.header,
+          this.props.subheader,
+          this.props.description,
+          this.props.date)}
         onMouseEnter={e => this.onMouseHover(e)}
         onMouseLeave={e => this.onMouseHover(e)}
       >
@@ -77,8 +82,10 @@ export default class TimelineItem extends Component {
 }
 
 TimelineItem.propTypes = {
-  key: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
   header: PropTypes.string.isRequired,
   subheader: PropTypes.string.isRequired,
-  callback: PropTypes.func.isRequired,
+  description: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  onSubMenuSelected: PropTypes.func.isRequired,
 };

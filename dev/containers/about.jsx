@@ -60,7 +60,12 @@ const mapDispatchToProps = dispatch =>
 
 const AboutMetaOptionComponent = (props) => {
   if (props.card != null) {
-    return <AboutCard />;
+    return (<AboutCard
+      date={props.card.date}
+      description={props.card.description}
+      header={props.card.header}
+      subheader={props.card.subheader}
+    />);
   }
   return (
     <AboutOptionComponent

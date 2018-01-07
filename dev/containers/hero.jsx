@@ -8,7 +8,7 @@ const SectionWrapper = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 `;
 
 
@@ -26,6 +26,7 @@ const HeroQuoteSection = styled.header`
 
 const HeroSectionWrapper = styled.div`
   display: flex;
+  flex-wrap: nowrap;
   flex: 1;
 `;
 
@@ -38,18 +39,6 @@ const AboutPortfolioHeader = styled.div`
   font-weight: 500;
 `;
 
-const HeroSegmentBackground = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 50px;
-  min-height: 80%;
-  width: 100%;
-  background: #F5F5F5;
-  z-index: -1;
-`;
-
 const HeroQuoteHat = styled.div`
   margin-top: 12%;
   height: 10px;
@@ -60,9 +49,10 @@ const HeroQuoteHat = styled.div`
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  flex:1 0 0;
+ 
   margin-right: auto;
   margin-left: auto;
+  width: 100%;
   
   padding-left: 15px;
   padding-right: 15px;
@@ -154,9 +144,8 @@ const AboutPortfolioSubHeaderWrapper = styled.div`
 export default () => (
   <SectionWrapper>
     <NavBar />
-    <Container style={{ flexGrow: '1' }}>
+    <Container style={{ flexGrow: '1', background: '#F5F5F5', zIndex: -'1' }}>
       <HeroSectionWrapper>
-        <HeroSegmentBackground />
         <HeroQuoteSection>
           <HeroQuoteHat />
           <HeroQuoteWrapper>

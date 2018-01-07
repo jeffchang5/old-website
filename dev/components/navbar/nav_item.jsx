@@ -6,7 +6,7 @@ const NavItem = styled.a`
   font-family: ${props => props.theme.font.sanserif};
   font-weight: 200;
   font-size: 15pt;
-  padding-top: 10px;
+  margin: 0 20px;
 `;
 
 const NavHoverBar = styled.div`
@@ -21,7 +21,6 @@ const NavWrapper = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin: 30px 30px 0 30px;
 `;
 
 class NavComponent extends React.Component {

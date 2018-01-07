@@ -15,8 +15,7 @@ const NavWrapper = styled.div`
 
 const NavBarWrapper = styled.nav`
   width: 100%;
-  margin-top: 15px;
-  margin-bottom: 15px;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,10 +26,11 @@ const LogoWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 180px;
 `;
+
 const LogoImage = styled.img`
-  width: 100px;
+  width: 50%;
+  min-width: 50px;
   height: auto;
 `;
 

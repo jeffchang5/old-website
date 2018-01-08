@@ -5,7 +5,8 @@ import NavItem from './nav_item';
 
 const NavWrapper = styled.div`
   display: flex;
-  width: 100%;
+  width: 100vw;
+  min-height: 100px;
   z-index: 99999;
   flex-direction: column;
   background-color: white;
@@ -15,7 +16,7 @@ const NavWrapper = styled.div`
 
 const NavBarWrapper = styled.nav`
   width: 100%;
-
+  margin: 20px 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,15 +24,25 @@ const NavBarWrapper = styled.nav`
 
 const LogoWrapper = styled.div`
   display: flex;
+  width: 100px;
+  min-width: auto;
+  min-height: auto;
+  margin: 0 20px;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 `;
 
 const LogoImage = styled.img`
-  width: 50%;
-  min-width: 50px;
-  height: auto;
+  width: 100%;
+  height: 100%;
+  
+`;
+
+const Divider = styled.div`
+  display: block;
+  height: 1px;
+  width: auto;
+  background: #CCC;
 `;
 
 export default () =>
@@ -45,4 +56,5 @@ export default () =>
       <NavItem url="/" text="RESUME" />
       <NavItem url="/" text="CONTACT" />
     </NavBarWrapper>
+    <Divider />
   </NavWrapper>);

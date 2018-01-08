@@ -3,16 +3,23 @@ import styled from 'styled-components';
 import NavBar from 'components/navbar';
 import HeroGallery from 'components/hero/gallery';
 import Portrait from 'resources/images/portfolio.png';
+import devices from 'theme/devices';
 
 const SectionWrapper = styled.div`
+  ${devices.desktop`
+    height: 100vh;
+   `};
+  
   display: flex;
   flex-direction: column;
-  height: 100vh;
   flex-wrap: nowrap;
 `;
 
 
 const HeroHeadlineWrapper = styled.header`
+  ${devices.small`
+    margin: 50px 0;
+ `};
   display: flex;
   flex-direction: column;
   align-self: center;
@@ -21,16 +28,18 @@ const HeroHeadlineWrapper = styled.header`
 
 const HeroQuoteSection = styled.header`
   flex: 4;
-  margin: 0 85px;
+  margin: 0 7%;
+  min-width: 45%;
 `;
 
 const HeroSectionWrapper = styled.div`
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   flex: 1;
 `;
 
 const AboutPortfolioHeader = styled.div`
+  display: inline-block;
   color: #3398CA;
   white-space: nowrap;
   margin: 10px 0 0 0;
@@ -116,14 +125,18 @@ const HeroQuoteCitation = styled.div`
 `;
 const HeroPortrait = styled.img`
   width: auto;
-  align-self: flex-end;
   flex-shrink: initial;
   max-width: 300px;
   max-height: 350px;
   
 `;
 const HeroPortfolio = styled.section`
-  flex: 1;
+  display: flex;
+  flex-direction: column;
+  
+  ${devices.small`
+    // align-content: center;
+ `};
 `;
 
 const AboutSubHeader = styled.div`
@@ -131,6 +144,7 @@ const AboutSubHeader = styled.div`
 `;
 
 const AboutPortfolioSubHeaderWrapper = styled.div`
+  display: inline-block;
   max-width: 400px;
   white-space: nowrap;
   font-family: ${props => props.theme.font.sanserif};
@@ -144,7 +158,7 @@ const AboutPortfolioSubHeaderWrapper = styled.div`
 export default () => (
   <SectionWrapper>
     <NavBar />
-    <Container style={{ flexGrow: '1', background: '#F5F5F5', zIndex: -'1' }}>
+    <Container style={{ flexGrow: '1', background: '#F5F5F5' }}>
       <HeroSectionWrapper>
         <HeroQuoteSection>
           <HeroQuoteHat />

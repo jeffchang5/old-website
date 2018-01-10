@@ -18,6 +18,7 @@ const HeaderDecoration = styled.div`
 const SectionHeaderWrapper = styled.div`
   display: flex;
   height: 15vh;
+  margin-top: 5%;
   flex-direction: column;
   align-items: center;
 `;

@@ -154,6 +154,14 @@ const AboutPortfolioSubHeaderWrapper = styled.div`
   padding: 10px 0;
 `;
 
+const HeroCenter = styled.div`
+  ${devices.small`
+    margin: 20px auto;
+   `};
+    ${devices.desktop`
+    margin: 0 0;
+   `};
+`;
 
 export default () => (
   <SectionWrapper>
@@ -173,15 +181,17 @@ export default () => (
           <HeroGallery />
         </HeroQuoteSection>
         <HeroHeadlineWrapper>
-          <HeroPortfolio>
-            <HeroPortrait src={Portrait} />
-            <AboutPortfolioHeader>Jeffrey Chang</AboutPortfolioHeader>
-            <AboutPortfolioSubHeaderWrapper>
-              <AboutSubHeader>Data Scientist</AboutSubHeader>
-              <AboutSubHeader>Developer</AboutSubHeader>
-              <AboutSubHeader>Student</AboutSubHeader>
-            </AboutPortfolioSubHeaderWrapper>
-          </HeroPortfolio>
+          <HeroCenter>
+            <HeroPortfolio>
+              <HeroPortrait src={Portrait} />
+              <AboutPortfolioHeader>Jeffrey Chang</AboutPortfolioHeader>
+              <AboutPortfolioSubHeaderWrapper>
+                <AboutSubHeader>Data Scientist</AboutSubHeader>
+                <AboutSubHeader>Developer</AboutSubHeader>
+                <AboutSubHeader>Student</AboutSubHeader>
+              </AboutPortfolioSubHeaderWrapper>
+            </HeroPortfolio>
+          </HeroCenter>
         </HeroHeadlineWrapper>
       </HeroSectionWrapper>
     </Container>

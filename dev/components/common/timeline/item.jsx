@@ -28,23 +28,25 @@ const TimelineCompanySubHeader = styled.div`
 `;
 
 const TimeLineItemWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
+  display: inline-flex;
+  align-self: center;
+  flex-direction: row;
   position: relative;
   padding: 15px 0;
 `;
 
 const TimeLineItemDecoration = styled.div`
-    visibility: ${props => props.isActive};
+    display: inline-block;
     position: absolute;
+    visibility: ${props => props.isActive};
     color: #ccc;
     line-height: 20px;
     margin-bottom: 1rem;
     font-size: 5em;
     letter-spacing: 5px;
     padding: 5px 0;
-    right: 4vh;
-    top: 20%;
+    right: -85px;
+    top: 3%;
 `;
 
 export default class TimelineItem extends Component {
@@ -62,7 +64,7 @@ export default class TimelineItem extends Component {
     this.setState({ isActive: toggle });
   }
   render() {
-    return (<TimeLineItemWrapper>
+    return (
       <TimelineCenter
         onClick={() => this.props.onSubMenuSelected(
           this.props.id,
@@ -73,11 +75,13 @@ export default class TimelineItem extends Component {
         onMouseEnter={e => this.onMouseHover(e)}
         onMouseLeave={e => this.onMouseHover(e)}
       >
-        <TimelineCompanyHeader>{this.props.header}</TimelineCompanyHeader>
+        <TimeLineItemWrapper>
+          <TimelineCompanyHeader>{this.props.header}</TimelineCompanyHeader>
+          <TimeLineItemDecoration isActive={this.state.isActive}>...</TimeLineItemDecoration>
+        </TimeLineItemWrapper>
         <TimelineCompanySubHeader>{this.props.subheader}</TimelineCompanySubHeader>
-        <TimeLineItemDecoration isActive={this.state.isActive}>...</TimeLineItemDecoration>
       </TimelineCenter>
-    </TimeLineItemWrapper>);
+    );
   }
 }
 

@@ -10,5 +10,5 @@ export default () =>
   (<AppWrapper>
     <Hero />
     <About />
-    <Projects />
+    {/*<Projects />*/}
   </AppWrapper>);

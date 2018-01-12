@@ -27,7 +27,7 @@ module.exports = {
         enforce: 'pre',
         loader: 'eslint-loader',
         options: { emitWarning: true } },
-      { test: /\.jsx?$/, loader: 'babel-loader' },
+      { test: /\.jsx?$/, loader: 'babel-loader', exclude: /node_modules/ },
       { test: /\.(svg|png|jpg|otf|ttf)$/,
         use: [{ loader: 'file-loader',
           options: {

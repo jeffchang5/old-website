@@ -29,7 +29,7 @@ const HeroHeadlineWrapper = styled.header`
 const HeroQuoteSection = styled.header`
   flex: 4;
   margin: 0 7%;
-  min-width: 45%;
+  min-width: 40%;
 `;
 
 const HeroSectionWrapper = styled.div`
@@ -44,8 +44,11 @@ const AboutPortfolioHeader = styled.div`
   white-space: nowrap;
   margin: 10px 0 0 0;
   font-family: 'Majestic Bold', monospace;
-  font-size: 4.0em;
+  font-size: 8vw;
   font-weight: 500;
+  ${devices.desktop`
+    font-size: 4.0em;
+ `};
 `;
 
 const HeroQuoteHat = styled.div`

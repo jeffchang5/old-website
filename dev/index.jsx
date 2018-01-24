@@ -12,7 +12,6 @@ import rootReducer from 'reducers';
 
 const store = createStore(rootReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
-
 ReactDOM.render(
   <ThemeProvider theme={Theme}>
     <Provider store={store}>

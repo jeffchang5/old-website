@@ -1,14 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 import MediaQuery from 'react-responsive';
-// import
+import DropDownIcon from 'components/common/dropdown';
 import devices from 'theme/devices';
 import logo from 'resources/images/redbluelogo.png';
 import NavItem from './nav_item';
+import MenuDropDown from './menu_dropdown';
 
 
 const NavWrapper = styled.div`
-  display: flex;
+   display: flex;
   width: 100%;
   z-index: 99999;
   flex-direction: column;
@@ -50,17 +51,42 @@ const LogoWrapper = styled.div`
 const Divider = styled.div`
   height: 50px;
   width: 1px;
-  margin: 0 20px;
+  margin-left: 20px;
   background: #ccc;
 `;
-const MenuWrapper = styled.div`
+const MenuCenter = styled.div`
+  display: flex;
+  justify-content: center;
+  font-family: ${props => props.theme.font.sanserif};
+  font-size: 2em;
+  flex-grow: 1;
+`;
+
+const MenuTitleWrapper = styled.div`
   display: inline-block;
+`;
+
+const DropDownWrapper = styled.div`
+  width: 25px;
+  height: 25px;
+  margin: 2px 15px;
 `;
 
 const LogoImage = styled.img`
   width: 100%;
   height: 100%;
 `;
+
+const MenuWrapper = styled.div`
+  display: flex;
+  align-self: center;
+`;
+
+const openMenu = e => {
+  const bottomOfMenuBar = e.target.getBoundingClientRect().bottom;
+
+};
+
 
 export default () =>
   (<NavWrapper>
@@ -70,8 +96,16 @@ export default () =>
           <LogoImage alt="logo" src={logo} />
         </LogoWrapper>
         <Divider />
-        <MenuWrapper>Jeffrey</MenuWrapper>
+        <MenuCenter>
+          <MenuWrapper onClick={e => openMenu(e)}>
+            <MenuTitleWrapper>JEFFREY</MenuTitleWrapper>
+            <DropDownWrapper>
+              <DropDownIcon />
+            </DropDownWrapper>
+          </MenuWrapper>
+        </MenuCenter>
       </NavBarWrapper>
+      <MenuDropDown />
     </MediaQuery>
     <MediaQuery minDeviceWidth={975}>
       <NavBarWrapper>

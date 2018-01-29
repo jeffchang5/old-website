@@ -20,6 +20,7 @@ const NavWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  text-transform: uppercase;
   flex-direction: column;
 `;
 
@@ -37,10 +38,9 @@ class NavComponent extends React.Component {
     this.setState({ hoverBarVisible: toggle });
   }
   render() {
-    return (<NavWrapper>
+    return (<NavWrapper onClick={() => scrollTo(document.body, this.props.scrollTop, 50)}>
       <NavHoverBar hoverBarVisible={this.state.hoverBarVisible} />
       <NavItem
-        href={this.props.url}
         onMouseEnter={this.toggleHoverBar}
         onMouseLeave={this.toggleHoverBar}
       >{this.props.text}</NavItem>
@@ -48,9 +48,8 @@ class NavComponent extends React.Component {
   }
 }
 
-
 NavComponent.propTypes = {
-  url: PropTypes.string,
+  scrollTop: PropTypes.number,
   text: PropTypes.string,
 };
 

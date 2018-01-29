@@ -9,7 +9,6 @@ import { selectActiveMenuItem, selectActiveSubMenuItem, updateMenuItems } from '
 import AboutOptionComponent from 'components/about/aboutoptions';
 import AboutViewWrapper from 'components/about/aboutviewwrapper';
 import AboutCard from 'components/about/aboutcard';
-
 import AboutItems from 'config/about_items';
 
 const AboutWrapper = styled.div`
@@ -102,7 +101,7 @@ class About extends Component {
     this.props.updateMenuItems(AboutItems);
   }
   render() {
-    return (<ResponsiveContainer>
+    return (<ResponsiveContainer innerRef={(section) => { this.section = section; }}>
       <Container>
         <SectionHeader text="About" />
         <AboutSectionWrapper>
@@ -129,6 +128,7 @@ class About extends Component {
 const AboutComponent = connect(
   mapStateToProps,
   mapDispatchToProps,
+  null, { withRef: true },
 )(About);
 
 About.propTypes = {

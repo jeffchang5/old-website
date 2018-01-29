@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import MediaQuery from 'react-responsive';
 import DropDownIcon from 'components/common/dropdown';
 import devices from 'theme/devices';
@@ -48,12 +49,14 @@ const LogoWrapper = styled.div`
     margin: 0 20px;
   `}; 
 `;
+
 const Divider = styled.div`
   height: 50px;
   width: 1px;
   margin-left: 20px;
   background: #ccc;
 `;
+
 const MenuCenter = styled.div`
   display: flex;
   justify-content: center;
@@ -84,11 +87,14 @@ const MenuWrapper = styled.div`
 
 const openMenu = e => {
   const bottomOfMenuBar = e.target.getBoundingClientRect().bottom;
-
 };
 
-
-export default () =>
+const unwrapTitle = (property, key) => {
+  if (property !== undefined) {
+    return property[key];
+  } return '';
+};
+const NavBar = props =>
   (<NavWrapper>
     <MediaQuery maxDeviceWidth={974}>
       <NavBarWrapper>
@@ -98,19 +104,24 @@ export default () =>
         <Divider />
         <MenuCenter>
           <MenuWrapper onClick={e => openMenu(e)}>
-            <MenuTitleWrapper>JEFFREY</MenuTitleWrapper>
+            <MenuTitleWrapper>Hello World</MenuTitleWrapper>
             <DropDownWrapper>
               <DropDownIcon />
             </DropDownWrapper>
           </MenuWrapper>
         </MenuCenter>
       </NavBarWrapper>
-      <MenuDropDown />
+      {/*<MenuDropDown />*/}
     </MediaQuery>
     <MediaQuery minDeviceWidth={975}>
       <NavBarWrapper>
-        <NavItem url="/" text="ABOUT" />
-        <NavItem url="/" text="PROJECTS" />
+        {props.navBarItems.slice(1).map(navBarItem =>
+          (<NavItem
+            key={navBarItem.title}
+            scrollTop={navBarItem.scroll.top}
+            text={navBarItem.title}
+          />))
+        }
         <LogoWrapper>
           <LogoImage alt="logo" src={logo} />
         </LogoWrapper>
@@ -119,3 +130,14 @@ export default () =>
       </NavBarWrapper>
     </MediaQuery>
   </NavWrapper>);
+
+NavBar.propTypes = {
+  navBarItems: PropTypes.arrayOf(PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    scroll: PropTypes.shape({
+      top: PropTypes.number,
+      height: PropTypes.number,
+    }),
+  })),
+};
+export default NavBar;

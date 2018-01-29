@@ -1,4 +1,4 @@
-/* eslint-disable no-underscore-dangle */
+/* eslint-disable no-underscore-dangle,no-unused-vars */
 import ReactDOM from 'react-dom';
 import React from 'react';
 import App from 'containers/app';
@@ -6,7 +6,7 @@ import { ThemeProvider } from 'styled-components';
 import Theme from 'theme/theme';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-// eslint-disable-next-line no-unused-vars
+
 import injectGlobal from 'theme/global';
 import rootReducer from 'reducers';
 import Scroll from 'components/common/scroll';

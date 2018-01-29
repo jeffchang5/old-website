@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import React from 'react';
 import PropTypes from 'prop-types';
+import scrollTo from 'theme/scrollto';
 
 const NavItem = styled.a`
   font-family: ${props => props.theme.font.sanserif};
@@ -10,9 +11,10 @@ const NavItem = styled.a`
 `;
 
 const NavHoverBar = styled.div`
-  height: 4px;
-  width: 100%;
-  background-color: salmon;
+  height: 5px;
+  width: 50%;
+  margin-bottom: 10px;
+  background-color: #000000CC;
   visibility: ${props => props.hoverBarVisible};
 `;
 
@@ -38,7 +40,9 @@ class NavComponent extends React.Component {
     this.setState({ hoverBarVisible: toggle });
   }
   render() {
-    return (<NavWrapper onClick={() => scrollTo(document.body, this.props.scrollTop, 50)}>
+    return (<NavWrapper
+      onClick={() => scrollTo(document.scrollingElement, this.props.scrollTop, 1000)}
+    >
       <NavHoverBar hoverBarVisible={this.state.hoverBarVisible} />
       <NavItem
         onMouseEnter={this.toggleHoverBar}

@@ -125,7 +125,7 @@ const NavBar = props =>
         <LogoWrapper>
           <LogoImage alt="logo" src={logo} />
         </LogoWrapper>
-        <NavItem url="/" text="RESUME" />
+        <NavItem url="" text="RESUME" />
         <NavItem url="/" text="CONTACT" />
       </NavBarWrapper>
     </MediaQuery>

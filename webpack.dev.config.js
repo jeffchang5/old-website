@@ -28,11 +28,11 @@ module.exports = {
         loader: 'eslint-loader',
         options: { emitWarning: true } },
       { test: /\.jsx?$/, loader: 'babel-loader', exclude: /node_modules/ },
-      { test: /\.(svg|png|jpg|otf|ttf)$/,
+      { test: /\.(svg|png|jpg|otf|ttf|js)$/,
         use: [{ loader: 'file-loader',
           options: {
             name: '[name].[ext]',
-            outputPath: 'images/',
+            outputPath: 'assets/',
           },
         }],
       },

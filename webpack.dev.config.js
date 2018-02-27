@@ -23,18 +23,26 @@ module.exports = {
   },
   module: {
     rules: [
-      { test: /\.jsx$/,
+      {
+        test: /\.jsx$/,
         enforce: 'pre',
         loader: 'eslint-loader',
-        options: { emitWarning: true } },
-      { test: /\.jsx?$/, loader: 'babel-loader', exclude: /node_modules/ },
-      { test: /\.(svg|png|jpg|otf|ttf)$/,
-        use: [{ loader: 'file-loader',
-          options: {
-            name: '[name].[ext]',
-            outputPath: 'images/',
+        options: { emitWarning: true },
+      },
+      {
+        test: /\.jsx?$/, loader: 'babel-loader', exclude: /node_modules/
+      },
+      {
+        test: /\.(svg|png|jpg|otf|ttf|pdf)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'static/',
+            },
           },
-        }],
+        ],
       },
       { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
     ],

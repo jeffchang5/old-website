@@ -40,26 +40,35 @@ class NavComponent extends React.Component {
     this.setState({ hoverBarVisible: toggle });
   }
   render() {
-    return (<NavWrapper
-      onClick={() => scrollTo(document.scrollingElement, this.props.scrollTop, 1000)}
-    >
-      <NavHoverBar hoverBarVisible={this.state.hoverBarVisible} />
-      <NavItem
-        onMouseEnter={this.toggleHoverBar}
-        onMouseLeave={this.toggleHoverBar}
-      >{this.props.text}</NavItem>
-    </NavWrapper>);
+    const opts = {};
+    if (this.props.isDownload) {
+      opts.download = '';
+    }
+    return (
+      <NavWrapper
+        onClick={() => scrollTo(document.scrollingElement, this.props.scrollTop, 1000)}
+      >
+        <NavHoverBar hoverBarVisible={this.state.hoverBarVisible} />
+        <NavItem
+          href={this.props.url}
+          onMouseEnter={this.toggleHoverBar}
+          onMouseLeave={this.toggleHoverBar}
+          {...opts}
+        >{this.props.text}
+        </NavItem>
+      </NavWrapper>);
   }
 }
 
 NavComponent.propTypes = {
   scrollTop: PropTypes.number,
+  url: PropTypes.string,
   text: PropTypes.string,
+  isDownload: PropTypes.bool,
 };
 
 NavComponent.defaultProps = {
-  url: 'http://www.google.com/',
-  text: 'Google',
+  text: 'Text',
 };
 
 export default NavComponent;

@@ -19,13 +19,16 @@ module.exports = {
   module: {
     rules: [
       { test: /\.jsx?$/, loader: 'babel-loader', exclude: /node_modules/ },
-      { test: /\.(svg|png|jpg|gif|otf|ttf)$/,
-        use: [{ loader: 'file-loader',
-          options: {
-            name: '[name].[ext]',
-            outputPath: 'images/',
-          },
-        }],
+      {
+        test: /\.(svg|png|jpg|gif|otf|ttf|pdf)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'static/',
+            },
+          }],
       },
     ],
   },

@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 import MediaQuery from 'react-responsive';
 import DropDownIcon from 'components/common/dropdown';
 import devices from 'theme/devices';
-import logo from 'resources/images/redbluelogo.png';
+import Logo from 'resources/images/redbluelogo.png';
+import Resume from 'resources/pdfs/Resume.pdf';
 import NavItem from './nav_item';
 import MenuDropDown from './menu_dropdown';
 
@@ -94,12 +95,12 @@ const unwrapTitle = (property, key) => {
     return property[key];
   } return '';
 };
-const NavBar = props =>
-  (<NavWrapper>
+const NavBar = props => (
+  <NavWrapper>
     <MediaQuery maxDeviceWidth={974}>
       <NavBarWrapper>
         <LogoWrapper>
-          <LogoImage alt="logo" src={logo} />
+          <LogoImage alt="logo" src={Logo} />
         </LogoWrapper>
         <Divider />
         <MenuCenter>
@@ -123,10 +124,10 @@ const NavBar = props =>
           />))
         }
         <LogoWrapper>
-          <LogoImage alt="logo" src={logo} />
+          <LogoImage alt="logo" src={Logo} />
         </LogoWrapper>
-        <NavItem url="/" text="RESUME" />
-        <NavItem url="/" text="CONTACT" />
+        <NavItem url={Resume} isDownload="true" text="RESUME" />
+        <NavItem url="mailto:me@jeffchang.io?Subject=Hey,%20I%20saw%20your%20website!" text="CONTACT" />
       </NavBarWrapper>
     </MediaQuery>
   </NavWrapper>);

@@ -13,15 +13,15 @@ class App extends Component {
     };
   }
   render() {
-    return (<div>
-      <Hero
-        ref={section => this.props.setRefs(section)}
-        navBarItems={this.props.navBarItems}
-      />
-      <About ref={section => this.props.setRefs(section)} />
-      <Projects ref={section => this.props.setRefs(section)} />
-      {/*<Projects />*/}
-    </div>);
+    return (
+      <div>
+        <Hero
+          ref={section => this.props.setRefs(section)}
+          navBarItems={this.props.navBarItems}
+        />
+        <About ref={section => this.props.setRefs(section)} />
+        <Projects ref={section => this.props.setRefs(section)} />
+      </div>);
   }
 }
 

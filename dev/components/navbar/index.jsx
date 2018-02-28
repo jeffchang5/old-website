@@ -11,7 +11,10 @@ import MenuDropDown from './menu_dropdown';
 
 
 const NavWrapper = styled.div`
-   display: flex;
+  display: flex;
+  top: 0;
+  position: ${props => (props.isFirstChildScrolled ? 'fixed' : 'inline-block')};
+  visibility: ${props => (props.isDownScroll ? 'hidden' : 'visible')};
   width: 100%;
   z-index: 99999;
   flex-direction: column;
@@ -86,17 +89,11 @@ const MenuWrapper = styled.div`
   align-self: center;
 `;
 
-const openMenu = e => {
-  const bottomOfMenuBar = e.target.getBoundingClientRect().bottom;
-};
-
-const unwrapTitle = (property, key) => {
-  if (property !== undefined) {
-    return property[key];
-  } return '';
-};
 const NavBar = props => (
-  <NavWrapper>
+  <NavWrapper
+    isFirstChildScrolled={props.isFirstChildScrolled}
+    isDownScroll={props.isDownScroll}
+  >
     <MediaQuery maxDeviceWidth={974}>
       <NavBarWrapper>
         <LogoWrapper>
@@ -112,7 +109,7 @@ const NavBar = props => (
           </MenuWrapper>
         </MenuCenter>
       </NavBarWrapper>
-      {/*<MenuDropDown />*/}
+      <MenuDropDown isVisible />
     </MediaQuery>
     <MediaQuery minDeviceWidth={975}>
       <NavBarWrapper>
@@ -127,12 +124,17 @@ const NavBar = props => (
           <LogoImage alt="logo" src={Logo} />
         </LogoWrapper>
         <NavItem url={Resume} isDownload="true" text="RESUME" />
-        <NavItem url="mailto:me@jeffchang.io?Subject=Hey,%20I%20saw%20your%20website!" text="CONTACT" />
+        <NavItem
+          url="mailto:me@jeffchang.io?Subject=Hey,%20I%20saw%20your%20website!"
+          text="CONTACT"
+        />
       </NavBarWrapper>
     </MediaQuery>
   </NavWrapper>);
 
 NavBar.propTypes = {
+  isFirstChildScrolled: PropTypes.bool,
+  isDownScroll: PropTypes.bool,
   navBarItems: PropTypes.arrayOf(PropTypes.shape({
     title: PropTypes.string.isRequired,
     scroll: PropTypes.shape({

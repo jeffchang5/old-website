@@ -5,12 +5,13 @@ export default ChildComponent => (class ScrollComponent extends React.Component 
   constructor(props) {
     super(props);
     this.references = [];
-    this.state = { navBarItems: [] };
+    this.lastScrollPosition = 0;
+    this.state = { navBarItems: [], isFirstChildScrolled: false };
     this.onScroll = this.onScroll.bind(this);
     this.setRefs = this.setRefs.bind(this);
   }
   componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener('scroll', this.onScroll);
     const heights = this.references.map((ref) => {
       if (ref.wrappedInstance !== undefined) {
         const wrappedRef = ref.wrappedInstance.section;
@@ -36,7 +37,17 @@ export default ChildComponent => (class ScrollComponent extends React.Component 
     window.removeEventListener('scroll', this.handleScroll);
   }
   onScroll() {
-    console.log('hello');
+    const bodyScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    if (bodyScrollTop >= this.state.navBarItems[0].scroll.height) {
+      if (bodyScrollTop > this.lastScrollPosition) {
+        this.setState({ ...this.state, isFirstChildScrolled: true, isDownScroll: true });
+      } else {
+        this.setState({ ...this.state, isFirstChildScrolled: true, isDownScroll: false });
+      }
+      this.lastScrollPosition = bodyScrollTop;
+    } else {
+      this.setState({ ...this.state, isFirstChildScrolled: false });
+    }
   }
 
   setRefs(ref) {
@@ -44,6 +55,8 @@ export default ChildComponent => (class ScrollComponent extends React.Component 
   }
   render() {
     return (<ChildComponent
+      isDownScroll={this.state.isDownScroll}
+      isFirstChildScrolled={this.state.isFirstChildScrolled}
       navBarItems={this.state.navBarItems}
       setRefs={this.setRefs}
       {...this.props}

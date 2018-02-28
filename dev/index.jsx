@@ -12,8 +12,10 @@ import rootReducer from 'reducers';
 import Scroll from 'components/common/scroll';
 
 const ScrollComponent = Scroll(App);
-const store = createStore(rootReducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+const store = createStore(
+  rootReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+);
 
 ReactDOM.render(
   <ThemeProvider theme={Theme}>
@@ -21,4 +23,5 @@ ReactDOM.render(
       <ScrollComponent />
     </Provider>
   </ThemeProvider>,
-  document.getElementById('root'));
+  document.getElementById('root'),
+);

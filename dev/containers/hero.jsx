@@ -170,41 +170,48 @@ const HeroCenter = styled.div`
 // eslint-disable-next-line react/prefer-stateless-function
 class Hero extends Component {
   render() {
-    return (<SectionWrapper innerRef={(section) => { this.section = section; }}>
-      <NavBar navBarItems={this.props.navBarItems} />
-      <Container style={{ flexGrow: '1', background: '#F5F5F5' }}>
-        <HeroSectionWrapper>
-          <HeroQuoteSection>
-            <HeroQuoteHat />
-            <HeroQuoteWrapper>
-              <HeroQuote>We have always held to the hope, the belief,
-                the conviction that there is a better life, a better world,
-                beyond the horizon.
-              </HeroQuote>
-            </HeroQuoteWrapper>
-            <Divider />
-            <HeroQuoteCitation>Franklin D. Roosevelt</HeroQuoteCitation>
-            <HeroGallery />
-          </HeroQuoteSection>
-          <HeroHeadlineWrapper>
-            <HeroCenter>
-              <HeroPortfolio>
-                <HeroPortrait src={Portrait} />
-                <AboutPortfolioHeader>Jeffrey Chang</AboutPortfolioHeader>
-                <AboutPortfolioSubHeaderWrapper>
-                  <AboutSubHeader>Data Scientist</AboutSubHeader>
-                  <AboutSubHeader>Developer</AboutSubHeader>
-                  <AboutSubHeader>Student</AboutSubHeader>
-                </AboutPortfolioSubHeaderWrapper>
-              </HeroPortfolio>
-            </HeroCenter>
-          </HeroHeadlineWrapper>
-        </HeroSectionWrapper>
-      </Container>
-    </SectionWrapper>);
+    return (
+      <SectionWrapper innerRef={(section) => { this.section = section; }}>
+        <NavBar
+          navBarItems={this.props.navBarItems}
+          isFirstChildScrolled={this.props.isFirstChildScrolled}
+          isDownScroll={this.props.isDownScroll}
+        />
+        <Container style={{ flexGrow: '1', background: '#F5F5F5' }}>
+          <HeroSectionWrapper>
+            <HeroQuoteSection>
+              <HeroQuoteHat />
+              <HeroQuoteWrapper>
+                <HeroQuote>We have always held to the hope, the belief,
+                  the conviction that there is a better life, a better world,
+                  beyond the horizon.
+                </HeroQuote>
+              </HeroQuoteWrapper>
+              <Divider />
+              <HeroQuoteCitation>Franklin D. Roosevelt</HeroQuoteCitation>
+              <HeroGallery />
+            </HeroQuoteSection>
+            <HeroHeadlineWrapper>
+              <HeroCenter>
+                <HeroPortfolio>
+                  <HeroPortrait src={Portrait} />
+                  <AboutPortfolioHeader>Jeffrey Chang</AboutPortfolioHeader>
+                  <AboutPortfolioSubHeaderWrapper>
+                    <AboutSubHeader>Data Scientist</AboutSubHeader>
+                    <AboutSubHeader>Developer</AboutSubHeader>
+                    <AboutSubHeader>Student</AboutSubHeader>
+                  </AboutPortfolioSubHeaderWrapper>
+                </HeroPortfolio>
+              </HeroCenter>
+            </HeroHeadlineWrapper>
+          </HeroSectionWrapper>
+        </Container>
+      </SectionWrapper>);
   }
 }
 Hero.propTypes = {
+  isFirstChildScrolled: PropTypes.bool,
+  isDownScroll: PropTypes.bool,
   navBarItems: PropTypes.arrayOf(PropTypes.shape({
     title: PropTypes.string.isRequired,
     scroll: PropTypes.shape({

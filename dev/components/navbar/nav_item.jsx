@@ -26,7 +26,7 @@ const NavWrapper = styled.div`
   flex-direction: column;
 `;
 
-class NavComponent extends React.Component {
+class NavItemComponent extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.toggleHoverBar = this.toggleHoverBar.bind(this);
@@ -60,15 +60,15 @@ class NavComponent extends React.Component {
   }
 }
 
-NavComponent.propTypes = {
+NavItemComponent.propTypes = {
   scrollTop: PropTypes.number,
   url: PropTypes.string,
   text: PropTypes.string,
   isDownload: PropTypes.bool,
 };
 
-NavComponent.defaultProps = {
+NavItemComponent.defaultProps = {
   text: 'Text',
 };
 
-export default NavComponent;
+export default NavItemComponent;

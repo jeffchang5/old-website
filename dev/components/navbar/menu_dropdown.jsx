@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 const MenuWrapper = styled.div`
   position: relative;
-  display: inline-block;
   border-top: 1px solid #ccc;
   width: 100%;
+  display:  ${props => (props.isVisible ? 'inline-block' : 'none')};
 `;
 
 const MenuItemWrapper = styled.div`;
@@ -30,14 +30,21 @@ const MenuItem = ({ text }) => (
   </MenuItemWrapper>);
 
 MenuItem.propTypes = {
-  text: propTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
 };
 
-export default () => (
-  <MenuWrapper>
+const MenuDropDown = ({ isVisible }) => (
+  <MenuWrapper isVisible={isVisible}>
     <MenuItem text="Hello World" />
     <MenuItem text="Hello World" />
     <MenuItem text="Hello World" />
     <MenuItem text="Hello World" />
     <MenuItem text="Hello World" />
   </MenuWrapper>);
+
+MenuDropDown.propTypes = {
+  isVisible: PropTypes.bool,
+};
+
+export default MenuDropDown;
+

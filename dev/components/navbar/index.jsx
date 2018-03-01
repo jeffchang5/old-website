@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import MediaQuery from 'react-responsive';
 import DropDownIcon from 'components/common/dropdown';
+import { slideUp, slideDown } from 'theme/animations';
 import devices from 'theme/devices';
 import Logo from 'resources/images/redbluelogo.png';
 import Resume from 'resources/pdfs/Resume.pdf';
@@ -10,16 +11,21 @@ import NavItem from './nav_item';
 import MenuDropDown from './menu_dropdown';
 
 
+const fun = (props) => {
+  if (props.isFirstChildScrolled) {
+    return (props.isDownScroll ? slideUp : slideDown);
+  } return '';
+};
+
 const NavWrapper = styled.div`
   display: flex;
-  top: 0;
   position: ${props => (props.isFirstChildScrolled ? 'fixed' : 'inline-block')};
-  visibility: ${props => (props.isDownScroll ? 'hidden' : 'visible')};
   width: 100%;
   z-index: 99999;
   flex-direction: column;
   background-color: white;
   border-bottom: 1px solid #ccc;
+  animation: ${props => fun(props)} .7s cubic-bezier(0.19, 1, 0.22, 1) forwards;
   
   ${devices.desktop`
     font-size: 4.0em;

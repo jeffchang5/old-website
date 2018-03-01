@@ -6,7 +6,7 @@ export default ChildComponent => (class ScrollComponent extends React.Component 
     super(props);
     this.references = [];
     this.lastScrollPosition = 0;
-    this.state = { navBarItems: [], isFirstChildScrolled: false };
+    this.state = { navBarItems: [], isFirstChildScrolled: false, isDownScroll: false };
     this.onScroll = this.onScroll.bind(this);
     this.setRefs = this.setRefs.bind(this);
   }
@@ -38,16 +38,20 @@ export default ChildComponent => (class ScrollComponent extends React.Component 
   }
   onScroll() {
     const bodyScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-    if (bodyScrollTop >= this.state.navBarItems[0].scroll.height) {
-      if (bodyScrollTop > this.lastScrollPosition) {
+    const firstElementHeight = this.state.navBarItems[0].scroll.height;
+    if (bodyScrollTop >= firstElementHeight) {
+      if (bodyScrollTop >= (this.lastScrollPosition)) {
         this.setState({ ...this.state, isFirstChildScrolled: true, isDownScroll: true });
       } else {
         this.setState({ ...this.state, isFirstChildScrolled: true, isDownScroll: false });
       }
       this.lastScrollPosition = bodyScrollTop;
+    } else if (bodyScrollTop >= (this.lastScrollPosition)) {
+      this.setState({ ...this.state, isFirstChildScrolled: false, isDownScroll: true });
     } else {
-      this.setState({ ...this.state, isFirstChildScrolled: false });
+      this.setState({ ...this.state, isFirstChildScrolled: false, isDownScroll: false });
     }
+    this.lastScrollPosition = bodyScrollTop;
   }
 
   setRefs(ref) {

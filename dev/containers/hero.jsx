@@ -10,7 +10,6 @@ const SectionWrapper = styled.div`
   ${devices.desktop`
     height: 100vh;
    `};
-  
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;

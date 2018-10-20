@@ -12,8 +12,10 @@ import MenuDropDown from './menu_dropdown';
 
 const toggleAnimation = (props) => {
   if (props.isFirstChildScrolled) {
-    return (`${props.isDownScroll ? slideUp : slideDown} .7s cubic-bezier(0.19, 1, 0.22, 1) forwards`);
-  } return 'none';
+    return (`${props.isDownScroll ? slideUp : slideDown} .7s cubic-bezier(0.19, 1, 0.22, 1)  0.5s forwards`);
+  }
+
+  return 'none';
 };
 
 const NavWrapper = styled.div`

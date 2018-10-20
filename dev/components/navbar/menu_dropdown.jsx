@@ -3,10 +3,11 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const MenuWrapper = styled.div`
-  position: relative;
+  position: absolute;
   border-top: 1px solid #ccc;
   width: 100%;
-  display:  ${props => (props.isVisible ? 'inline-block' : 'none')};
+  top: 95px;
+  display:  ${props => (props.isVisible ? 'block' : 'none')};
 `;
 
 const MenuItemWrapper = styled.div`;
@@ -44,6 +45,13 @@ const MenuDropDown = ({ isVisible }) => (
 
 MenuDropDown.propTypes = {
   isVisible: PropTypes.bool,
+  navBarItems: PropTypes.arrayOf(PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    scroll: PropTypes.shape({
+      top: PropTypes.number,
+      height: PropTypes.number,
+    }),
+  })),
 };
 
 export default MenuDropDown;

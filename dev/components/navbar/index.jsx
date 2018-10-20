@@ -10,22 +10,22 @@ import Resume from 'resources/pdfs/Resume.pdf';
 import NavItem from './nav_item';
 import MenuDropDown from './menu_dropdown';
 
-
-const fun = (props) => {
+const toggleAnimation = (props) => {
   if (props.isFirstChildScrolled) {
-    return (props.isDownScroll ? slideUp : slideDown);
-  } return '';
+    return (`${props.isDownScroll ? slideUp : slideDown} .7s cubic-bezier(0.19, 1, 0.22, 1) forwards`);
+  } return 'none';
 };
 
 const NavWrapper = styled.div`
   display: flex;
-  position: ${props => (props.isFirstChildScrolled ? 'fixed' : 'inline-block')};
   width: 100%;
   z-index: 99999;
   flex-direction: column;
   background-color: white;
   border-bottom: 1px solid #ccc;
-  animation: ${props => fun(props)} .7s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  position: ${props => (props.isFirstChildScrolled ? 'fixed' : 'inline-block')};
+  animation: ${props => toggleAnimation(props)};
+  transition: ${props => (props.isFirstChildScrolled ? 'all' : 'none')};
   
   ${devices.desktop`
     font-size: 4.0em;
@@ -95,50 +95,70 @@ const MenuWrapper = styled.div`
   align-self: center;
 `;
 
-const NavBar = props => (
-  <NavWrapper
-    isFirstChildScrolled={props.isFirstChildScrolled}
-    isDownScroll={props.isDownScroll}
-  >
-    <MediaQuery maxDeviceWidth={974}>
-      <NavBarWrapper>
-        <LogoWrapper>
-          <LogoImage alt="logo" src={Logo} />
-        </LogoWrapper>
-        <Divider />
-        <MenuCenter>
-          <MenuWrapper onClick={e => openMenu(e)}>
-            <MenuTitleWrapper>Hello World</MenuTitleWrapper>
-            <DropDownWrapper>
-              <DropDownIcon />
-            </DropDownWrapper>
-          </MenuWrapper>
-        </MenuCenter>
-      </NavBarWrapper>
-      <MenuDropDown isVisible />
-    </MediaQuery>
-    <MediaQuery minDeviceWidth={975}>
-      <NavBarWrapper>
-        {props.navBarItems.slice(1).map(navBarItem =>
-          (<NavItem
-            key={navBarItem.title}
-            scrollTop={navBarItem.scroll.top}
-            text={navBarItem.title}
-          />))
-        }
-        <LogoWrapper>
-          <LogoImage alt="logo" src={Logo} />
-        </LogoWrapper>
-        <NavItem url={Resume} isDownload="true" text="RESUME" />
-        <NavItem
-          url="mailto:me@jeffchang.io?Subject=Hey,%20I%20saw%20your%20website!"
-          text="CONTACT"
-        />
-      </NavBarWrapper>
-    </MediaQuery>
-  </NavWrapper>);
+class NavBarComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      current_title: 'Jeffrey Chang',
+      isDropDownVisible: false,
+    };
+  }
 
-NavBar.propTypes = {
+  componentDidMount() {
+    window.addEventListener('scroll', () => {
+      this.setState({ ...this.state, isDropDownVisible: false });
+    });
+  }
+  toggleMenu() {
+    this.setState({ ...this.state, isDropDownVisible: !this.state.isDropDownVisible });
+  }
+
+  render() {
+    return (<NavWrapper
+      isFirstChildScrolled={this.props.isFirstChildScrolled}
+      isDownScroll={this.props.isDownScroll}
+    >
+      <MediaQuery maxDeviceWidth={974}>
+        <NavBarWrapper>
+          <LogoWrapper>
+            <LogoImage alt="logo" src={Logo} />
+          </LogoWrapper>
+          <Divider />
+          <MenuCenter>
+            <MenuWrapper onClick={() => this.toggleMenu()}>
+              <MenuTitleWrapper>Hello World</MenuTitleWrapper>
+              <DropDownWrapper>
+                <DropDownIcon />
+              </DropDownWrapper>
+            </MenuWrapper>
+          </MenuCenter>
+        </NavBarWrapper>
+        <MenuDropDown isVisible={this.state.isDropDownVisible} />
+      </MediaQuery>
+      <MediaQuery minDeviceWidth={975}>
+        <NavBarWrapper>
+          {this.props.navBarItems.slice(1).map(navBarItem =>
+            (<NavItem
+              key={navBarItem.title}
+              scrollTop={navBarItem.scroll.top}
+              text={navBarItem.title}
+            />))
+          }
+          <LogoWrapper>
+            <LogoImage alt="logo" src={Logo} />
+          </LogoWrapper>
+          <NavItem url={Resume} isDownload="true" text="RESUME" />
+          <NavItem
+            url="mailto:me@jeffchang.io?Subject=Hey,%20I%20saw%20your%20website!"
+            text="CONTACT"
+          />
+        </NavBarWrapper>
+      </MediaQuery>
+    </NavWrapper>);
+  }
+}
+
+NavBarComponent.propTypes = {
   isFirstChildScrolled: PropTypes.bool,
   isDownScroll: PropTypes.bool,
   navBarItems: PropTypes.arrayOf(PropTypes.shape({
@@ -149,4 +169,4 @@ NavBar.propTypes = {
     }),
   })),
 };
-export default NavBar;
+export default NavBarComponent;

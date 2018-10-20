@@ -45,11 +45,8 @@ export default ChildComponent => (class ScrollComponent extends React.Component 
       } else {
         this.setState({ ...this.state, isFirstChildScrolled: true, isDownScroll: false });
       }
-      this.lastScrollPosition = bodyScrollTop;
-    } else if (bodyScrollTop >= (this.lastScrollPosition)) {
-      this.setState({ ...this.state, isFirstChildScrolled: false, isDownScroll: true });
     } else {
-      this.setState({ ...this.state, isFirstChildScrolled: false, isDownScroll: false });
+      this.setState({ ...this.state, isFirstChildScrolled: false, isDownScroll: true });
     }
     this.lastScrollPosition = bodyScrollTop;
   }

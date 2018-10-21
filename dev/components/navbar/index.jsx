@@ -12,10 +12,21 @@ import MenuDropDown from './menu_dropdown';
 
 const toggleAnimation = (props) => {
   if (props.isFirstChildScrolled) {
-    return (`${props.isDownScroll ? slideUp : slideDown} .7s cubic-bezier(0.19, 1, 0.22, 1)  0.5s forwards`);
+    return (`${props.isDownScroll ? slideUp : slideDown} .7s cubic-bezier(0.19, 1, 0.22, 1) forwards`);
   }
 
   return 'none';
+};
+
+// Uses negative absolute positioning to hide component when in fixed positioning downwards.
+// Otherwise, causes an animation when scrolled past the height of the first element.
+const fixInitialAnimation = (props) => {
+  if (props.isFirstChildScrolled && props.isDownScroll) {
+    return '-125px';
+  } else if (props.isFirstChildScrolled && !props.isDownScroll) {
+    return '0px';
+  }
+  return null;
 };
 
 const NavWrapper = styled.div`
@@ -27,6 +38,7 @@ const NavWrapper = styled.div`
   border-bottom: 1px solid #ccc;
   position: ${props => (props.isFirstChildScrolled ? 'fixed' : 'inline-block')};
   animation: ${props => toggleAnimation(props)};
+  top: ${props => fixInitialAnimation(props)};
   transition: ${props => (props.isFirstChildScrolled ? 'all' : 'none')};
   
   ${devices.desktop`

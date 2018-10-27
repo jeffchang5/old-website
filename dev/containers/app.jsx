@@ -16,7 +16,8 @@ class App extends Component {
         />
         <About ref={section => this.props.setRefs(section)} />
         <Projects ref={section => this.props.setRefs(section)} />
-      </div>);
+      </div>
+    );
   }
 }
 

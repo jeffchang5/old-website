@@ -2,12 +2,12 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: path.resolve('./dev/index.jsx'),
+  entry: path.resolve('./dev/index.tsx'),
   output: {
     filename: 'bundle.js',
     path: path.resolve('./dist/public'),
   },
-  devtool: 'source-map',
+  devtool: 'inline-source-map',
   target: 'web',
   devServer: {
     inline: true,
@@ -19,18 +19,26 @@ module.exports = {
       path.resolve('./dev'),
       path.resolve('./node_modules'),
     ],
-    extensions: ['.js', '.jsx', '.json'],
+    extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
   },
   module: {
+    // loaders: [
+    //   All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
+      // { test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
+    // ],
+    // preLoaders: [
+    //   { test: /\.js$/, loader: 'source-map-loader', },
+    // ],
     rules: [
       {
-        test: /\.jsx$/,
-        enforce: 'pre',
-        loader: 'eslint-loader',
-        options: { emitWarning: true },
+        test: /\.jsx?$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/,
       },
       {
-        test: /\.jsx?$/, loader: 'babel-loader', exclude: /node_modules/
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
       },
       {
         test: /\.(svg|png|jpg|otf|ttf|pdf)$/,
@@ -44,7 +52,11 @@ module.exports = {
           },
         ],
       },
-      { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
+      {
+        enforce: 'pre',
+        test: /\.js$/,
+        loader: 'source-map-loader',
+      },
     ],
   },
   plugins: [

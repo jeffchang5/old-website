@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
-  entry: path.resolve('./dev/index.jsx'),
+  entry: path.resolve('./dev/index.tsx'),
   output: {
     filename: 'bundle.min.js',
     path: path.resolve('./dist/public'),
@@ -18,7 +18,16 @@ module.exports = {
   },
   module: {
     rules: [
-      { test: /\.jsx?$/, loader: 'babel-loader', exclude: /node_modules/ },
+      {
+        test: /\.jsx?$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
       {
         test: /\.(svg|png|jpg|gif|otf|ttf|pdf)$/,
         use: [

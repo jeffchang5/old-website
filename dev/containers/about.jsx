@@ -7,9 +7,11 @@ import ResponsiveContainer from 'components/common/responsive_container';
 
 import { selectActiveMenuItem, selectActiveSubMenuItem, updateMenuItems } from 'actions/about';
 import AboutOptionComponent from 'components/about/aboutoptions';
-import AboutViewWrapper from 'components/about/aboutviewwrapper';
+// import AboutViewWrapper from 'components/about/aboutviewwrapper';
 import AboutCard from 'components/about/aboutcard';
 import AboutItems from 'config/about_items';
+
+import ExperienceComponent from 'components/experience';
 
 const AboutWrapper = styled.div`
   display: flex;
@@ -19,13 +21,9 @@ const AboutWrapper = styled.div`
 `;
 
 const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-left: 15px;
-  padding-right: 15px;
-  flex: 1;
-
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 20px;
 `;
 
 const AboutSectionWrapper = styled.div`
@@ -56,6 +54,7 @@ const mapDispatchToProps = dispatch =>
       dispatch(selectActiveSubMenuItem(
         id, name, position, description, date)),
   });
+
 
 const AboutMetaOptionComponent = (props) => {
   if (props.card != null) {
@@ -101,27 +100,30 @@ class About extends Component {
     this.props.updateMenuItems(AboutItems);
   }
   render() {
-    return (<ResponsiveContainer innerRef={(section) => { this.section = section; }}>
-      <Container>
-        <SectionHeader text="About" />
-        <AboutSectionWrapper>
-          <AboutWrapper>
-            <AboutMetaOptionComponent
-              option={{
-                activeId: this.props.activeId,
-                onMenuItemClicked: this.props.onMenuItemClicked,
-                items: this.props.items,
-              }}
-              card={this.props.card_details}
-            />
-            <AboutViewWrapper
-              onSubMenuSelected={this.props.onSubMenuSelected}
-              item={findAboutItem(this.props.items, this.props.activeId)}
-            />
-          </AboutWrapper>
-        </AboutSectionWrapper>
-      </Container>
-    </ResponsiveContainer>);
+    return (
+      <ResponsiveContainer innerRef={(section) => { this.section = section; }}>
+        <Container>
+          <SectionHeader text="About" />
+          <AboutSectionWrapper>
+            <AboutWrapper>
+              <ExperienceComponent />
+              {/*<AboutMetaOptionComponent*/}
+                {/*option={{*/}
+                  {/*activeId: this.props.activeId,*/}
+                  {/*onMenuItemClicked: this.props.onMenuItemClicked,*/}
+                  {/*items: this.props.items,*/}
+                {/*}}*/}
+                {/*card={this.props.card_details}*/}
+              {/*/>*/}
+              {/*<AboutViewWrapper*/}
+                {/*onSubMenuSelected={this.props.onSubMenuSelected}*/}
+                {/*item={findAboutItem(this.props.items, this.props.activeId)}*/}
+              {/*/>*/}
+            </AboutWrapper>
+          </AboutSectionWrapper>
+        </Container>
+      </ResponsiveContainer>
+    );
   }
 }
 

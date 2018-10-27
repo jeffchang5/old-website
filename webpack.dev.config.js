@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+  mode: 'development',
   entry: path.resolve('./dev/index.tsx'),
   output: {
     filename: 'bundle.js',
@@ -22,13 +23,6 @@ module.exports = {
     extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
   },
   module: {
-    // loaders: [
-    //   All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
-      // { test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
-    // ],
-    // preLoaders: [
-    //   { test: /\.js$/, loader: 'source-map-loader', },
-    // ],
     rules: [
       {
         test: /\.jsx?$/,

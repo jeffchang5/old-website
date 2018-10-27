@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
+  mode: 'production',
   entry: path.resolve('./dev/index.tsx'),
   output: {
     filename: 'bundle.min.js',
@@ -14,7 +15,7 @@ module.exports = {
       path.resolve('./dev'),
       path.resolve('./node_modules'),
     ],
-    extensions: ['.js', '.jsx', '.json'],
+    extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
   },
   module: {
     rules: [
@@ -46,9 +47,6 @@ module.exports = {
       template: path.resolve('./dev/template.html'),
       title: 'Jeffrey Chang',
       inject: 'body',
-    }),
-    new UglifyJSPlugin({
-      parallel: true,
     }),
   ],
 };

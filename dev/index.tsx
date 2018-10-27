@@ -33,8 +33,8 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
 export interface Props {
-    name: string;
-    enthusiasmLevel?: number;
+  name: string;
+  enthusiasmLevel?: number;
 }
 
 function Hello({ name, enthusiasmLevel = 1 }: Props) {
@@ -64,11 +64,10 @@ export default Hello;
 // helpers
 
 function getExclamationMarks(numChars: number) {
-    return Array(numChars + 1).join('!');
+  return Array(numChars + 1).join('!');
 }
 ReactDOM.render(
 // @ts-ignore
   <Hello />,
   document.getElementById('root'),
 );
-

@@ -35,6 +35,16 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
+        test: /\.(ts|tsx)$/,
+        enforce: 'pre',
+        use: [
+          {
+            loader: 'tslint-loader',
+            options: { /* Loader options go here */ }
+          }
+        ]
+      },
+      {
         test: /\.(svg|png|jpg|otf|ttf|pdf)$/,
         use: [
           {

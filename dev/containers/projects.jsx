@@ -47,7 +47,7 @@ export default class ProjectsComponent extends React.Component {
 
   render() {
     return (
-      <WideContainer innerRef={(section) => { this.section = section; }}>
+      <WideContainer ref={(section) => { this.section = section; }}>
         { Object.keys(ProjectCategories).map(category => (
           <svg key={category} xmlns="http://www.w3.org/2000/svg" version="1.1" height="0">
             <filter id={`${category}-filter`}>

@@ -170,7 +170,7 @@ const HeroCenter = styled.div`
 class Hero extends Component {
   render() {
     return (
-      <SectionWrapper innerRef={(section) => { this.section = section; }}>
+      <SectionWrapper ref={(section) => { this.section = section; }}>
         <NavBar
           navBarItems={this.props.navBarItems}
           isFirstChildScrolled={this.props.isFirstChildScrolled}

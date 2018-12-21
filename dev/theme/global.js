@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-expressions */
-import { injectGlobal } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 import MajesticBoldFont from 'resources/fonts/Majesti-Banner-Bold.otf';
 import LiberationSansFont from 'resources/fonts/LiberationSans-Regular.ttf';
 
 
-injectGlobal`
+export default createGlobalStyle`
   @font-face {
     font-family: "Majestic Bold";
     src: url('${MajesticBoldFont}');

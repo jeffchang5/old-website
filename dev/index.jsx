@@ -7,7 +7,6 @@ import Theme from 'theme/theme';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 // eslint-disable-next-line no-unused-vars
-import injectGlobal from 'theme/global';
 import rootReducer from 'reducers';
 import Scroll from 'components/common/scroll';
 

@@ -3,6 +3,7 @@ import Hero from 'containers/hero';
 import About from 'containers/about';
 import Projects from 'containers/projects';
 import PropTypes from 'prop-types';
+import GlobalStyle from '../theme/global';
 
 class App extends Component {
   render() {
@@ -16,6 +17,7 @@ class App extends Component {
         />
         <About ref={section => this.props.setRefs(section)} />
         <Projects ref={section => this.props.setRefs(section)} />
+        <GlobalStyle />
       </div>);
   }
 }

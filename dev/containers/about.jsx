@@ -101,7 +101,7 @@ class About extends Component {
   }
   render() {
     return (
-      <ResponsiveContainer innerRef={(section) => { this.section = section; }}>
+      <ResponsiveContainer ref={(section) => { this.section = section; }}>
         <Container>
           <SectionHeader text="About" />
           <AboutSectionWrapper>

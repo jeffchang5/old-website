@@ -4,19 +4,18 @@ import PropTypes from 'prop-types';
 import MediaQuery from 'react-responsive';
 import DropDownIcon from 'components/common/dropdown';
 import { slideUp, slideDown } from 'theme/animations';
+import { css } from 'styled-components';
 import devices from 'theme/devices';
 import Logo from 'resources/images/redbluelogo.png';
 import Resume from 'resources/pdfs/Resume.pdf';
 import NavItem from './nav_item';
 import MenuDropDown from './menu_dropdown';
 
-const toggleAnimation = (props) => {
-  if (props.isFirstChildScrolled) {
-    return (`${props.isDownScroll ? slideUp : slideDown} .7s cubic-bezier(0.19, 1, 0.22, 1) forwards`);
-  }
-
-  return 'none';
-};
+// Only toggles if it is past first scrolled component and if the user is scrolling down.
+const navBarAnimation = css`
+  ${props => props.isFirstChildScrolled ? (props.isDownScroll ? slideUp : slideDown) : 'none'} 
+  .7s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+`;
 
 // Uses negative absolute positioning to hide component when in fixed positioning downwards.
 // Otherwise, causes an animation when scrolled past the height of the first element.
@@ -37,7 +36,7 @@ const NavWrapper = styled.div`
   background-color: white;
   border-bottom: 1px solid #ccc;
   position: ${props => (props.isFirstChildScrolled ? 'fixed' : 'inline-block')};
-  animation: ${props => toggleAnimation(props)};
+  animation: ${navBarAnimation};
   top: ${props => fixInitialAnimation(props)};
   transition: ${props => (props.isFirstChildScrolled ? 'all' : 'none')};
   

@@ -11,7 +11,7 @@ const SectionHeader = styled.div`
 
 const HeaderDecoration = styled.div`
   height: 10px;
-  width: 60%;
+  width: 100px;
   background: black;
   
 `;

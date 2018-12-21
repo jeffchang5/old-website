@@ -7,7 +7,6 @@ import ResponsiveContainer from 'components/common/responsive_container';
 
 import { selectActiveMenuItem, selectActiveSubMenuItem, updateMenuItems } from 'actions/about';
 import AboutOptionComponent from 'components/about/aboutoptions';
-// import AboutViewWrapper from 'components/about/aboutviewwrapper';
 import AboutCard from 'components/about/aboutcard';
 import AboutItems from 'config/about_items';
 
@@ -107,18 +106,6 @@ class About extends Component {
           <AboutSectionWrapper>
             <AboutWrapper>
               <ExperienceComponent />
-              {/*<AboutMetaOptionComponent*/}
-                {/*option={{*/}
-                  {/*activeId: this.props.activeId,*/}
-                  {/*onMenuItemClicked: this.props.onMenuItemClicked,*/}
-                  {/*items: this.props.items,*/}
-                {/*}}*/}
-                {/*card={this.props.card_details}*/}
-              {/*/>*/}
-              {/*<AboutViewWrapper*/}
-                {/*onSubMenuSelected={this.props.onSubMenuSelected}*/}
-                {/*item={findAboutItem(this.props.items, this.props.activeId)}*/}
-              {/*/>*/}
             </AboutWrapper>
           </AboutSectionWrapper>
         </Container>

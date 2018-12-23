@@ -160,7 +160,7 @@ class NavBarComponent extends React.Component {
           <LogoWrapper>
             <LogoImage alt="logo" src={Logo} />
           </LogoWrapper>
-          <NavItem url={Resume} isDownload="true" text="RESUME" />
+          <NavItem url={Resume} text="RESUME" />
           <NavItem
             url="mailto:me@jeffchang.io?Subject=Hey,%20I%20saw%20your%20website!"
             text="CONTACT"

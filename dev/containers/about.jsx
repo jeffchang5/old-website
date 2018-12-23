@@ -1,16 +1,10 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import SectionHeader from 'components/common/section_header';
 import ResponsiveContainer from 'components/common/responsive_container';
 
-import { selectActiveMenuItem, selectActiveSubMenuItem, updateMenuItems } from 'actions/about';
-import AboutOptionComponent from 'components/about/aboutoptions';
-import AboutCard from 'components/about/aboutcard';
-import AboutItems from 'config/about_items';
-
-import ExperienceComponent from 'components/experience';
+import AboutComponent from 'components/about';
 
 const AboutWrapper = styled.div`
   display: flex;
@@ -34,36 +28,15 @@ const AboutSectionWrapper = styled.div`
   height: 100%;
 `;
 
-const findAboutItem = (items, id) => (
-  items.filter(aboutItems =>
-    aboutItems.id === id,
-  )[0]);
-
-const mapStateToProps = state =>
-  ({
-    activeId: state.about.active_menuitem,
-    items: state.about.menuitems,
-    card_details: state.about.card_details,
-  });
-
-const mapDispatchToProps = dispatch =>
-  ({
-    updateMenuItems: items => dispatch(updateMenuItems(items)),
-    onMenuItemClicked: id => dispatch(selectActiveMenuItem(id)),
-    onSubMenuSelected: (id, name, position, description, date) =>
-      dispatch(selectActiveSubMenuItem(
-        id, name, position, description, date)),
-  });
-
-
 const AboutMetaOptionComponent = (props) => {
   if (props.card != null) {
-    return (<AboutCard
-      date={props.card.date}
-      description={props.card.description}
-      header={props.card.header}
-      subheader={props.card.subheader}
-    />);
+    return (
+      <AboutCard
+        date={props.card.date}
+        description={props.card.description}
+        header={props.card.header}
+        subheader={props.card.subheader}
+      />);
   }
   return (
     <AboutOptionComponent
@@ -96,9 +69,6 @@ AboutMetaOptionComponent.propTypes = ({
 });
 
 class About extends Component {
-  componentDidMount() {
-    this.props.updateMenuItems(AboutItems);
-  }
   render() {
     return (
       <ResponsiveContainer ref={(section) => { this.section = section; }}>
@@ -106,7 +76,7 @@ class About extends Component {
           <SectionHeader text="About" />
           <AboutSectionWrapper>
             <AboutWrapper>
-              <ExperienceComponent />
+              <AboutComponent />
             </AboutWrapper>
           </AboutSectionWrapper>
         </Container>
@@ -114,24 +84,7 @@ class About extends Component {
     );
   }
 }
-
-const AboutComponent = connect(
-  mapStateToProps,
-  mapDispatchToProps,
-  null, { withRef: true },
-)(About);
-
 About.propTypes = {
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-    }),
-  ).isRequired,
-  activeId: PropTypes.string.isRequired,
-  onMenuItemClicked: PropTypes.func.isRequired,
-  onSubMenuSelected: PropTypes.func.isRequired,
-  updateMenuItems: PropTypes.func.isRequired,
   card_details: PropTypes.shape({
     id: PropTypes.string.isRequired,
     header: PropTypes.string.isRequired,
@@ -141,4 +94,4 @@ About.propTypes = {
   }),
 };
 
-export default AboutComponent;
+export default About;

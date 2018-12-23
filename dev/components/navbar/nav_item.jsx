@@ -40,10 +40,6 @@ class NavItemComponent extends React.Component {
     this.setState({ hoverBarVisible: toggle });
   }
   render() {
-    const opts = {};
-    if (this.props.isDownload) {
-      opts.download = '';
-    }
     return (
       <NavWrapper
         onClick={() => scrollTo(document.scrollingElement, this.props.scrollTop, 1000)}
@@ -53,7 +49,6 @@ class NavItemComponent extends React.Component {
           href={this.props.url}
           onMouseEnter={this.toggleHoverBar}
           onMouseLeave={this.toggleHoverBar}
-          {...opts}
         >{this.props.text}
         </NavItem>
       </NavWrapper>);
@@ -64,7 +59,6 @@ NavItemComponent.propTypes = {
   scrollTop: PropTypes.number,
   url: PropTypes.string,
   text: PropTypes.string,
-  isDownload: PropTypes.bool,
 };
 
 NavItemComponent.defaultProps = {

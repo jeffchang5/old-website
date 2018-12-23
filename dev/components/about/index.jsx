@@ -1,94 +1,57 @@
-// import React, { Component } from 'react';
-// import styled from 'styled-components';
-// import PropTypes from 'prop-types';
-// import SectionHeader from 'components/common/section_header';
-// import ResponsiveContainer from 'components/common/responsive_container';
-//
-// import AboutChipComponent from './aboutoptions';
-// import AboutViewWrapper from './aboutviewwrapper';
-//
-// const AboutWrapper = styled.div`
-//   display: flex;
-//   position: relative;
-//   flex: 1;
-//   flex-wrap: wrap;
-// `;
-//
-// const Container = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   padding-left: 15px;
-//   padding-right: 15px;
-//   flex: 1;
-//
-// `;
-//
-//
-// const AboutSectionWrapper = styled.div`
-//   display: flex;
-//   flex: 1;
-//   flex-direction: column;
-//   width: 100%;
-// `;
-//
-// const findAboutItem = (items, id) => (
-//   items.filter(aboutItems =>
-//     aboutItems.id === id,
-//   ));
-//
-// class AboutComponent extends Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       active_option: 'experience',
-//       card_item: null,
-//     };
-//     this.aboutOptionCallback = this.aboutOptionCallback.bind(this);
-//     this.aboutCardCallback = this.aboutCardCallback.bind(this);
-//   }
-//   aboutOptionCallback(aboutId) {
-//     this.setState({
-//       active_option: aboutId,
-//     });
-//   }
-//
-//   aboutCardCallback(aboutId) {
-//     this.setState({
-//       active_option: aboutId,
-//     });
-//   }
-//   render() {
-//     return (
-//       <ResponsiveContainer>
-//         <Container>
-//           <SectionHeader text="About" />
-//           <AboutSectionWrapper>
-//             <AboutWrapper>
-//               <AboutChipComponent
-//                 optionCallback={this.aboutOptionCallback}
-//                 active={this.state.active_option}
-//                 items={this.props.items}
-//               />
-//               <AboutViewWrapper
-//                 cardCallback={this.aboutCardCallback}
-//                 data={findAboutItem(this.props.items, this.state.active_option)[0]}
-//               />
-//             </AboutWrapper>
-//           </AboutSectionWrapper>
-//         </Container>
-//       </ResponsiveContainer>);
-//   }
-// }
-//
-//
-// AboutComponent.propTypes = {
-//   items: PropTypes.arrayOf(
-//     PropTypes.shape({
-//       id: PropTypes.string.isRequired,
-//       name: PropTypes.string.isRequired,
-//     }),
-//   ).isRequired,
-// };
-//
-// export default AboutComponent;
+import React from 'react';
+import styled from 'styled-components';
+
+const AboutWrapper = styled.dl`
+`;
+
+const AboutTitle = styled.p`
+    margin: 0;
+    font-weight: bold;
+    text-align: center;
+    font-size: ${props => props.theme.fontsize.normal_header};
+`;
+
+const AboutQuote = styled.div`
+    display: flex;
+    flex-direction: column;
+`;
+
+const AboutSubHeader = styled(AboutTitle)`
+    color: ${props => props.theme.color.secondary};
+`;
+
+const AboutDescription = styled.p`
+    font-size: ${props => props.theme.fontsize.text};
+`;
+
+const AboutList = styled.dt`
+    display: inline-grid;
+    grid-template-columns: 1fr 2fr;
+    align-content: center;
+    margin-top: 5%;
+    grid-gap: 45px;
+`;
+
+export default () => (
+  <AboutWrapper>
+    <AboutList>
+
+      <AboutQuote>
+        <AboutTitle>A little spontaneity</AboutTitle>
+        <AboutSubHeader>with the propensity to get shit done.</AboutSubHeader>
+      </AboutQuote>
+
+      <AboutDescription>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </AboutDescription>
+
+      <AboutQuote>
+        <AboutTitle>A little spontaneity</AboutTitle>
+        <AboutSubHeader>with the propensity to get shit done.</AboutSubHeader>
+      </AboutQuote>
+
+      <AboutDescription>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </AboutDescription>
+    </AboutList>
+  </AboutWrapper>);

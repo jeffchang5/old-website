@@ -23,6 +23,7 @@ const Container = styled.div`
     max-width: 860px;
     margin: 0 auto;
     padding: 0 20px;
+    height: 100%;
 `;
 
 const AboutSectionWrapper = styled.div`
@@ -30,6 +31,7 @@ const AboutSectionWrapper = styled.div`
   flex: 1;
   flex-direction: column;
   width: 100%;
+  height: 100%;
 `;
 
 const findAboutItem = (items, id) => (

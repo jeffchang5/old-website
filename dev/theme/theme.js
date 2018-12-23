@@ -12,8 +12,8 @@ export default {
   fontsize: {
     large_header: '4em',
     header: '3.5em',
-    normal_header: '2em',
+    normal_header: '1.8em',
     subheader: '1em',
-    text: '20pt',
+    text: '1.5rem',
   },
 };

@@ -27,17 +27,20 @@ const AboutDescription = styled.p`
 const ExperienceList = styled.dt`
     display: inline-grid;
     grid-template-columns: 1fr 2fr;
+    align-content: center;
+    margin-top: 5%;
     grid-gap: 45px;
-    height: 100%;
 `;
 
 export default () => (
   <ExperienceWrapper>
-    <ExperienceList> {/*Grid*/}
+    <ExperienceList>
+
       <ExperienceQuote>
         <ExperienceTitle>A little spontaneity</ExperienceTitle>
         <ExperienceSubHeader>with the propensity to get shit done.</ExperienceSubHeader>
       </ExperienceQuote>
+
       <AboutDescription>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
       </AboutDescription>
@@ -46,6 +49,7 @@ export default () => (
         <ExperienceTitle>A little spontaneity</ExperienceTitle>
         <ExperienceSubHeader>with the propensity to get shit done.</ExperienceSubHeader>
       </ExperienceQuote>
+      
       <AboutDescription>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
       </AboutDescription>

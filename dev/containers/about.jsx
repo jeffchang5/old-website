@@ -39,7 +39,6 @@ const findAboutItem = (items, id) => (
     aboutItems.id === id,
   )[0]);
 
-
 const mapStateToProps = state =>
   ({
     activeId: state.about.active_menuitem,

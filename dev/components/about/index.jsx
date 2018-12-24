@@ -16,8 +16,12 @@ const AboutQuote = styled.div`
     flex-direction: column;
 `;
 
-const AboutSubHeader = styled(AboutTitle)`
+const BlueSubHeader = styled(AboutTitle)`
     color: ${props => props.theme.color.secondary};
+`;
+
+const RedSubHeader = styled(AboutTitle)`
+    color: ${props => props.theme.color.primary};
 `;
 
 const AboutDescription = styled.p`
@@ -25,6 +29,7 @@ const AboutDescription = styled.p`
 `;
 
 const AboutList = styled.dt`
+    margin-top: 30px;
     display: inline-grid;
     grid-template-columns: 1fr 2fr;
     align-content: center;
@@ -38,7 +43,7 @@ export default () => (
 
       <AboutQuote>
         <AboutTitle>A little spontaneity</AboutTitle>
-        <AboutSubHeader>with the propensity to get shit done.</AboutSubHeader>
+        <BlueSubHeader>with the propensity to get shit done.</BlueSubHeader>
       </AboutQuote>
 
       <AboutDescription>
@@ -47,7 +52,7 @@ export default () => (
 
       <AboutQuote>
         <AboutTitle>A little spontaneity</AboutTitle>
-        <AboutSubHeader>with the propensity to get shit done.</AboutSubHeader>
+        <RedSubHeader>with the propensity to get shit done.</RedSubHeader>
       </AboutQuote>
 
       <AboutDescription>

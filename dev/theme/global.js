@@ -1,8 +1,6 @@
-/* eslint-disable no-unused-expressions */
 import { createGlobalStyle } from 'styled-components';
 import MajesticBoldFont from 'resources/fonts/Majesti-Banner-Bold.otf';
 import LiberationSansFont from 'resources/fonts/LiberationSans-Regular.ttf';
-
 
 export default createGlobalStyle`
   @font-face {

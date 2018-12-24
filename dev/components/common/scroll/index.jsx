@@ -1,4 +1,3 @@
-/* eslint-disable react/no-did-mount-set-state */
 import React from 'react';
 
 export default ChildComponent => (class ScrollComponent extends React.Component {

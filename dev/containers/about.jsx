@@ -29,22 +29,13 @@ const AboutSectionWrapper = styled.div`
 `;
 
 const AboutMetaOptionComponent = (props) => {
-  if (props.card != null) {
-    return (
-      <AboutCard
-        date={props.card.date}
-        description={props.card.description}
-        header={props.card.header}
-        subheader={props.card.subheader}
-      />);
-  }
   return (
-    <AboutOptionComponent
-      active={props.option.activeId}
-      onMenuItemClicked={props.option.onMenuItemClicked}
-      items={props.option.items}
-    />
-  );
+    <AboutCard
+      date={props.card.date}
+      description={props.card.description}
+      header={props.card.header}
+      subheader={props.card.subheader}
+    />);
 };
 
 AboutMetaOptionComponent.propTypes = ({

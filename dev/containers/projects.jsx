@@ -1,13 +1,13 @@
 import React from 'react';
-import styled from 'styled-components';
 import WideContainer from 'components/common/responsive_container';
 import Slider from "react-slick";
-// import "~slick-carousel/slick/slick.css";
-// import "~slick-carousel/slick/slick-theme.css";
+
+import ProjectCard from 'components/projects/projectscard'
+import SectionHeader from 'components/common/section_header';
 
 class SimpleSlider extends React.Component {
   render() {
-    var settings = {
+    let settings = {
       dots: true,
       infinite: true,
       speed: 500,
@@ -15,26 +15,27 @@ class SimpleSlider extends React.Component {
       slidesToScroll: 1
     };
     return (
-      <Slider {...settings}>
-        <div>
-          <h3>1</h3>
-        </div>
-        <div>
-          <h3>2</h3>
-        </div>
-        <div>
-          <h3>3</h3>
-        </div>
-        <div>
-          <h3>4</h3>
-        </div>
-        <div>
-          <h3>5</h3>
-        </div>
-        <div>
-          <h3>6</h3>
-        </div>
-      </Slider>
+      <div>
+        <SectionHeader text="Projects" />
+        <Slider {...settings}>
+          <ProjectCard>sdaf</ProjectCard>
+          <div>
+            <h3>2</h3>
+          </div>
+          <div>
+            <h3>3</h3>
+          </div>
+          <div>
+            <h3>4</h3>
+          </div>
+          <div>
+            <h3>5</h3>
+          </div>
+          <div>
+            <h3>6</h3>
+          </div>
+        </Slider>
+      </div>
     );
   }
 }
@@ -42,13 +43,6 @@ class SimpleSlider extends React.Component {
 export default class ProjectsComponent extends React.Component {
   constructor(props) {
     super(props);
-    this.menuCallback = this.menuCallback.bind(this);
-  }
-
-  menuCallback(category) {
-    this.setState({
-      category,
-    });
   }
 
   render() {

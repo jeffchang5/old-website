@@ -23,7 +23,8 @@ const TimelineComponent = props => (
         onSubMenuSelected={props.onSubMenuSelected}
       />
       ))}
-  </TimelineWrapper>);
+  </TimelineWrapper>
+);
 
 TimelineComponent.propTypes = {
   items: PropTypes.arrayOf(PropTypes.shape({

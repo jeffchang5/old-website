@@ -3,7 +3,6 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-
 const SectionHeader = styled.div`
   font-family: ${props => props.theme.font.header};
   font-size: 5.0em;

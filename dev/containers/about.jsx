@@ -17,7 +17,7 @@ const Container = styled.div`
     max-width: 860px;
     margin: 0 auto;
     padding: 0 20px;
-    height: 100%;
+    height: 100vh;
 `;
 
 const AboutSectionWrapper = styled.div`

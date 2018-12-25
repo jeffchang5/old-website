@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import React from 'react';
 
 const ProjectContainer = styled.div`
-    height: 100%;
     background-color: pink;
+    height: 350px;
 `;
 
 export default () => (
@@ -11,4 +11,3 @@ export default () => (
       adfsdf
   </ProjectContainer>
 );
-

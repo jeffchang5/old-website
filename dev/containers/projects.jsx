@@ -4,6 +4,23 @@ import Slider from "react-slick";
 
 import ProjectCard from 'components/projects/projectscard'
 import SectionHeader from 'components/common/section_header';
+import styled from 'styled-components';
+
+const SliderWrapper = styled.div`
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 80vh;
+`;
+
+const Container = styled.div`
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 100vh;
+`;
 
 class SimpleSlider extends React.Component {
   render() {
@@ -15,27 +32,17 @@ class SimpleSlider extends React.Component {
       slidesToScroll: 1
     };
     return (
-      <div>
+      <Container>
         <SectionHeader text="Projects" />
-        <Slider {...settings}>
-          <ProjectCard>sdaf</ProjectCard>
-          <div>
-            <h3>2</h3>
-          </div>
-          <div>
-            <h3>3</h3>
-          </div>
-          <div>
-            <h3>4</h3>
-          </div>
-          <div>
-            <h3>5</h3>
-          </div>
-          <div>
-            <h3>6</h3>
-          </div>
-        </Slider>
-      </div>
+        <SliderWrapper>
+          <Slider {...settings}>
+            <ProjectCard>sdaf</ProjectCard>
+            <ProjectCard>sdaf</ProjectCard>
+            <ProjectCard>sdaf</ProjectCard>
+            <ProjectCard>sdaf</ProjectCard>
+          </Slider>
+        </SliderWrapper>
+      </Container>
     );
   }
 }

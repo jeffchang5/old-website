@@ -12,7 +12,7 @@ const SliderWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    height: 80vh;
+    height: 55vh;
 `;
 
 const Container = styled.div`

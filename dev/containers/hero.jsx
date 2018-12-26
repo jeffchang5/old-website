@@ -15,7 +15,6 @@ const SectionWrapper = styled.div`
   flex-wrap: nowrap;
 `;
 
-
 const HeroHeadlineWrapper = styled.header`
   ${devices.small`
     margin: 50px 0;

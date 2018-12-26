@@ -3,29 +3,34 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import SectionHeader from 'components/common/section_header';
 import ResponsiveContainer from 'components/common/responsive_container';
+import devices from 'theme/devices';
 
 import AboutComponent from 'components/about';
 
 const AboutWrapper = styled.div`
-  display: flex;
-  position: relative;
-  flex: 1;
-  flex-wrap: wrap;
+    display: flex;
+    position: relative;
+    flex: 1;
+    flex-wrap: wrap;
 `;
 
 const Container = styled.div`
     max-width: 860px;
     margin: 0 auto;
     padding: 0 20px;
+    
     height: 100vh;
+    ${devices.desktop`
+      height: 100vh;
+    `}
 `;
 
 const AboutSectionWrapper = styled.div`
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
 `;
 
 const AboutMetaOptionComponent = (props) => {

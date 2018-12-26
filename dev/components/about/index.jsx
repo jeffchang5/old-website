@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import devices from 'theme/devices';
+
 const AboutWrapper = styled.dl`
 `;
 
@@ -25,16 +27,22 @@ const RedSubHeader = styled(AboutTitle)`
 `;
 
 const AboutDescription = styled.p`
+    &::first-letter { 
+      font-size: 35px;
+    }
     font-size: ${props => props.theme.fontsize.text};
 `;
 
 const AboutList = styled.dt`
     margin-top: 30px;
     display: inline-grid;
-    grid-template-columns: 1fr 2fr;
+    ${devices.desktop`
+      grid-template-columns: 1fr 2fr;
+      grid-gap: 45px;
+    `}
+    grid-gap: 25px;
     align-content: center;
     margin-top: 5%;
-    grid-gap: 45px;
 `;
 
 export default () => (

@@ -11,7 +11,8 @@ const SliderWrapper = styled.div`
     flex: 1;
     flex-direction: column;
     justify-content: center;
-    width: 100%;
+    // width: 100%;
+    min-width: 100px;
     height: 55vh;
 `;
 

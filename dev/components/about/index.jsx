@@ -27,9 +27,6 @@ const RedSubHeader = styled(AboutTitle)`
 `;
 
 const AboutDescription = styled.p`
-    &::first-letter { 
-      font-size: 35px;
-    }
     font-size: ${props => props.theme.fontsize.text};
 `;
 

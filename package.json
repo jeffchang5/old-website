@@ -42,8 +42,7 @@
   "scripts": {
     "dev": "webpack-dev-server --config webpack.dev.config.js --hot --inline --open",
     "prod": "NODE_ENV='production' webpack -p --config webpack.prod.config.js",
-    "subtree": "git subtree push --prefix dist/public origin master",
-    "deploy": "NODE_ENV='production' webpack -p --config webpack.prod.config.js && git subtree push --prefix dist/public origin master"
+    "deploy": "yarn run prod && cd dist/public && now alias $(now) jeffchang.io"
   },
   "repository": {
     "type": "git",

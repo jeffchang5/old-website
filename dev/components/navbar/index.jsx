@@ -150,13 +150,13 @@ class NavBarComponent extends React.Component {
       </MediaQuery>
       <MediaQuery minDeviceWidth={975}>
         <NavBarWrapper>
-          {this.props.navBarItems.slice(1).map(navBarItem =>
+          {/* {this.props.navBarItems.slice(1).map(navBarItem =>
             (<NavItem
               key={navBarItem.title}
               scrollTop={navBarItem.scroll.top}
               text={navBarItem.title}
             />))
-          }
+          } */}
           <LogoWrapper>
             <LogoImage alt="logo" src={Logo} />
           </LogoWrapper>

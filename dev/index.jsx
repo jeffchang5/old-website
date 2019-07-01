@@ -7,9 +7,7 @@ import Theme from 'theme/theme';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import rootReducer from 'reducers';
-import Scroll from 'components/common/scroll';
 
-const ScrollComponent = Scroll(App);
 const store = createStore(
   rootReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
@@ -18,7 +16,7 @@ const store = createStore(
 ReactDOM.render(
   <ThemeProvider theme={Theme}>
     <Provider store={store}>
-      <ScrollComponent />
+      <App />
     </Provider>
   </ThemeProvider>,
   document.getElementById('root'),

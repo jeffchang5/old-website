@@ -172,8 +172,8 @@ class Hero extends Component {
       <SectionWrapper ref={(section) => { this.section = section; }}>
         <NavBar
           navBarItems={this.props.navBarItems}
-          isFirstChildScrolled={this.props.isFirstChildScrolled}
-          isDownScroll={this.props.isDownScroll}
+          // isFirstChildScrolled={this.props.isFirstChildScrolled}
+          // isDownScroll={this.props.isDownScroll}
         />
         <Container style={{ flexGrow: '1', background: '#F5F5F5' }}>
           <HeroSectionWrapper>
